@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Página de login -->
+  <div id="login-page" class="page">
+    <div class="login-container">
+      <h1>Entrar</h1>
+      <input type="email" id="login-email" placeholder="E‑mail" autocomplete="username">
+      <input type="password" id="login-password" placeholder="Palavra‑passe" autocomplete="current-password">
+      <button id="login-button" class="btn">Entrar</button>
+      <p id="login-error" class="error-msg"></p>
+    </div>
+  </div>
+
+  <!-- Página de administração -->
+  <div id="admin-page" class="page hidden">
+    <header class="admin-header">
+      <div class="client-select-wrapper">
+        <label for="client-select">Cliente:</label>
+        <select id="client-select"></select>
+      </div>
+      <button id="logout-button" class="btn-logout">Sair</button>
+    </header>
+    <nav class="admin-nav">
+      <ul id="menu" class="menu">
+        <li class="menu-item active" data-section="conversas">Conversas</li>
+        <li class="menu-item" data-section="conteudo">Conteúdo</li>
+        <li class="menu-item" data-section="fluxos">Fluxos</li>
+        <li class="menu-item" data-section="integracoes">Integrações</li>
+        <li class="menu-item" data-section="agenda">Agenda</li>
+        <li class="menu-item" data-section="analytics">Analytics</li>
+        <li class="menu-item" data-section="definicoes">Definições</li>
+      </ul>
+    </nav>
+    <main id="main-content" class="main-content"></main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
