@@ -6,7 +6,7 @@
 import { submitMarketOrder, submitTrailingStop } from "../../scripts/alpaca_api.js";
 import { validateOrder, calcPositionSize, stopLossPrice } from "./risk.js";
 import { readState, writePositions, appendTrade } from "./memory.js";
-import settings from "../config/settings.json" assert { type: "json" };
+import settings from "../config/settings.json" with { type: "json" };
 
 export async function openPosition(ticker, pricePerShare, thesis) {
   const state = readState();

@@ -1,40 +1,308 @@
 /**
  * Loop principal do agente — Passo 8
- * Orchestration wrapper: lê memória, chama rotina certa, persiste estado.
  *
- * Em produção, este ficheiro é invocado pelas rotinas do Claude Desktop.
- * Cada rotina define o seu próprio prompt (ver /routines/).
+ * Uso:
+ *   ROUTINE=premarket    node agent/src/agent.js
+ *   ROUTINE=market_open  node agent/src/agent.js
+ *   ROUTINE=midday       node agent/src/agent.js
+ *   ROUTINE=close        node agent/src/agent.js
+ *   ROUTINE=weekly       node agent/src/agent.js
+ *
+ * Em modo mock: ALPACA_PAPER_MOCK=true ROUTINE=market_open node agent/src/agent.js
  */
-import { readState, writeState } from "./memory.js";
-import settings from "../config/settings.json" assert { type: "json" };
 
-const ROUTINE = process.env.ROUTINE; // premarket | market_open | midday | close | weekly
+import { execSync } from "child_process";
+import { readFileSync } from "fs";
+import { resolve } from "path";
+import {
+  readState, writeState, readPositions, writePositions,
+  appendTrade, appendToTradeLog, appendToResearchLog,
+  updateAgentStateMd, readMemoryFiles,
+} from "./memory.js";
+import { validateOrder, calcPositionSize, stopLossPrice } from "./risk.js";
+import settings from "../config/settings.json" with { type: "json" };
 
-async function runCycle() {
+function loadJson(relPath) {
+  return JSON.parse(readFileSync(resolve(process.cwd(), relPath), "utf-8"));
+}
+
+// Seleciona o cliente Alpaca: mock ou real
+const USE_MOCK = process.env.ALPACA_PAPER_MOCK === "true"
+  || !process.env.ALPACA_API_KEY;
+
+const alpaca = USE_MOCK
+  ? await import("../../scripts/mock_alpaca.js")
+  : await import("../../scripts/alpaca_api.js");
+
+const ROUTINE = process.env.ROUTINE;
+const VALID_ROUTINES = ["premarket", "market_open", "midday", "close", "weekly"];
+
+// ─── Guardrails ─────────────────────────────────────────────────────────────
+
+function isInWhitelist(ticker) {
+  const { tickers } = loadJson("data/sp500_whitelist.json");
+  return tickers.includes(ticker.toUpperCase());
+}
+
+// ─── Rotinas ────────────────────────────────────────────────────────────────
+
+async function runPremarket() {
+  log("PRE-MARKET RESEARCH (06:00 ET)");
   const state = readState();
+  const mem = readMemoryFiles();
+
+  // Em mock, simula um briefing de research
+  const briefing = USE_MOCK
+    ? "[MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados."
+    : "[Perplexity] — implementar após configurar PERPLEXITY_API_KEY";
+
+  log("Briefing macro:", briefing);
+
+  appendToResearchLog(`
+### Research ${today()} — Pre-Market Briefing
+**Fonte**: ${USE_MOCK ? "MOCK" : "Perplexity Sonar Reasoning"}
+**Contexto macro**: ${briefing}
+**Watchlist**: ver memory/trading_strategy.md
+`);
+
   const cycle = state.cycle + 1;
+  writeState({ ...state, cycle, status: "PREMARKET_DONE" });
+  updateAgentStateMd({
+    cycle, phase: state.phase, status: "PREMARKET_DONE",
+    capital: { current: state.capital.current, initial: state.capital.initial, drawdown_pct: state.risk.drawdown_pct },
+    openPositions: state.risk.open_positions,
+    note: `Pre-market concluído. Briefing: ${briefing.slice(0, 80)}...`,
+    nextRoutine: "Market Open (08:30 ET)",
+  });
 
-  console.log(`[agent] ciclo #${cycle} | rotina: ${ROUTINE || "manual"} | modo: ${settings.agent.mode}`);
+  log("Concluído. Próxima rotina: 08:30 Market Open.");
+}
 
-  if (state.phase === "SETUP") {
-    console.log("[agent] Sistema em fase SETUP. Implementar Passos 5-10 antes de operar.");
-    console.log("[agent] Ver CLAUDE.md e strategy.md para próximos passos.");
+async function runMarketOpen() {
+  log("MARKET OPEN EXECUTION (08:30 ET)");
+  const state = readState();
+
+  // Verificação de guardrails globais
+  const { valid, errors } = validateOrder({}, state);
+  if (!valid) {
+    log("ORDENS BLOQUEADAS pelos guardrails:", errors.join("; "));
     return;
   }
 
-  // TODO Passo 8: invocar rotina correta com base em ROUTINE env var
-  // switch (ROUTINE) {
-  //   case "premarket":   await runPremarket(); break;
-  //   case "market_open": await runMarketOpen(); break;
-  //   case "midday":      await runMidday(); break;
-  //   case "close":       await runClose(); break;
-  //   case "weekly":      await runWeekly(); break;
-  // }
+  const account = await alpaca.getAccount();
+  const equity = parseFloat(account.equity);
+  log(`Portfolio: $${equity.toFixed(2)}`);
 
-  writeState({ ...state, cycle });
+  // Posições de demonstração (mock): comprar AAPL e MSFT se não houver posições
+  const positions = await alpaca.getPositions();
+  if (USE_MOCK && positions.length === 0) {
+    for (const ticker of ["AAPL", "MSFT"]) {
+      const snap = await alpaca.getSnapshot(ticker);
+      const price = snap.latestTrade.p;
+      const qty = calcPositionSize(equity, price);
+
+      if (qty < 1) { log(`Sem capital para ${ticker}`); continue; }
+
+      const order = await alpaca.submitMarketOrder(ticker, qty, "buy");
+      await alpaca.submitTrailingStop(ticker, qty, settings.risk.trailing_stop_pct);
+
+      appendToTradeLog(`
+### Trade — ${ticker} LONG (paper/mock)
+- **Data entrada**: ${now()}
+- **Preço entrada**: $${price}
+- **Quantidade**: ${qty} shares
+- **Capital alocado**: $${(price * qty).toFixed(2)} (${((price * qty / equity) * 100).toFixed(1)}%)
+- **Stop-loss**: $${stopLossPrice(price).toFixed(2)} (-${settings.risk.stop_loss_pct}%)
+- **Trailing stop**: ${settings.risk.trailing_stop_pct}% configurado
+- **Order ID**: ${order.id}
+`);
+      log(`BUY ${qty}x ${ticker} @ $${price}`);
+    }
+  }
+
+  const updatedState = readState();
+  const updatedPositions = await alpaca.getPositions();
+  updatedState.risk.open_positions = updatedPositions.length;
+  updatedState.capital.current = parseFloat((await alpaca.getAccount()).equity);
+  writeState({ ...updatedState, cycle: updatedState.cycle + 1 });
+
+  updateAgentStateMd({
+    cycle: updatedState.cycle,
+    phase: updatedState.phase,
+    status: "MARKET_OPEN_DONE",
+    capital: { current: updatedState.capital.current, initial: updatedState.capital.initial, drawdown_pct: 0 },
+    openPositions: updatedPositions.length,
+    note: `Market open: ${updatedPositions.length} posições abertas.`,
+    nextRoutine: "Midday Adjustment (12:00 ET)",
+  });
+
+  log(`Concluído. Posições abertas: ${updatedPositions.length}.`);
 }
 
-runCycle().catch(err => {
+async function runMidday() {
+  log("MIDDAY ADJUSTMENT (12:00 ET)");
+  const state = readState();
+  const positions = await alpaca.getPositions();
+  let cuts = 0;
+
+  for (const pos of positions) {
+    const pnlPct = parseFloat(pos.unrealized_plpc) * 100;
+    log(`${pos.symbol}: ${pnlPct.toFixed(2)}%`);
+
+    // Guardrail: corte mandatório a -7%
+    if (pnlPct <= -settings.risk.stop_loss_pct) {
+      log(`CORTE OBRIGATÓRIO: ${pos.symbol} ${pnlPct.toFixed(2)}%`);
+      await alpaca.closePosition(pos.symbol);
+      appendToTradeLog(`
+### Corte Mandatório — ${pos.symbol} (${pnlPct.toFixed(2)}%)
+- **Data**: ${now()}
+- **Motivo**: Guardrail -${settings.risk.stop_loss_pct}% atingido
+- **Preço saída**: $${pos.current_price}
+`);
+      cuts++;
+    }
+  }
+
+  updateAgentStateMd({
+    cycle: state.cycle + 1,
+    phase: state.phase,
+    status: "MIDDAY_DONE",
+    capital: { current: state.capital.current, initial: state.capital.initial, drawdown_pct: state.risk.drawdown_pct },
+    openPositions: positions.length - cuts,
+    note: `Midday: ${cuts} corte(s) mandatório(s). ${positions.length - cuts} posições mantidas.`,
+    nextRoutine: "Market Close (15:00 ET)",
+  });
+
+  writeState({ ...state, cycle: state.cycle + 1, risk: { ...state.risk, open_positions: positions.length - cuts } });
+  log(`Concluído. Cortes: ${cuts}.`);
+}
+
+async function runMarketClose() {
+  log("MARKET CLOSE (15:00 ET)");
+  const state = readState();
+  const account = await alpaca.getAccount();
+  const equity = parseFloat(account.equity);
+  const lastEquity = parseFloat(account.last_equity);
+  const pnlDay = equity - lastEquity;
+  const pnlDayPct = (pnlDay / lastEquity) * 100;
+
+  log(`P&L do dia: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%)`);
+
+  // Daily loss cap
+  if (pnlDayPct < -settings.risk.daily_loss_cap_pct) {
+    log(`DAILY LOSS CAP ATINGIDO: ${pnlDayPct.toFixed(2)}%. Cancelando ordens.`);
+    await alpaca.cancelAllOrders();
+  }
+
+  appendToResearchLog(`
+### Fecho de Mercado — ${today()}
+**P&L dia**: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%)
+**Capital final**: $${equity.toFixed(2)}
+**Daily cap atingido**: ${pnlDayPct < -settings.risk.daily_loss_cap_pct ? "Sim" : "Não"}
+`);
+
+  const updatedState = { ...state, capital: { ...state.capital, current: equity }, cycle: state.cycle + 1 };
+  writeState(updatedState);
+
+  updateAgentStateMd({
+    cycle: updatedState.cycle,
+    phase: updatedState.phase,
+    status: "IDLE",
+    capital: { current: equity, initial: state.capital.initial, drawdown_pct: ((state.capital.initial - equity) / state.capital.initial) * 100 },
+    openPositions: (await alpaca.getPositions()).length,
+    note: `Fecho: P&L ${pnlDayPct.toFixed(2)}% | Capital $${equity.toFixed(2)}`,
+    nextRoutine: "Pre-Market Research (amanhã 06:00 ET)",
+  });
+
+  // Persistência atómica — push para GitHub
+  atomicPush();
+  log(`Concluído. Capital: $${equity.toFixed(2)}. Memória persistida.`);
+}
+
+async function runWeeklyReview() {
+  log("WEEKLY REVIEW (Sexta 16:00 ET)");
+  const state = readState();
+  const tradesDb = loadJson(settings.paths.trades_json);
+
+  const stats = tradesDb.stats;
+  log(`Trades semana: ${stats.total} | Win rate: ${stats.win_rate_pct}% | P&L: $${stats.total_pnl}`);
+
+  appendToResearchLog(`
+### Weekly Review — ${today()}
+**Performance total**: $${stats.total_pnl} | Win rate: ${stats.win_rate_pct}%
+**Trades**: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)
+**Nota**: Análise detalhada requer comparação com SPY via Perplexity.
+`);
+
+  updateAgentStateMd({
+    cycle: state.cycle + 1,
+    phase: state.phase,
+    status: "IDLE",
+    capital: { current: state.capital.current, initial: state.capital.initial, drawdown_pct: state.risk.drawdown_pct },
+    openPositions: state.risk.open_positions,
+    note: `Weekly review: ${stats.total} trades | $${stats.total_pnl} P&L`,
+    nextRoutine: "Pre-Market Research (segunda 06:00 ET)",
+  });
+
+  writeState({ ...state, cycle: state.cycle + 1 });
+  atomicPush();
+  log("Weekly review concluído. Memória persistida.");
+}
+
+// ─── Persistência Atómica ────────────────────────────────────────────────────
+
+function atomicPush() {
+  try {
+    const msg = `chore: atomic persist — ciclo ${readState().cycle} [${now()}]`;
+    execSync(`git add memory/ AGENT_STATE.md agent/memory/ && git commit -m "${msg}" --allow-empty`, { stdio: "pipe" });
+    execSync("git push origin HEAD", { stdio: "pipe" });
+    log("Git push atómico: OK");
+  } catch (e) {
+    log("AVISO: git push falhou —", e.message.slice(0, 100));
+  }
+}
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+function log(...args) {
+  console.log(`[agent][${now()}]`, ...args);
+}
+
+function now() {
+  return new Date().toISOString().replace("T", " ").slice(0, 19);
+}
+
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+// ─── Entry Point ─────────────────────────────────────────────────────────────
+
+async function main() {
+  log(`Iniciando rotina: ${ROUTINE ?? "(nenhuma)"} | mock: ${USE_MOCK}`);
+
+  const state = readState();
+  if (state.phase === "SETUP") {
+    log("AVISO: fase SETUP — a correr em modo de demonstração.");
+  }
+
+  if (!ROUTINE || !VALID_ROUTINES.includes(ROUTINE)) {
+    log(`ROUTINE inválida. Usar: ${VALID_ROUTINES.join(" | ")}`);
+    process.exit(1);
+  }
+
+  const routines = {
+    premarket:   runPremarket,
+    market_open: runMarketOpen,
+    midday:      runMidday,
+    close:       runMarketClose,
+    weekly:      runWeeklyReview,
+  };
+
+  await routines[ROUTINE]();
+}
+
+main().catch(err => {
   console.error("[agent] ERRO FATAL:", err.message);
   process.exit(1);
 });

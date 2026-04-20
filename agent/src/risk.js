@@ -2,7 +2,7 @@
  * Gestor de risco — Passo 6
  * Aplica guardrails definidos no CLAUDE.md antes de qualquer ordem.
  */
-import settings from "../config/settings.json" assert { type: "json" };
+import settings from "../config/settings.json" with { type: "json" };
 
 const R = settings.risk;
 

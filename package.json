@@ -1,12 +1,31 @@
 {
-  "name": "chatbot-backend",
-  "version": "1.0.0",
-  "description": "API mínima para integrar Landbot/website com um backend controlado por ti",
+  "name": "chatcorelab-trading-agent",
+  "version": "0.1.0",
+  "description": "Agente de trading autónomo fundamentalista — S&P 500 via Alpaca + Claude Opus 4.7",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "node index.js",
-    "start:prod": "NODE_ENV=production node index.js"
+    "start:prod": "NODE_ENV=production node index.js",
+
+    "agent:premarket":   "ROUTINE=premarket node agent/src/agent.js",
+    "agent:open":        "ROUTINE=market_open node agent/src/agent.js",
+    "agent:midday":      "ROUTINE=midday node agent/src/agent.js",
+    "agent:close":       "ROUTINE=close node agent/src/agent.js",
+    "agent:weekly":      "ROUTINE=weekly node agent/src/agent.js",
+
+    "mock:premarket":    "ALPACA_PAPER_MOCK=true ROUTINE=premarket node agent/src/agent.js",
+    "mock:open":         "ALPACA_PAPER_MOCK=true ROUTINE=market_open node agent/src/agent.js",
+    "mock:midday":       "ALPACA_PAPER_MOCK=true ROUTINE=midday node agent/src/agent.js",
+    "mock:close":        "ALPACA_PAPER_MOCK=true ROUTINE=close node agent/src/agent.js",
+    "mock:weekly":       "ALPACA_PAPER_MOCK=true ROUTINE=weekly node agent/src/agent.js",
+    "mock:full-day":     "npm run mock:premarket && npm run mock:open && npm run mock:midday && npm run mock:close",
+
+    "validate":          "node scripts/validate_env.js",
+    "validate:mock":     "ALPACA_PAPER_MOCK=true node scripts/validate_env.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
