@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-04-20T00:00:00Z",
-  "cycle": 0,
+  "updated_at": "2026-04-20T20:35:44.005Z",
+  "cycle": 4,
   "phase": "SETUP",
-  "status": "IDLE",
+  "status": "PREMARKET_DONE",
   "capital": {
     "initial": 10000,
-    "current": 10000,
+    "current": 9992.21,
     "currency": "USDT"
   },
   "risk": {
     "drawdown_pct": 0,
     "max_drawdown_pct": 10,
     "risk_per_trade_pct": 2,
-    "open_positions": 0,
+    "open_positions": 2,
     "max_positions": 3
   },
   "last_signal": null,

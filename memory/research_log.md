@@ -66,3 +66,15 @@ _Nenhum registado ainda._
 **Erro/Sucesso**: [Descrição objetiva]
 **Ajuste ao sistema**: [Mudança concreta nos ficheiros de memória]
 ```
+
+
+### Research 2026-04-20 — Pre-Market Briefing
+**Fonte**: MOCK
+**Contexto macro**: [MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados.
+**Watchlist**: ver memory/trading_strategy.md
+
+
+### Fecho de Mercado — 2026-04-20
+**P&L dia**: $-7.79 (-0.08%)
+**Capital final**: $9992.21
+**Daily cap atingido**: Não
