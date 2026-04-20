@@ -1,0 +1,46 @@
+{
+  "agent": {
+    "name": "chatcorelab-trader",
+    "version": "0.1.0",
+    "mode": "paper",
+    "cycle_interval_ms": 3600000,
+    "log_level": "info"
+  },
+  "markets": [
+    { "symbol": "BTC/USDT", "active": true },
+    { "symbol": "ETH/USDT", "active": true }
+  ],
+  "timeframes": {
+    "primary": "1h",
+    "confirmation": "4h"
+  },
+  "indicators": {
+    "ema_fast": 20,
+    "ema_slow": 50,
+    "rsi_period": 14,
+    "rsi_oversold": 40,
+    "rsi_overbought": 70,
+    "volume_ma_period": 20
+  },
+  "risk": {
+    "risk_per_trade_pct": 2,
+    "max_positions": 3,
+    "max_drawdown_pct": 10,
+    "min_rr_ratio": 2,
+    "partial_tp_pct": 50
+  },
+  "exchange": {
+    "id": "binance",
+    "sandbox": true,
+    "api_key_env": "EXCHANGE_API_KEY",
+    "api_secret_env": "EXCHANGE_API_SECRET"
+  },
+  "paths": {
+    "state": "agent/memory/state.json",
+    "positions": "agent/memory/positions.json",
+    "trades": "agent/memory/trades.json",
+    "agent_log": "agent/logs/agent.log",
+    "trades_log": "agent/logs/trades.log",
+    "agent_state_md": "AGENT_STATE.md"
+  }
+}
