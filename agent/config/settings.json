@@ -3,44 +3,56 @@
     "name": "chatcorelab-trader",
     "version": "0.1.0",
     "mode": "paper",
-    "cycle_interval_ms": 3600000,
+    "model": "claude-opus-4-7",
+    "approach": "fundamental",
     "log_level": "info"
   },
-  "markets": [
-    { "symbol": "BTC/USDT", "active": true },
-    { "symbol": "ETH/USDT", "active": true }
-  ],
-  "timeframes": {
-    "primary": "1h",
-    "confirmation": "4h"
+  "schedule": {
+    "premarket_research": "0 6 * * 1-5",
+    "market_open": "30 8 * * 1-5",
+    "midday_adjustment": "0 12 * * 1-5",
+    "market_close": "0 15 * * 1-5",
+    "weekly_review": "0 16 * * 5",
+    "timezone": "America/New_York"
   },
-  "indicators": {
-    "ema_fast": 20,
-    "ema_slow": 50,
-    "rsi_period": 14,
-    "rsi_oversold": 40,
-    "rsi_overbought": 70,
-    "volume_ma_period": 20
+  "market": {
+    "exchange": "alpaca",
+    "universe": "SP500",
+    "paper_base_url": "https://paper-api.alpaca.markets",
+    "live_base_url": "https://api.alpaca.markets",
+    "data_url": "https://data.alpaca.markets",
+    "api_key_env": "ALPACA_API_KEY",
+    "api_secret_env": "ALPACA_SECRET_KEY"
+  },
+  "research": {
+    "provider": "perplexity",
+    "model": "sonar-reasoning",
+    "api_key_env": "PERPLEXITY_API_KEY"
+  },
+  "alerts": {
+    "provider": "clickup",
+    "api_token_env": "CLICKUP_API_TOKEN",
+    "list_id_env": "CLICKUP_LIST_ID"
   },
   "risk": {
-    "risk_per_trade_pct": 2,
-    "max_positions": 3,
+    "max_position_pct": 5,
+    "stop_loss_pct": 7,
+    "trailing_stop_pct": 12,
+    "daily_loss_cap_pct": 2,
     "max_drawdown_pct": 10,
-    "min_rr_ratio": 2,
-    "partial_tp_pct": 50
-  },
-  "exchange": {
-    "id": "binance",
-    "sandbox": true,
-    "api_key_env": "EXCHANGE_API_KEY",
-    "api_secret_env": "EXCHANGE_API_SECRET"
+    "partial_tp_pct": 15,
+    "partial_tp_sell_size": 50,
+    "max_open_positions": 6,
+    "earnings_blackout_days": 5
   },
   "paths": {
-    "state": "agent/memory/state.json",
-    "positions": "agent/memory/positions.json",
-    "trades": "agent/memory/trades.json",
-    "agent_log": "agent/logs/agent.log",
-    "trades_log": "agent/logs/trades.log",
-    "agent_state_md": "AGENT_STATE.md"
+    "agent_instructions": "memory/agent_instructions.md",
+    "trading_strategy": "memory/trading_strategy.md",
+    "trade_log": "memory/trade_log.md",
+    "research_log": "memory/research_log.md",
+    "agent_state": "AGENT_STATE.md",
+    "state_json": "agent/memory/state.json",
+    "positions_json": "agent/memory/positions.json",
+    "trades_json": "agent/memory/trades.json"
   }
 }

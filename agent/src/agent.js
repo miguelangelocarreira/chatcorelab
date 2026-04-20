@@ -1,28 +1,37 @@
 /**
- * Loop principal do agente — Passo 8 (stub)
+ * Loop principal do agente — Passo 8
+ * Orchestration wrapper: lê memória, chama rotina certa, persiste estado.
  *
- * Ciclo:
- *   1. Ler AGENT_STATE.md + state.json
- *   2. Buscar dados de mercado
- *   3. Calcular indicadores
- *   4. Avaliar sinais
- *   5. Verificar risco
- *   6. Executar ordens
- *   7. Persistir estado
- *   8. Atualizar AGENT_STATE.md
+ * Em produção, este ficheiro é invocado pelas rotinas do Claude Desktop.
+ * Cada rotina define o seu próprio prompt (ver /routines/).
  */
-import { readState } from "./memory.js";
+import { readState, writeState } from "./memory.js";
+import settings from "../config/settings.json" assert { type: "json" };
+
+const ROUTINE = process.env.ROUTINE; // premarket | market_open | midday | close | weekly
 
 async function runCycle() {
   const state = readState();
-  console.log(`[agent] ciclo #${state.cycle} | fase: ${state.phase} | status: ${state.status}`);
+  const cycle = state.cycle + 1;
+
+  console.log(`[agent] ciclo #${cycle} | rotina: ${ROUTINE || "manual"} | modo: ${settings.agent.mode}`);
 
   if (state.phase === "SETUP") {
-    console.log("[agent] Módulos ainda não implementados. Ver strategy.md Passos 2-8.");
+    console.log("[agent] Sistema em fase SETUP. Implementar Passos 5-10 antes de operar.");
+    console.log("[agent] Ver CLAUDE.md e strategy.md para próximos passos.");
     return;
   }
 
-  // TODO Passo 8: implementar ciclo completo
+  // TODO Passo 8: invocar rotina correta com base em ROUTINE env var
+  // switch (ROUTINE) {
+  //   case "premarket":   await runPremarket(); break;
+  //   case "market_open": await runMarketOpen(); break;
+  //   case "midday":      await runMidday(); break;
+  //   case "close":       await runClose(); break;
+  //   case "weekly":      await runWeekly(); break;
+  // }
+
+  writeState({ ...state, cycle });
 }
 
 runCycle().catch(err => {

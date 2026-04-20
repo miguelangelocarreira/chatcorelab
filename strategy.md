@@ -1,76 +1,64 @@
 # Trading Agent — Strategy Document
 
-> Este ficheiro é a fonte de verdade da estratégia. Atualiza-o quando a estratégia mudar,
-> não quando o mercado flutuar. Para estado operacional, usa `AGENT_STATE.md`.
+> Fonte de verdade da estratégia. Só humanos o editam.
+> O agente lê este ficheiro mas usa `memory/trading_strategy.md` como guia operacional detalhado.
+> Para estado operacional, usa `AGENT_STATE.md`.
 
 ## 1. Identidade do Agente
 
-- **Nome**: ChatCoreLab Trading Agent v0.1
-- **Estilo**: Trend-following + mean-reversion adaptativo
-- **Mercados alvo**: Crypto (BTC/USDT, ETH/USDT) — expansível
-- **Timeframe primário**: 1h | Timeframe de confirmação: 4h
-- **Exchange**: Paper trading (simulado) → Binance spot
+- **Nome**: ChatCoreLab Autonomous Trading Agent v0.1
+- **Motor de raciocínio**: Claude Opus 4.7 (Graduate-level reasoning)
+- **Abordagem**: Análise Fundamentalista (NÃO técnica — sem MACD, candlesticks, RSI)
+- **Benchmark**: S&P 500 (SPY)
+- **Mercado**: Ações do S&P 500 via Alpaca
+- **Modo atual**: Paper Trading (mínimo 30 dias obrigatório)
 
-## 2. Filosofia de Risco
+## 2. Por que Análise Fundamentalista?
 
-- Nunca arriscar mais de **2% do capital** por trade
-- Stop-loss obrigatório em todos os trades abertos
-- Máximo de **3 posições** simultâneas
-- Drawdown máximo tolerado: **10%** — agente suspende operação automaticamente
-- Sem alavancagem na fase inicial (paper trading)
+O Opus 4.7 tem vantagem competitiva em:
+- Digestão de relatórios financeiros (10-K, 10-Q, earnings calls)
+- Julgamento sob ambiguidade (sinais macro contraditórios)
+- Self-verifying outputs (loop interno de verificação)
+- Teses de investimento coerentes baseadas em fundamentos
 
-## 3. Sinais de Entrada
+Não foi desenhado para day-trading técnico. A vantagem é na análise profunda, não na velocidade.
 
-### Long (compra)
-- EMA 20 cruza acima de EMA 50 no timeframe 1h
-- RSI(14) entre 40–65 (não sobrecomprado)
-- Volume da vela de breakout > média 20 períodos
+## 3. Filosofia de Risco
 
-### Short / Saída de Long
-- EMA 20 cruza abaixo de EMA 50
-- RSI(14) > 70 (sobrecomprado) + divergência bearish
-- Stop-loss atingido
+- Nunca arriscar mais de **5% do capital** por posição
+- Stop-loss obrigatório a **-7%** em todas as posições
+- Trailing stop de **12%** em posições vencedoras
+- Daily loss cap: **-2%** — para tudo no dia
+- Drawdown máximo: **-10%** — suspende agente, alerta humano
+- Apenas ativos da **whitelist S&P 500** — sem opções, sem alavancagem
 
-## 4. Gestão de Posição
+## 4. Os 10 Passos de Construção
+
+- [x] Passo 1 — Estrutura base de pastas e ficheiros-âncora
+- [x] Passo 2 — Arquitetura de memória (CLAUDE.md + /memory/)
+- [x] Passo 3 — Tech stack: Alpaca + Perplexity + ClickUp (/scripts/)
+- [x] Passo 4 — Scaffolding de ficheiros e schema (/memory/ + /routines/)
+- [ ] Passo 5 — Migração de estratégia em Plan Mode (refinamento de prompts)
+- [x] Passo 6 — Guardrails e limites de risco (CLAUDE.md)
+- [x] Passo 7 — Rotinas e gatilhos cron (/routines/)
+- [ ] Passo 8 — Persistência remota GitHub + push atómico
+- [ ] Passo 9 — Variáveis de ambiente na cloud (Alpaca, Perplexity, ClickUp)
+- [ ] Passo 10 — Validação, monitorização e iteração (paper trading 30 dias)
+
+## 5. Ciclo de Operação (24/5)
 
 ```
-Tamanho = (Capital × RiskPct) / (EntryPrice - StopPrice)
+06:00 ET  — Pre-Market Research (Perplexity: macro, watchlist)
+08:30 ET  — Market Open Execution (Alpaca: ordens + trailing stops)
+12:00 ET  — Midday Adjustment (cortes -7%, ajuste stops)
+15:00 ET  — Market Close (fecho intraday + persistência atómica)
+16:00 ET* — Weekly Review (*apenas sexta: performance vs SPY, ajuste estratégia)
 ```
 
-- **Risk/Reward mínimo**: 1:2
-- Take-profit parcial a 50% do target (fecha metade, move stop para break-even)
+## 6. Invariantes (nunca mudar sem revisão explícita)
 
-## 5. Ciclo de Operação do Agente
-
-```
-[Inicio do ciclo]
-  1. Ler AGENT_STATE.md  ← anti-context-rot
-  2. Buscar dados de mercado (API)
-  3. Calcular indicadores
-  4. Avaliar sinais
-  5. Verificar risco/drawdown
-  6. Executar ordens (paper ou live)
-  7. Atualizar memory/state.json
-  8. Escrever sumário em AGENT_STATE.md
-[Fim do ciclo — aguarda próximo tick]
-```
-
-## 6. Os 10 Passos de Construção
-
-- [x] Passo 1 — Estrutura de pastas e ficheiros-âncora (este ficheiro)
-- [ ] Passo 2 — Módulo de memória (`agent/src/memory.js`)
-- [ ] Passo 3 — Conector de dados de mercado (`agent/src/market.js`)
-- [ ] Passo 4 — Motor de indicadores (`agent/src/indicators.js`)
-- [ ] Passo 5 — Gerador de sinais (`agent/src/signals.js`)
-- [ ] Passo 6 — Gestor de risco (`agent/src/risk.js`)
-- [ ] Passo 7 — Motor de execução paper-trade (`agent/src/executor.js`)
-- [ ] Passo 8 — Loop principal do agente (`agent/src/agent.js`)
-- [ ] Passo 9 — Dashboard / logs legíveis por humanos
-- [ ] Passo 10 — Migração para live trading com circuit-breakers
-
-## 7. Invariantes (nunca mudar sem revisão explícita)
-
-- O agente **nunca executa** sem ler `AGENT_STATE.md` primeiro
-- O agente **nunca escreve** em `strategy.md` — só humanos o fazem
-- Todos os trades ficam registados em `agent/memory/trades.json`
-- Em caso de erro, o agente regista em `agent/logs/agent.log` e para
+- O agente lê SEMPRE `/memory/` antes de agir
+- O agente persiste SEMPRE em `/memory/` antes de terminar
+- Só humanos editam `strategy.md` e `CLAUDE.md`
+- Credenciais apenas em variáveis de ambiente — nunca em código
+- Paper trading 30 dias antes de qualquer capital real
