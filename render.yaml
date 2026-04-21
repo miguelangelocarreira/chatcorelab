@@ -1,0 +1,64 @@
+# Render deployment configuration
+# Cron jobs em UTC (mercado usa EDT = UTC-4 de março a novembro)
+# Ajustar para UTC-5 em novembro (EST)
+
+# Variáveis partilhadas por todos os jobs
+x-env: &env
+  - key: ALPACA_API_KEY
+    sync: false
+  - key: ALPACA_SECRET_KEY
+    sync: false
+  - key: PERPLEXITY_API_KEY
+    sync: false
+  - key: CLICKUP_API_TOKEN
+    sync: false
+  - key: CLICKUP_LIST_ID
+    sync: false
+  - key: GITHUB_TOKEN
+    sync: false
+
+services:
+  # 06:00 ET = 10:00 UTC (EDT)
+  - type: cron
+    name: premarket-research
+    runtime: node
+    schedule: "0 10 * * 1-5"
+    buildCommand: npm install
+    startCommand: bash scripts/render_wrapper.sh premarket
+    envVars: *env
+
+  # 08:30 ET = 12:30 UTC (EDT)
+  - type: cron
+    name: market-open
+    runtime: node
+    schedule: "30 12 * * 1-5"
+    buildCommand: npm install
+    startCommand: bash scripts/render_wrapper.sh market_open
+    envVars: *env
+
+  # 12:00 ET = 16:00 UTC (EDT)
+  - type: cron
+    name: midday-adjustment
+    runtime: node
+    schedule: "0 16 * * 1-5"
+    buildCommand: npm install
+    startCommand: bash scripts/render_wrapper.sh midday
+    envVars: *env
+
+  # 15:00 ET = 19:00 UTC (EDT)
+  - type: cron
+    name: market-close
+    runtime: node
+    schedule: "0 19 * * 1-5"
+    buildCommand: npm install
+    startCommand: bash scripts/render_wrapper.sh close
+    envVars: *env
+
+  # 16:00 ET sexta = 20:00 UTC sexta (EDT)
+  - type: cron
+    name: weekly-review
+    runtime: node
+    schedule: "0 20 * * 5"
+    buildCommand: npm install
+    startCommand: bash scripts/render_wrapper.sh weekly
+    envVars: *env
