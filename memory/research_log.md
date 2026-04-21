@@ -78,3 +78,15 @@ _Nenhum registado ainda._
 **P&L dia**: $-7.79 (-0.08%)
 **Capital final**: $9992.21
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-21 — Pre-Market Briefing
+**Fonte**: MOCK
+**Contexto macro**: [MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados.
+**Watchlist**: ver memory/trading_strategy.md
+
+
+### Fecho de Mercado — 2026-04-21
+**P&L dia**: $-5.42 (-0.05%)
+**Capital final**: $9994.58
+**Daily cap atingido**: Não

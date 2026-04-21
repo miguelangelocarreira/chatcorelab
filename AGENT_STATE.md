@@ -9,7 +9,7 @@
 ## Estado Atual
 
 - **Fase**: `SETUP`
-- **Última atualização**: 2026-04-20
+- **Última atualização**: 2026-04-21
 - **Ciclo #**: 4
 - **Status**: IDLE
 - **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
@@ -18,10 +18,10 @@
 
 ```json
 {
-  "capital_atual": 9992.21,
+  "capital_atual": 9994.58,
   "capital_inicial": 10000,
   "moeda": "USD",
-  "drawdown_pct": 0.07790000000000874,
+  "drawdown_pct": 0.054200000000000734,
   "posicoes_abertas": 2,
   "max_posicoes": 6,
   "status": "IDLE",
@@ -31,7 +31,7 @@
 
 ## Nota do Último Ciclo
 
-Fecho: P&L -0.08% | Capital $9992.21
+Fecho: P&L -0.05% | Capital $9994.58
 
 ---
 

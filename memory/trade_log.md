@@ -61,3 +61,23 @@ _Nenhuma operação registada. Agente em fase de setup (Passo 1/10)._
 - **Stop-loss**: $387.04 (-7%)
 - **Trailing stop**: 12% configurado
 - **Order ID**: mock-2-MSFT
+
+
+### Trade — AAPL LONG (paper/mock)
+- **Data entrada**: 2026-04-21 14:53:14
+- **Preço entrada**: $210.6
+- **Quantidade**: 2 shares
+- **Capital alocado**: $421.20 (4.2%)
+- **Stop-loss**: $195.86 (-7%)
+- **Trailing stop**: 12% configurado
+- **Order ID**: mock-1-AAPL
+
+
+### Trade — MSFT LONG (paper/mock)
+- **Data entrada**: 2026-04-21 14:53:14
+- **Preço entrada**: $412.57
+- **Quantidade**: 1 shares
+- **Capital alocado**: $412.57 (4.1%)
+- **Stop-loss**: $383.69 (-7%)
+- **Trailing stop**: 12% configurado
+- **Order ID**: mock-2-MSFT
