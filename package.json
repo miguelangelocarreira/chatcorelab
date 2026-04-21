@@ -24,6 +24,8 @@
     "mock:weekly":       "ALPACA_PAPER_MOCK=true ROUTINE=weekly node agent/src/agent.js",
     "mock:full-day":     "npm run mock:premarket && npm run mock:open && npm run mock:midday && npm run mock:close",
 
+    "mock:reset":        "node scripts/reset_mock.js",
+
     "validate":          "node scripts/validate_env.js",
     "validate:mock":     "ALPACA_PAPER_MOCK=true node scripts/validate_env.js"
   },

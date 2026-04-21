@@ -1,3 +1,11 @@
-node_modules
-.env.DS_Store
+node_modules/
 .env
+.env.local
+.DS_Store
+
+# Estado de runtime do mock — muda a cada execução, não versionar
+agent/memory/mock_account.json
+
+# Logs de operação — gerados em runtime
+agent/logs/*.log
+
