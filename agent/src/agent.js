@@ -51,16 +51,19 @@ async function runPremarket() {
   const state = readState();
   const mem = readMemoryFiles();
 
-  // Em mock, simula um briefing de research
-  const briefing = USE_MOCK
-    ? "[MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados."
-    : "[Perplexity] — implementar após configurar PERPLEXITY_API_KEY";
+  let briefing;
+  if (USE_MOCK || !process.env.PERPLEXITY_API_KEY) {
+    briefing = "[MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados.";
+  } else {
+    const { getMarketBriefing } = await import("../../scripts/perplexity_research.js");
+    briefing = await getMarketBriefing(today());
+  }
 
   log("Briefing macro:", briefing);
 
   appendToResearchLog(`
 ### Research ${today()} — Pre-Market Briefing
-**Fonte**: ${USE_MOCK ? "MOCK" : "Perplexity Sonar Reasoning"}
+**Fonte**: ${USE_MOCK || !process.env.PERPLEXITY_API_KEY ? "MOCK" : "Perplexity sonar"}
 **Contexto macro**: ${briefing}
 **Watchlist**: ver memory/trading_strategy.md
 `);

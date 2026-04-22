@@ -4,6 +4,8 @@
  */
 
 const PERPLEXITY_URL = "https://api.perplexity.ai/chat/completions";
+// sonar = modelo mais barato ($1/1000 pedidos). sonar-pro só se necessário.
+const DEFAULT_MODEL = "sonar";
 
 function assertCredentials() {
   if (!process.env.PERPLEXITY_API_KEY) {
@@ -11,7 +13,7 @@ function assertCredentials() {
   }
 }
 
-async function query(systemPrompt, userPrompt, model = "sonar-reasoning") {
+async function query(systemPrompt, userPrompt) {
   assertCredentials();
   const res = await fetch(PERPLEXITY_URL, {
     method: "POST",
@@ -20,13 +22,14 @@ async function query(systemPrompt, userPrompt, model = "sonar-reasoning") {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model,
+      model: DEFAULT_MODEL,
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
-      return_citations: true,
+      return_citations: false,
       search_recency_filter: "day",
+      max_tokens: 512,
     }),
   });
   if (!res.ok) {
@@ -34,52 +37,28 @@ async function query(systemPrompt, userPrompt, model = "sonar-reasoning") {
     throw new Error(`Perplexity API → ${res.status}: ${err}`);
   }
   const data = await res.json();
-  return {
-    content: data.choices[0].message.content,
-    citations: data.citations || [],
-  };
+  return data.choices[0].message.content;
 }
 
-const ANALYST_SYSTEM = `És um analista financeiro sénior especializado em ações do S&P 500.
-Respondes sempre em português europeu com análise objetiva e estruturada.
-Citas sempre as fontes e indicas a data das informações.`;
+const SYSTEM = "Analista S&P 500. Respostas curtas e objetivas em português europeu.";
 
 export function getMarketBriefing(date) {
   return query(
-    ANALYST_SYSTEM,
-    `Faz um briefing de mercado para ${date}. Inclui:
-    1. Futuros S&P 500 e principais movimentos premarket
-    2. Dados económicos publicados ou esperados hoje
-    3. Discursos de membros da Fed agendados
-    4. 3-5 notícias mais relevantes para o mercado de ações hoje`
+    SYSTEM,
+    `Briefing de mercado ${date}: futuros S&P500, 1 dado macro relevante, 1 discurso Fed, 3 notícias de ações. Máx 200 palavras.`
   );
 }
 
 export function researchStock(ticker) {
   return query(
-    ANALYST_SYSTEM,
-    `Faz uma análise fundamentalista completa de ${ticker}. Inclui:
-    1. Resumo do negócio e vantagem competitiva
-    2. Métricas financeiras: Revenue growth YoY, FCF yield, margem operacional, Dívida/EBITDA
-    3. Catalisadores identificados para os próximos 6-18 meses
-    4. Principais riscos (bull/bear case)
-    5. Consenso de analistas e target price médio
-    6. Recomendação: Comprar / Watchlist / Evitar`
+    SYSTEM,
+    `${ticker}: revenue growth YoY, FCF yield, margem operacional, catalisador principal, risco principal, consenso analistas. Máx 150 palavras.`
   );
 }
 
-export function getEarningsCalendar(tickers, weeksAhead = 2) {
+export function getEarningsCalendar(tickers) {
   return query(
-    ANALYST_SYSTEM,
-    `Quais são as datas de resultados (earnings) das seguintes empresas nas próximas ${weeksAhead} semanas: ${tickers.join(", ")}?
-    Formato: TICKER — DATA — Estimativa EPS — Estimativa Revenue`
-  );
-}
-
-export function getSectorOutlook(sector) {
-  return query(
-    ANALYST_SYSTEM,
-    `Analisa o outlook fundamentalista atual para o setor ${sector} no S&P 500.
-    Inclui: tailwinds macro, riscos regulatórios, valuations relativas ao histórico, e 2-3 empresas de destaque.`
+    SYSTEM,
+    `Earnings nas próximas 2 semanas: ${tickers.join(", ")}. Formato: TICKER — DATA — EPS est.`
   );
 }
