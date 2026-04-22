@@ -61,11 +61,22 @@ async function runPremarket() {
 
   log("Briefing macro:", briefing);
 
+  // Scoring fundamentalista da watchlist
+  let topPicks = [];
+  if (!USE_MOCK && process.env.TAVILY_API_KEY) {
+    const { screenWatchlist } = await import("./screener.js");
+    const { researchStock } = await import("../../scripts/tavily_research.js");
+    log("A fazer screening da watchlist...");
+    const scores = await screenWatchlist(researchStock);
+    topPicks = scores.filter(s => s.score > 0).slice(0, 5);
+    log(`Screening completo. Top picks: ${topPicks.map(s => `${s.ticker}(${s.score})`).join(", ") || "nenhum"}`);
+  }
+
   appendToResearchLog(`
 ### Research ${today()} — Pre-Market Briefing
 **Fonte**: ${USE_MOCK || !process.env.TAVILY_API_KEY ? "MOCK" : "Tavily"}
 **Contexto macro**: ${briefing}
-**Watchlist**: ver memory/trading_strategy.md
+**Top picks hoje**: ${topPicks.length ? topPicks.map(s => `${s.ticker} (score ${s.score})`).join(", ") : "screening não disponível"}
 `);
 
   const cycle = state.cycle + 1;
@@ -74,7 +85,7 @@ async function runPremarket() {
     cycle, phase: state.phase, status: "PREMARKET_DONE",
     capital: { current: state.capital.current, initial: state.capital.initial, drawdown_pct: state.risk.drawdown_pct },
     openPositions: state.risk.open_positions,
-    note: `Pre-market concluído. Briefing: ${briefing.slice(0, 80)}...`,
+    note: `Pre-market concluído. Top picks: ${topPicks.map(s => s.ticker).join(", ") || "nenhum"}`,
     nextRoutine: "Market Open (08:30 ET)",
   });
 
@@ -99,30 +110,63 @@ async function runMarketOpen() {
   const equity = parseFloat(account.equity);
   log(`Portfolio: $${equity.toFixed(2)}`);
 
-  // Posições de demonstração (mock): comprar AAPL e MSFT se não houver posições
   const positions = await alpaca.getPositions();
-  if (USE_MOCK && positions.length === 0) {
-    for (const ticker of ["AAPL", "MSFT"]) {
+  const openTickers = new Set(positions.map(p => p.symbol));
+  const slotsAvailable = settings.risk.max_open_positions - positions.length;
+
+  if (slotsAvailable <= 0) {
+    log(`Sem slots disponíveis (${positions.length}/${settings.risk.max_open_positions} posições).`);
+  } else if (USE_MOCK) {
+    // Mock: usa AAPL e MSFT como demonstração
+    for (const ticker of ["AAPL", "MSFT"].filter(t => !openTickers.has(t)).slice(0, slotsAvailable)) {
+      await executeBuy(ticker, equity, "MOCK — demonstração do sistema");
+    }
+  } else {
+    // Real: usa scores do premarket
+    const { loadPremarketScores } = await import("./screener.js");
+    const scores = loadPremarketScores();
+
+    if (!scores) {
+      log("AVISO: scores de premarket não disponíveis para hoje. Sem novas compras.");
+    } else {
+      const candidates = scores
+        .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker))
+        .slice(0, Math.min(slotsAvailable, 2)); // máx 2 compras por dia
+
+      if (candidates.length === 0) {
+        log("Nenhum candidato com score positivo hoje. Sem compras.");
+      }
+
+      for (const candidate of candidates) {
+        await executeBuy(candidate.ticker, equity, `Score ${candidate.score} — ${candidate.summary.slice(0, 120)}`);
+      }
+    }
+  }
+
+  async function executeBuy(ticker, portfolioEquity, rationale) {
+    try {
       const snap = await alpaca.getSnapshot(ticker);
       const price = snap.latestTrade.p;
-      const qty = calcPositionSize(equity, price);
-
-      if (qty < 1) { log(`Sem capital para ${ticker}`); continue; }
+      const qty = calcPositionSize(portfolioEquity, price);
+      if (qty < 1) { log(`Sem capital para ${ticker}`); return; }
 
       const order = await alpaca.submitMarketOrder(ticker, qty, "buy");
       await alpaca.submitTrailingStop(ticker, qty, settings.risk.trailing_stop_pct);
 
       appendToTradeLog(`
-### Trade — ${ticker} LONG (paper/mock)
+### Trade — ${ticker} LONG
 - **Data entrada**: ${now()}
 - **Preço entrada**: $${price}
 - **Quantidade**: ${qty} shares
-- **Capital alocado**: $${(price * qty).toFixed(2)} (${((price * qty / equity) * 100).toFixed(1)}%)
+- **Capital alocado**: $${(price * qty).toFixed(2)} (${((price * qty / portfolioEquity) * 100).toFixed(1)}%)
 - **Stop-loss**: $${stopLossPrice(price).toFixed(2)} (-${settings.risk.stop_loss_pct}%)
-- **Trailing stop**: ${settings.risk.trailing_stop_pct}% configurado
+- **Trailing stop**: ${settings.risk.trailing_stop_pct}%
+- **Racional**: ${rationale}
 - **Order ID**: ${order.id}
 `);
-      log(`BUY ${qty}x ${ticker} @ $${price}`);
+      log(`BUY ${qty}x ${ticker} @ $${price} | ${rationale.slice(0, 60)}`);
+    } catch (e) {
+      log(`ERRO ao comprar ${ticker}:`, e.message);
     }
   }
 

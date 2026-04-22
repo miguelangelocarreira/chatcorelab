@@ -1,0 +1,21 @@
+{
+  "updated": "2026-04-22",
+  "note": "Watchlist curada manualmente. Atualizar na Weekly Review se necessário.",
+  "stocks": [
+    { "ticker": "NVDA", "sector": "Technology",   "thesis": "AI infrastructure leader, data center demand" },
+    { "ticker": "MSFT", "sector": "Technology",   "thesis": "Azure cloud + Copilot AI monetization" },
+    { "ticker": "GOOGL","sector": "Technology",   "thesis": "Search + cloud + Gemini AI" },
+    { "ticker": "META", "sector": "Technology",   "thesis": "Ad revenue growth + Llama AI ecosystem" },
+    { "ticker": "AMZN", "sector": "Technology",   "thesis": "AWS cloud + retail margin expansion" },
+    { "ticker": "AAPL", "sector": "Technology",   "thesis": "Services growth + AI iPhone supercycle" },
+    { "ticker": "LLY",  "sector": "Healthcare",   "thesis": "GLP-1 obesity/diabetes market leader" },
+    { "ticker": "ABBV", "sector": "Healthcare",   "thesis": "Post-Humira diversification + oncology pipeline" },
+    { "ticker": "UNH",  "sector": "Healthcare",   "thesis": "Managed care + Optum data services" },
+    { "ticker": "LMT",  "sector": "Defense",      "thesis": "NATO budget expansion, F-35 program" },
+    { "ticker": "RTX",  "sector": "Defense",      "thesis": "Defense + commercial aerospace recovery" },
+    { "ticker": "GEV",  "sector": "Industrials",  "thesis": "GE Vernova grid infrastructure + energy transition" },
+    { "ticker": "CEG",  "sector": "Energy",       "thesis": "Nuclear power + AI data center contracts" },
+    { "ticker": "VST",  "sector": "Energy",       "thesis": "Power generation + data center demand" },
+    { "ticker": "JPM",  "sector": "Financials",   "thesis": "Rate environment + investment banking strength" }
+  ]
+}
