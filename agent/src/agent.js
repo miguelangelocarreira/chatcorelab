@@ -230,6 +230,18 @@ async function runMidday() {
   log(`Concluído. Cortes: ${cuts}.`);
 }
 
+async function getSPYDailyChangePct() {
+  try {
+    const snap = await alpaca.getSnapshot("SPY");
+    const bar = snap.dailyBar;
+    if (bar && bar.o && bar.c) return ((bar.c - bar.o) / bar.o) * 100;
+    return 0;
+  } catch (e) {
+    log("SPY snapshot falhou:", e.message);
+    return 0;
+  }
+}
+
 async function runMarketClose() {
   log("MARKET CLOSE (15:00 ET)");
   const state = readState();
@@ -238,8 +250,10 @@ async function runMarketClose() {
   const lastEquity = parseFloat(account.last_equity);
   const pnlDay = equity - lastEquity;
   const pnlDayPct = (pnlDay / lastEquity) * 100;
+  const spyPct = await getSPYDailyChangePct();
 
-  log(`P&L do dia: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%)`);
+  log(`P&L do dia: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%) | SPY: ${spyPct.toFixed(2)}%`);
+  log(`vs Benchmark: ${(pnlDayPct - spyPct).toFixed(2)}% (${pnlDayPct >= spyPct ? "✓ outperform" : "✗ underperform"})`);
 
   // Daily loss cap
   if (pnlDayPct < -settings.risk.daily_loss_cap_pct) {
@@ -251,16 +265,18 @@ async function runMarketClose() {
     }
   }
 
-  // Resumo diário no ClickUp
+  // Resumo diário no ClickUp com SPY real
   if (process.env.CLICKUP_API_TOKEN) {
     const { sendDailySummary } = await import("../../scripts/clickup_alerts.js");
-    await sendDailySummary(today(), pnlDay, pnlDayPct, 0, equity)
+    await sendDailySummary(today(), pnlDay, pnlDayPct, spyPct, equity)
       .catch(e => log("ClickUp summary falhou:", e.message));
   }
 
   appendToResearchLog(`
 ### Fecho de Mercado — ${today()}
 **P&L dia**: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%)
+**SPY dia**: ${spyPct.toFixed(2)}%
+**vs Benchmark**: ${(pnlDayPct - spyPct).toFixed(2)}% (${pnlDayPct >= spyPct ? "outperform" : "underperform"})
 **Capital final**: $${equity.toFixed(2)}
 **Daily cap atingido**: ${pnlDayPct < -settings.risk.daily_loss_cap_pct ? "Sim" : "Não"}
 `);
