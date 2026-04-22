@@ -108,3 +108,9 @@ _Nenhum registado ainda._
 **P&L dia**: $0.00 (0.00%)
 **Capital final**: $100000.00
 **Daily cap atingido**: Não
+
+
+### Fecho de Mercado — 2026-04-22
+**P&L dia**: $0.00 (0.00%)
+**Capital final**: $100000.00
+**Daily cap atingido**: Não
