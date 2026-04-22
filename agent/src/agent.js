@@ -52,10 +52,10 @@ async function runPremarket() {
   const mem = readMemoryFiles();
 
   let briefing;
-  if (USE_MOCK || !process.env.PERPLEXITY_API_KEY) {
+  if (USE_MOCK || !process.env.TAVILY_API_KEY) {
     briefing = "[MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados.";
   } else {
-    const { getMarketBriefing } = await import("../../scripts/perplexity_research.js");
+    const { getMarketBriefing } = await import("../../scripts/tavily_research.js");
     briefing = await getMarketBriefing(today());
   }
 
@@ -63,7 +63,7 @@ async function runPremarket() {
 
   appendToResearchLog(`
 ### Research ${today()} — Pre-Market Briefing
-**Fonte**: ${USE_MOCK || !process.env.PERPLEXITY_API_KEY ? "MOCK" : "Perplexity sonar"}
+**Fonte**: ${USE_MOCK || !process.env.TAVILY_API_KEY ? "MOCK" : "Tavily"}
 **Contexto macro**: ${briefing}
 **Watchlist**: ver memory/trading_strategy.md
 `);

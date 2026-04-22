@@ -9,7 +9,7 @@ const MOCK_MODE = process.env.ALPACA_PAPER_MOCK === "true";
 const REQUIRED = [
   { key: "ALPACA_API_KEY",      desc: "Alpaca API key",     mock_ok: true },
   { key: "ALPACA_SECRET_KEY",   desc: "Alpaca secret key",  mock_ok: true },
-  { key: "PERPLEXITY_API_KEY",  desc: "Perplexity API key", mock_ok: false },
+  { key: "TAVILY_API_KEY",      desc: "Tavily API key",     mock_ok: false },
   { key: "CLICKUP_API_TOKEN",   desc: "ClickUp token",      mock_ok: false },
   { key: "CLICKUP_LIST_ID",     desc: "ClickUp list ID",    mock_ok: false },
 ];
@@ -60,29 +60,26 @@ async function pingAlpaca() {
   }
 }
 
-async function pingPerplexity() {
-  if (!process.env.PERPLEXITY_API_KEY) return false;
+async function pingTavily() {
+  if (!process.env.TAVILY_API_KEY) return false;
   try {
-    const res = await fetch("https://api.perplexity.ai/chat/completions", {
+    const res = await fetch("https://api.tavily.com/search", {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "sonar",
-        messages: [{ role: "user", content: "ping" }],
-        max_tokens: 5,
+        api_key: process.env.TAVILY_API_KEY,
+        query: "ping",
+        max_results: 1,
       }),
     });
     if (res.ok) {
-      console.log("  ✓  Perplexity               OK");
+      console.log("  ✓  Tavily                   OK");
       return true;
     }
-    console.log(`  ✗  Perplexity               HTTP ${res.status}`);
+    console.log(`  ✗  Tavily                   HTTP ${res.status}`);
     return false;
   } catch (e) {
-    console.log(`  ✗  Perplexity               ${e.message}`);
+    console.log(`  ✗  Tavily                   ${e.message}`);
     return false;
   }
 }
@@ -115,15 +112,15 @@ async function main() {
   const envOk = checkEnvVars();
 
   console.log("\n── Conectividade ──────────────────────────────────");
-  const [alpacaOk, perplexityOk, clickupOk] = await Promise.all([
+  const [alpacaOk, tavilyOk, clickupOk] = await Promise.all([
     pingAlpaca(),
-    pingPerplexity(),
+    pingTavily(),
     pingClickUp(),
   ]);
 
   const allOk = MOCK_MODE
-    ? alpacaOk  // em mock, só o alpaca (também mock) é obrigatório
-    : envOk && alpacaOk && perplexityOk && clickupOk;
+    ? alpacaOk
+    : envOk && alpacaOk && tavilyOk && clickupOk;
 
   console.log("\n── Resultado ──────────────────────────────────────");
   if (allOk) {
