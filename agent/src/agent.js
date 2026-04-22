@@ -83,6 +83,9 @@ async function runPremarket() {
 
 async function runMarketOpen() {
   log("MARKET OPEN EXECUTION (08:30 ET)");
+
+  if (!await validateContext()) return;
+
   const state = readState();
 
   // Verificação de guardrails globais
@@ -144,6 +147,9 @@ async function runMarketOpen() {
 
 async function runMidday() {
   log("MIDDAY ADJUSTMENT (12:00 ET)");
+
+  if (!await validateContext()) return;
+
   const state = readState();
   const positions = await alpaca.getPositions();
   let cuts = 0;
@@ -270,16 +276,53 @@ async function runWeeklyReview() {
   log("Weekly review concluído. Memória persistida.");
 }
 
+// ─── Validação de Contexto ───────────────────────────────────────────────────
+
+async function validateContext() {
+  const state = readState();
+
+  // Verifica se o push anterior falhou
+  if (state.persist_ok === false) {
+    const msg = `⚠️ CONTEXTO INVÁLIDO: o push anterior falhou (ciclo ${state.cycle}). Trades suspensos até confirmação manual.`;
+    log(msg);
+    if (process.env.CLICKUP_API_TOKEN) {
+      const { alertDailyLossCap } = await import("../../scripts/clickup_alerts.js");
+      // Reutiliza alerta de alta prioridade para notificar
+      const { createTask } = await import("../../scripts/clickup_alerts.js").catch(() => null) || {};
+      await fetch(`https://api.clickup.com/api/v2/list/${process.env.CLICKUP_LIST_ID}/task`, {
+        method: "POST",
+        headers: { Authorization: process.env.CLICKUP_API_TOKEN, "Content-Type": "application/json" },
+        body: JSON.stringify({ name: msg, description: `Ciclo: ${state.cycle}\nData: ${now()}\nAção necessária: verificar o repositório GitHub e repor persist_ok: true em agent/memory/state.json`, priority: 1, status: "to do" }),
+      }).catch(e => log("ClickUp alerta falhou:", e.message));
+    }
+    return false;
+  }
+
+  return true;
+}
+
 // ─── Persistência Atómica ────────────────────────────────────────────────────
 
-function atomicPush() {
+async function atomicPush() {
+  const state = readState();
   try {
-    const msg = `chore: atomic persist — ciclo ${readState().cycle} [${now()}]`;
+    const msg = `chore: atomic persist — ciclo ${state.cycle} [${now()}]`;
     execSync(`git add memory/ AGENT_STATE.md agent/memory/ && git commit -m "${msg}" --allow-empty`, { stdio: "pipe" });
     execSync("git push origin HEAD", { stdio: "pipe" });
+    // Marca persist como OK
+    writeState({ ...readState(), persist_ok: true });
     log("Git push atómico: OK");
   } catch (e) {
     log("AVISO: git push falhou —", e.message.slice(0, 100));
+    // Marca falha — o workflow Persist memory vai commitar este flag
+    writeState({ ...readState(), persist_ok: false });
+    if (process.env.CLICKUP_API_TOKEN) {
+      await fetch(`https://api.clickup.com/api/v2/list/${process.env.CLICKUP_LIST_ID}/task`, {
+        method: "POST",
+        headers: { Authorization: process.env.CLICKUP_API_TOKEN, "Content-Type": "application/json" },
+        body: JSON.stringify({ name: `🚨 PUSH FALHOU — memória pode estar desatualizada (ciclo ${state.cycle})`, description: `O agente não conseguiu persistir o estado no GitHub.\nTrades suspensos na próxima rotina até resolução manual.\nData: ${now()}`, priority: 1, status: "to do" }),
+      }).catch(() => {});
+    }
   }
 }
 
