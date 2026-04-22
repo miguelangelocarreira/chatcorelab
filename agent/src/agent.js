@@ -198,9 +198,13 @@ async function runMidday() {
   const positions = await alpaca.getPositions();
   let cuts = 0;
 
+  let cuts = 0;
+  let partials = 0;
+
   for (const pos of positions) {
     const pnlPct = parseFloat(pos.unrealized_plpc) * 100;
-    log(`${pos.symbol}: ${pnlPct.toFixed(2)}%`);
+    const qty = parseInt(pos.qty);
+    log(`${pos.symbol}: ${pnlPct.toFixed(2)}% (${qty} shares)`);
 
     // Guardrail: corte mandatório a -7%
     if (pnlPct <= -settings.risk.stop_loss_pct) {
@@ -213,6 +217,20 @@ async function runMidday() {
 - **Preço saída**: $${pos.current_price}
 `);
       cuts++;
+
+    // Take-profit parcial: vender 50% quando lucro > 15%
+    } else if (pnlPct >= settings.risk.partial_tp_pct && qty >= 2) {
+      const sellQty = Math.floor(qty / 2);
+      log(`TAKE-PROFIT PARCIAL: ${pos.symbol} +${pnlPct.toFixed(2)}% — vendendo ${sellQty} de ${qty} shares`);
+      await alpaca.submitMarketOrder(pos.symbol, sellQty, "sell");
+      appendToTradeLog(`
+### Take-Profit Parcial — ${pos.symbol} (+${pnlPct.toFixed(2)}%)
+- **Data**: ${now()}
+- **Motivo**: Target +${settings.risk.partial_tp_pct}% atingido
+- **Vendido**: ${sellQty} shares (50%) @ $${pos.current_price}
+- **Mantido**: ${qty - sellQty} shares (deixar correr com trailing stop ${settings.risk.trailing_stop_pct}%)
+`);
+      partials++;
     }
   }
 
@@ -222,12 +240,12 @@ async function runMidday() {
     status: "MIDDAY_DONE",
     capital: { current: state.capital.current, initial: state.capital.initial, drawdown_pct: state.risk.drawdown_pct },
     openPositions: positions.length - cuts,
-    note: `Midday: ${cuts} corte(s) mandatório(s). ${positions.length - cuts} posições mantidas.`,
+    note: `Midday: ${cuts} corte(s), ${partials} take-profit(s) parcial(is). ${positions.length - cuts} posições mantidas.`,
     nextRoutine: "Market Close (15:00 ET)",
   });
 
   writeState({ ...state, cycle: state.cycle + 1, risk: { ...state.risk, open_positions: positions.length - cuts } });
-  log(`Concluído. Cortes: ${cuts}.`);
+  log(`Concluído. Cortes: ${cuts} | Take-profits parciais: ${partials}.`);
 }
 
 async function getSPYDailyChangePct() {
@@ -299,25 +317,40 @@ async function runMarketClose() {
   log(`Concluído. Capital: $${equity.toFixed(2)}. Memória persistida.`);
 }
 
+function selfGrade(winRatePct, capitalCurrent, capitalInitial) {
+  const totalReturnPct = ((capitalCurrent - capitalInitial) / capitalInitial) * 100;
+  if (winRatePct >= 60 && totalReturnPct > 2)  return "A";
+  if (winRatePct >= 50 && totalReturnPct > 0)  return "B";
+  if (winRatePct >= 40 || totalReturnPct >= 0) return "C";
+  if (winRatePct >= 30 || totalReturnPct > -5) return "D";
+  return "F";
+}
+
 async function runWeeklyReview() {
   log("WEEKLY REVIEW (Sexta 16:00 ET)");
   const state = readState();
   const tradesDb = loadJson(settings.paths.trades_json);
+  const spyPct = await getSPYDailyChangePct();
 
   const stats = tradesDb.stats;
-  log(`Trades semana: ${stats.total} | Win rate: ${stats.win_rate_pct}% | P&L: $${stats.total_pnl}`);
+  const grade = selfGrade(stats.win_rate_pct, state.capital.current, state.capital.initial);
+  const totalReturnPct = ((state.capital.current - state.capital.initial) / state.capital.initial) * 100;
+
+  log(`Trades semana: ${stats.total} | Win rate: ${stats.win_rate_pct}% | P&L: $${stats.total_pnl} | Nota: ${grade}`);
 
   appendToResearchLog(`
 ### Weekly Review — ${today()}
-**Performance total**: $${stats.total_pnl} | Win rate: ${stats.win_rate_pct}%
-**Trades**: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)
+**Performance total**: $${stats.total_pnl} (${totalReturnPct.toFixed(2)}% desde início)
+**Win rate**: ${stats.win_rate_pct}% | **Trades**: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)
+**Auto-avaliação**: ${grade}
+**SPY hoje**: ${spyPct.toFixed(2)}%
 `);
 
   if (process.env.CLICKUP_API_TOKEN) {
     const { sendWeeklySummary } = await import("../../scripts/clickup_alerts.js");
     await sendWeeklySummary({
       week: today(),
-      content: `P&L total: $${stats.total_pnl}\nWin rate: ${stats.win_rate_pct}%\nTrades: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)\nCapital: $${state.capital.current}`,
+      content: `Nota da semana: ${grade}\nP&L total: $${stats.total_pnl} (${totalReturnPct.toFixed(2)}%)\nWin rate: ${stats.win_rate_pct}%\nTrades: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)\nCapital: $${state.capital.current}\nSPY referência: ${spyPct.toFixed(2)}%`,
     }).catch(e => log("ClickUp weekly falhou:", e.message));
   }
 
