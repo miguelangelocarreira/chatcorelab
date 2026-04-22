@@ -10,9 +10,9 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-22
-- **Ciclo #**: 8
-- **Status**: IDLE
-- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
+- **Ciclo #**: 9
+- **Status**: PREMARKET_DONE
+- **Próxima rotina**: Market Open (08:30 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -21,18 +21,18 @@
   "capital_atual": 100000,
   "capital_inicial": 10000,
   "moeda": "USD",
-  "drawdown_pct": -900,
-  "posicoes_abertas": 0,
+  "drawdown_pct": 0,
+  "posicoes_abertas": 2,
   "max_posicoes": 6,
-  "status": "IDLE",
+  "status": "PREMARKET_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Fecho: P&L 0.00% | Capital $100000.00
+Pre-market concluído. Top picks: NVDA, AMZN, LMT, MSFT, AAPL
 
 ---
 
-_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
+_Próximo passo: Market Open (08:30 ET)_

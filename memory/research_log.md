@@ -114,3 +114,9 @@ _Nenhum registado ainda._
 **P&L dia**: $0.00 (0.00%)
 **Capital final**: $100000.00
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-22 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 22 de abril de 2026, os futuros do S&P 500 e do Dow Jones Industrial Average estão em alta, refletindo a reação positiva ao prolongamento do cessar-fogo no Oriente Médio pelo presidente Trump. As principais índices da bolsa de valores dos EUA estão prestes a abrir em alta, com Boeing, Tesla, IBM e Southwest Airlines reportando resultados positivos. Entre as notícias de destaque, Adobe anunciou um programa de recompra de ações no valor de $25 bilhões, e Boeing registrou uma perda trimestral menor do que o esperado.
+**Top picks hoje**: NVDA (score 4), AMZN (score 4), LMT (score 4), MSFT (score 3), AAPL (score 3)
