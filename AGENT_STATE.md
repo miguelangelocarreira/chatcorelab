@@ -10,7 +10,7 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-22
-- **Ciclo #**: 5
+- **Ciclo #**: 6
 - **Status**: PREMARKET_DONE
 - **Próxima rotina**: Market Open (08:30 ET)
 
@@ -31,7 +31,7 @@
 
 ## Nota do Último Ciclo
 
-Pre-market concluído. Briefing: [Perplexity] — implementar após configurar PERPLEXITY_API_KEY...
+Pre-market concluído. Briefing: Na manhã de 22 de abril de 2026, os futuros do S&P 500 e do Dow Jones estão em a...
 
 ---
 

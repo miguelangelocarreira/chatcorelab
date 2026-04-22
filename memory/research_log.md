@@ -96,3 +96,9 @@ _Nenhum registado ainda._
 **Fonte**: Perplexity Sonar Reasoning
 **Contexto macro**: [Perplexity] — implementar após configurar PERPLEXITY_API_KEY
 **Watchlist**: ver memory/trading_strategy.md
+
+
+### Research 2026-04-22 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 22 de abril de 2026, os futuros do S&P 500 e do Dow Jones estão em alta, refletindo a extensão do cessar-fogo no Oriente Médio anunciada pelo presidente Trump. As expectativas de ganhos para a Tesla, que está prestes a divulgar seus resultados do primeiro trimestre, também estão em foco. Além disso, a GE Vernova teve um desempenho notável devido a um balanço de lucros positivo. O mercado também está atento às declarações de analistas sobre a Amazon e a Anthropic, que influenciaram as perspectivas de preço da Amazon.
+**Watchlist**: ver memory/trading_strategy.md
