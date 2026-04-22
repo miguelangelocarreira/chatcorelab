@@ -285,9 +285,16 @@ async function runMarketClose() {
 
   // Resumo diário no ClickUp com SPY real
   if (process.env.CLICKUP_API_TOKEN) {
-    const { sendDailySummary } = await import("../../scripts/clickup_alerts.js");
-    await sendDailySummary(today(), pnlDay, pnlDayPct, spyPct, equity)
+    const { sendDailySummary: clickupSummary } = await import("../../scripts/clickup_alerts.js");
+    await clickupSummary(today(), pnlDay, pnlDayPct, spyPct, equity)
       .catch(e => log("ClickUp summary falhou:", e.message));
+  }
+
+  // Resumo diário no Telegram
+  if (process.env.TELEGRAM_BOT_TOKEN) {
+    const { sendDailySummary: telegramSummary } = await import("../../scripts/telegram_alerts.js");
+    await telegramSummary(today(), pnlDay, pnlDayPct, spyPct, equity)
+      .catch(e => log("Telegram summary falhou:", e.message));
   }
 
   appendToResearchLog(`
@@ -347,11 +354,17 @@ async function runWeeklyReview() {
 `);
 
   if (process.env.CLICKUP_API_TOKEN) {
-    const { sendWeeklySummary } = await import("../../scripts/clickup_alerts.js");
-    await sendWeeklySummary({
+    const { sendWeeklySummary: clickupWeekly } = await import("../../scripts/clickup_alerts.js");
+    await clickupWeekly({
       week: today(),
-      content: `Nota da semana: ${grade}\nP&L total: $${stats.total_pnl} (${totalReturnPct.toFixed(2)}%)\nWin rate: ${stats.win_rate_pct}%\nTrades: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)\nCapital: $${state.capital.current}\nSPY referência: ${spyPct.toFixed(2)}%`,
+      content: `Nota da semana: ${grade}\nP&L total: $${stats.total_pnl} (${totalReturnPct.toFixed(2)}%)\nWin rate: ${stats.win_rate_pct}%\nTrades: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)\nCapital: $${state.capital.current}`,
     }).catch(e => log("ClickUp weekly falhou:", e.message));
+  }
+
+  if (process.env.TELEGRAM_BOT_TOKEN) {
+    const { sendWeeklySummary: telegramWeekly } = await import("../../scripts/telegram_alerts.js");
+    await telegramWeekly(today(), grade, totalReturnPct, stats.win_rate_pct, stats.total, state.capital.current)
+      .catch(e => log("Telegram weekly falhou:", e.message));
   }
 
   updateAgentStateMd({
