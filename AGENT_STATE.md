@@ -9,10 +9,10 @@
 ## Estado Atual
 
 - **Fase**: `SETUP`
-- **Última atualização**: 2026-04-21
-- **Ciclo #**: 4
-- **Status**: IDLE
-- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
+- **Última atualização**: 2026-04-22
+- **Ciclo #**: 5
+- **Status**: PREMARKET_DONE
+- **Próxima rotina**: Market Open (08:30 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -21,18 +21,18 @@
   "capital_atual": 9994.58,
   "capital_inicial": 10000,
   "moeda": "USD",
-  "drawdown_pct": 0.054200000000000734,
+  "drawdown_pct": 0,
   "posicoes_abertas": 2,
   "max_posicoes": 6,
-  "status": "IDLE",
+  "status": "PREMARKET_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Fecho: P&L -0.05% | Capital $9994.58
+Pre-market concluído. Briefing: [Perplexity] — implementar após configurar PERPLEXITY_API_KEY...
 
 ---
 
-_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
+_Próximo passo: Market Open (08:30 ET)_

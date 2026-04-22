@@ -90,3 +90,9 @@ _Nenhum registado ainda._
 **P&L dia**: $-5.42 (-0.05%)
 **Capital final**: $9994.58
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-22 — Pre-Market Briefing
+**Fonte**: Perplexity Sonar Reasoning
+**Contexto macro**: [Perplexity] — implementar após configurar PERPLEXITY_API_KEY
+**Watchlist**: ver memory/trading_strategy.md
