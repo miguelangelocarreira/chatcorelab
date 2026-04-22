@@ -10,29 +10,29 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-22
-- **Ciclo #**: 6
-- **Status**: PREMARKET_DONE
-- **Próxima rotina**: Market Open (08:30 ET)
+- **Ciclo #**: 7
+- **Status**: IDLE
+- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
 
 ## Capital & Risco (PAPER)
 
 ```json
 {
-  "capital_atual": 9994.58,
+  "capital_atual": 100000,
   "capital_inicial": 10000,
   "moeda": "USD",
-  "drawdown_pct": 0,
-  "posicoes_abertas": 2,
+  "drawdown_pct": -900,
+  "posicoes_abertas": 0,
   "max_posicoes": 6,
-  "status": "PREMARKET_DONE",
+  "status": "IDLE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Pre-market concluído. Briefing: Na manhã de 22 de abril de 2026, os futuros do S&P 500 e do Dow Jones estão em a...
+Fecho: P&L 0.00% | Capital $100000.00
 
 ---
 
-_Próximo passo: Market Open (08:30 ET)_
+_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
