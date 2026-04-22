@@ -195,6 +195,17 @@ async function runMarketClose() {
   if (pnlDayPct < -settings.risk.daily_loss_cap_pct) {
     log(`DAILY LOSS CAP ATINGIDO: ${pnlDayPct.toFixed(2)}%. Cancelando ordens.`);
     await alpaca.cancelAllOrders();
+    if (process.env.CLICKUP_API_TOKEN) {
+      const { alertDailyLossCap } = await import("../../scripts/clickup_alerts.js");
+      await alertDailyLossCap(pnlDayPct).catch(e => log("ClickUp alert falhou:", e.message));
+    }
+  }
+
+  // Resumo diário no ClickUp
+  if (process.env.CLICKUP_API_TOKEN) {
+    const { sendDailySummary } = await import("../../scripts/clickup_alerts.js");
+    await sendDailySummary(today(), pnlDay, pnlDayPct, 0, equity)
+      .catch(e => log("ClickUp summary falhou:", e.message));
   }
 
   appendToResearchLog(`
@@ -234,8 +245,15 @@ async function runWeeklyReview() {
 ### Weekly Review — ${today()}
 **Performance total**: $${stats.total_pnl} | Win rate: ${stats.win_rate_pct}%
 **Trades**: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)
-**Nota**: Análise detalhada requer comparação com SPY via Perplexity.
 `);
+
+  if (process.env.CLICKUP_API_TOKEN) {
+    const { sendWeeklySummary } = await import("../../scripts/clickup_alerts.js");
+    await sendWeeklySummary({
+      week: today(),
+      content: `P&L total: $${stats.total_pnl}\nWin rate: ${stats.win_rate_pct}%\nTrades: ${stats.total} (${stats.wins} wins, ${stats.losses} losses)\nCapital: $${state.capital.current}`,
+    }).catch(e => log("ClickUp weekly falhou:", e.message));
+  }
 
   updateAgentStateMd({
     cycle: state.cycle + 1,
