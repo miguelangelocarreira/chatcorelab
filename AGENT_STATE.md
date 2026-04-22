@@ -11,28 +11,28 @@
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-22
 - **Ciclo #**: 9
-- **Status**: PREMARKET_DONE
-- **Próxima rotina**: Market Open (08:30 ET)
+- **Status**: MARKET_OPEN_DONE
+- **Próxima rotina**: Midday Adjustment (12:00 ET)
 
 ## Capital & Risco (PAPER)
 
 ```json
 {
-  "capital_atual": 100000,
+  "capital_atual": 99999.75,
   "capital_inicial": 10000,
   "moeda": "USD",
   "drawdown_pct": 0,
   "posicoes_abertas": 2,
   "max_posicoes": 6,
-  "status": "PREMARKET_DONE",
+  "status": "MARKET_OPEN_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Pre-market concluído. Top picks: NVDA, AMZN, LMT, MSFT, AAPL
+Market open: 2 posições abertas.
 
 ---
 
-_Próximo passo: Market Open (08:30 ET)_
+_Próximo passo: Midday Adjustment (12:00 ET)_

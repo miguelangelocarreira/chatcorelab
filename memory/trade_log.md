@@ -81,3 +81,14 @@ _Nenhuma operação registada. Agente em fase de setup (Passo 1/10)._
 - **Stop-loss**: $383.69 (-7%)
 - **Trailing stop**: 12% configurado
 - **Order ID**: mock-2-MSFT
+
+
+### Trade — NVDA LONG
+- **Data entrada**: 2026-04-22 16:12:19
+- **Preço entrada**: $201.27
+- **Quantidade**: 24 shares
+- **Capital alocado**: $4830.48 (4.8%)
+- **Stop-loss**: $187.18 (-7%)
+- **Trailing stop**: 12%
+- **Racional**: Score 4 — NVDA's fundamental analysis reveals robust revenue growth year over year, with a notable 65.47% increase in revenue and 
+- **Order ID**: d00ff52e-564d-421e-b5e0-0705e0c4d853
