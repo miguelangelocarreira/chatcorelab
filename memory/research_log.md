@@ -5,118 +5,116 @@
 
 ---
 
-## Contexto Macro Atual
+## Contexto Macro — Abril 2026
 
-_A preencher na primeira execução da rotina Pre-Market (06:00)._
+**Última atualização**: 2026-04-22
+**Fonte**: Análise de mercado manual (seed inicial)
 
-**Última atualização**: —  
-**Fonte**: Perplexity Sonar Reasoning
+### S&P 500
+- Março 2026: -5% (profit-taking em AI, tensão no Médio Oriente)
+- Abril 2026: recuperação forte, +4.5% semanal (melhor semana desde maio 2025)
+- Índice entrou na "era dos 7.000" com 3 novos recordes consecutivos
+- Earnings Q1 2026: crescimento blended +13.2% YoY (6º trimestre consecutivo de dois dígitos)
 
----
+### Reserva Federal
+- Taxa: 3.5%-3.75% (mantida em janeiro e março 2026)
+- Sem cortes esperados em 2026
+- PCE 2026 revisto para 2.7% — inflação persistente por energia e conflito Irão
+- Risco: mandato de Powell termina maio 2026, incerteza sobre sucessor
 
-## Watchlist de Research
-
-_Empresas em análise fundamentalista ativa. Ainda não em carteira._
-
-| Ticker | Setor | Reason to Watch | Research Date | Decision |
-|--------|-------|-----------------|---------------|----------|
-| — | — | — | — | — |
-
----
-
-## Lições Aprendidas
-
-_Acumular após cada trade fechado e cada Weekly Review._
-
-| Data | Lição | Categoria |
-|------|-------|-----------|
-| — | — | — |
+### Geopolítica
+- Conflito Irão: perturbação no Estreito de Ormuz e Canal de Suez
+- Petróleo: +12% YoY, ~$100/barril
+- Orçamentos de defesa NATO em expansão — tailwind para LMT, RTX, NOC
 
 ---
 
-## Sinais Ambíguos Documentados
+## Setores — Q1 2026
 
-_Situações onde os fundamentos e o macro apontavam em direções opostas._
+### Outperformers
+- **Energia**: +21% Q1, beneficia do conflito Irão e procura de data centers AI
+- **Defesa/Industriais**: LMT e RTX em destaque, orçamentos NATO crescentes
+- **Nuclear**: CEG fechou aquisição Calpine ($16.4B) — maior produtor privado de energia dos EUA, 55 GW capacidade
 
-_Nenhum registado ainda._
+### Underperformers
+- **Tecnologia**: valuations pressionadas, questionamento do ROI em AI
+- **Real Estate**: sensível às taxas elevadas
+- **Retail discricionário**: pressão no consumidor
 
----
-
-## Formato de Entrada de Research
-
-```markdown
-### Research [TICKER] — [DATA]
-**Fonte**: Perplexity / 10-K / Earnings call
-**Resumo executivo**: [2-3 frases]
-**Pontos bull**:
-- ...
-**Pontos bear**:
-- ...
-**Decisão**: [Entrar / Watchlist / Ignorar]
-**Próximo trigger**: [O que mudaria a decisão]
-```
+### Neutros
+- **Healthcare**: LLY com guidance forte ($80-83B revenue 2026, +25% YoY), valuations elevadas
 
 ---
 
-## Formato de Lição Aprendida
+## Análise por Stock — Abril 2026
 
-```markdown
-### Lição #[N] — [DATA]
-**Contexto**: [O que aconteceu]
-**Erro/Sucesso**: [Descrição objetiva]
-**Ajuste ao sistema**: [Mudança concreta nos ficheiros de memória]
-```
+### NVDA — COMPRAR/MANTER
+- Earnings: 20 maio 2026 | Expectativa: ~$78B revenue guidance
+- Revenue YoY: +65.47% | Tese: data centers AI, contratos MSFT/GOOGL/AMZN
+- Posição atual: 24 shares @ $201.27 (entrada 2026-04-22)
 
+### AMZN — COMPRAR (antes de earnings)
+- Earnings: 29 abril 2026
+- AWS Q4 2025: +24% (mais rápido em 13 trimestres) | AWS AI run-rate: $15B anual
+- CapEx 2026: $125B — mercado foca em disciplina de capital
 
-### Research 2026-04-20 — Pre-Market Briefing
-**Fonte**: MOCK
-**Contexto macro**: [MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados.
-**Watchlist**: ver memory/trading_strategy.md
+### LLY — COMPRAR/MANTER
+- Earnings: 30 abril 2026 | Revenue estimado: $17.6B
+- Guidance 2026: $80-83B (+25% YoY) | EPS: $33.50-$35.00
+- ACHIEVE-4 confirmou segurança cardiovascular GLP-1
 
+### LMT — COMPRAR
+- Earnings: 23 abril 2026 | EPS est: $6.79 | Revenue est: $18.38B
+- Bateu EPS nos últimos 4 trimestres | FY2026 EPS: $29.93 (+4.9%)
+- Tailwind direto: aumento orçamentos defesa NATO
 
-### Fecho de Mercado — 2026-04-20
-**P&L dia**: $-7.79 (-0.08%)
-**Capital final**: $9992.21
-**Daily cap atingido**: Não
+### CEG — COMPRAR/MANTER
+- Earnings: 7 maio 2026 | EPS Q1 est: $2.49
+- Maior operador nuclear dos EUA após aquisição Calpine
+- Guidance 2026: $11.00-$12.00/share | Procura AI data centers = tailwind direto
 
+### META — POSITIVO
+- AI Advantage+ advertising: $60B annual run-rate
+- DAU família de apps: 3.58B (+7% YoY) | Forte monetização AI
 
-### Research 2026-04-21 — Pre-Market Briefing
-**Fonte**: MOCK
-**Contexto macro**: [MOCK] Futuros S&P 500: +0.3%. Sem dados macro hoje. Fed sem discursos agendados.
-**Watchlist**: ver memory/trading_strategy.md
+---
 
+## AI Infrastructure — Tendências 2026
 
-### Fecho de Mercado — 2026-04-21
-**P&L dia**: $-5.42 (-0.05%)
-**Capital final**: $9994.58
-**Daily cap atingido**: Não
+- Big tech (MSFT, AMZN, GOOGL, META) investem >$650B em 2026
+- +100 GW de capacidade nova em data centers 2026-2030
+- Ponto de inflexão 2027: inferência ultrapassa treino em workloads
+- Bottleneck principal: energia elétrica — beneficia CEG, VST, NEE diretamente
 
+---
 
-### Research 2026-04-22 — Pre-Market Briefing
-**Fonte**: Perplexity Sonar Reasoning
-**Contexto macro**: [Perplexity] — implementar após configurar PERPLEXITY_API_KEY
-**Watchlist**: ver memory/trading_strategy.md
+## Riscos a Monitorizar
 
+- Conflito Irão — escalada pode pressionar energia e inflação
+- Fed independence risk — transição de Powell maio 2026
+- AI ROI — mercado questiona retorno do capex massivo
+- Earnings miss nas mega-caps pode desestabilizar o índice
+- Top 10 stocks = ~40% do peso do S&P 500 (risco de concentração)
 
-### Research 2026-04-22 — Pre-Market Briefing
-**Fonte**: Tavily
-**Contexto macro**: Na manhã de 22 de abril de 2026, os futuros do S&P 500 e do Dow Jones estão em alta, refletindo a extensão do cessar-fogo no Oriente Médio anunciada pelo presidente Trump. As expectativas de ganhos para a Tesla, que está prestes a divulgar seus resultados do primeiro trimestre, também estão em foco. Além disso, a GE Vernova teve um desempenho notável devido a um balanço de lucros positivo. O mercado também está atento às declarações de analistas sobre a Amazon e a Anthropic, que influenciaram as perspectivas de preço da Amazon.
-**Watchlist**: ver memory/trading_strategy.md
+---
 
+## Lições e Padrões
 
-### Fecho de Mercado — 2026-04-22
-**P&L dia**: $0.00 (0.00%)
-**Capital final**: $100000.00
-**Daily cap atingido**: Não
+- **Padrão**: Stocks com earnings surprise em 2+ trimestres consecutivos tendem a outperformar
+- **Padrão**: Setor Defense outperforma em períodos de tensão geopolítica
+- **Padrão**: Nuclear e energy infrastructure são proxies diretos do AI buildout
+- **Regra**: Evitar posições abertas 5 dias antes de earnings (risco binário)
+- **Regra**: Score Tavily > 3 = sinal forte; 1-2 = watchlist; 0 = aguardar
+- **Regra**: Em ambiente de taxas altas, evitar Real Estate e Utilities puras
 
+---
 
-### Fecho de Mercado — 2026-04-22
-**P&L dia**: $0.00 (0.00%)
-**Capital final**: $100000.00
-**Daily cap atingido**: Não
-
+## Histórico de Briefings Pre-Market
 
 ### Research 2026-04-22 — Pre-Market Briefing
 **Fonte**: Tavily
-**Contexto macro**: Na manhã de 22 de abril de 2026, os futuros do S&P 500 e do Dow Jones Industrial Average estão em alta, refletindo a reação positiva ao prolongamento do cessar-fogo no Oriente Médio pelo presidente Trump. As principais índices da bolsa de valores dos EUA estão prestes a abrir em alta, com Boeing, Tesla, IBM e Southwest Airlines reportando resultados positivos. Entre as notícias de destaque, Adobe anunciou um programa de recompra de ações no valor de $25 bilhões, e Boeing registrou uma perda trimestral menor do que o esperado.
-**Top picks hoje**: NVDA (score 4), AMZN (score 4), LMT (score 4), MSFT (score 3), AAPL (score 3)
+**Contexto macro**: Futuros S&P 500 e DJIA em alta, refletindo prolongamento do cessar-fogo no Médio Oriente. Boeing, Tesla, IBM e Southwest Airlines reportaram resultados positivos. Adobe anunciou recompra de $25B. GE Vernova com desempenho notável.
+**Top picks**: NVDA (score 4), AMZN (score 4), LMT (score 4), MSFT (score 3), AAPL (score 3)
+
+### Fecho de Mercado — 2026-04-22
+**P&L dia**: $0.00 (0.00%) | **Capital**: $100,000.00 | **Daily cap atingido**: Não
