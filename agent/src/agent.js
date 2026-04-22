@@ -131,7 +131,7 @@ async function runMarketOpen() {
     } else {
       const candidates = scores
         .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker))
-        .slice(0, Math.min(slotsAvailable, 2)); // máx 2 compras por dia
+        .slice(0, 1); // 1 compra por ciclo — evita conflitos de ordens
 
       if (candidates.length === 0) {
         log("Nenhum candidato com score positivo hoje. Sem compras.");
