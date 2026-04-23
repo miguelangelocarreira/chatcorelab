@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updated_at": "2026-04-23T12:31:39.283Z",
-  "cycle": 21,
+  "updated_at": "2026-04-23T14:19:05.241Z",
+  "cycle": 22,
   "phase": "SETUP",
   "status": "PREMARKET_DONE",
   "capital": {
     "initial": 100000,
-    "current": 100084.13,
+    "current": 100087.23,
     "currency": "USD"
   },
   "risk": {
     "drawdown_pct": 0,
     "max_drawdown_pct": 10,
     "daily_pnl_pct": 0,
-    "open_positions": 2,
+    "open_positions": 4,
     "max_open_positions": 6
   },
   "last_signal": null,

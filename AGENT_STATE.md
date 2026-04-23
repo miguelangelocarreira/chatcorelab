@@ -10,7 +10,7 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-23
-- **Ciclo #**: 20
+- **Ciclo #**: 21
 - **Status**: MARKET_OPEN_DONE
 - **Próxima rotina**: Midday Adjustment (12:00 ET)
 
@@ -18,11 +18,11 @@
 
 ```json
 {
-  "capital_atual": 100084.13,
+  "capital_atual": 100087.23,
   "capital_inicial": 100000,
   "moeda": "USD",
   "drawdown_pct": 0,
-  "posicoes_abertas": 2,
+  "posicoes_abertas": 4,
   "max_posicoes": 6,
   "status": "MARKET_OPEN_DONE",
   "modo": "paper"
@@ -31,7 +31,7 @@
 
 ## Nota do Último Ciclo
 
-Market open: 2 posições abertas.
+Market open: 4 posições abertas.
 
 ---
 
