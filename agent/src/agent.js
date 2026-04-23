@@ -122,7 +122,7 @@ async function runMarketOpen() {
       await executeBuy(ticker, equity, "MOCK — demonstração do sistema");
     }
   } else {
-    // Real: usa scores do premarket
+    // Real: usa scores do premarket + Claude Opus 4.7 reasoning
     const { loadPremarketScores } = await import("./screener.js");
     const scores = loadPremarketScores();
 
@@ -134,16 +134,68 @@ async function runMarketOpen() {
         .filter(s => s.earningsBlackout)
         .forEach(s => log(`BLACKOUT: ${s.ticker} tem earnings em ${s.earningsDaysAway} dia(s) — excluído`));
 
-      const candidates = scores
-        .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker) && !s.earningsBlackout)
-        .slice(0, 1); // 1 compra por ciclo — evita conflitos de ordens
+      if (process.env.ANTHROPIC_API_KEY) {
+        // Claude Opus 4.7: raciocínio fundamentalista completo com adaptive thinking
+        const { analyzeAndDecide } = await import("../../scripts/claude_reasoning.js");
+        const mem = readMemoryFiles();
+        let decision = null;
+        try {
+          log("Claude: a analisar mercado com Opus 4.7...");
+          decision = await analyzeAndDecide({
+            date: today(),
+            equity,
+            positions,
+            scores: scores.filter(s => isInWhitelist(s.ticker)),
+            tradeLog: mem.tradeLog,
+            strategy: mem.strategy,
+            instructions: mem.instructions,
+            briefing: mem.researchLog.split("\n").slice(-30).join("\n"),
+          });
+          log(`Claude: ${decision.action}${decision.ticker ? ` → ${decision.ticker}` : ""} | confiança ${(decision.confidence * 100).toFixed(0)}%`);
+          log(`Claude: ${decision.reasoning}`);
+          appendToResearchLog(`\n### Claude Decision — ${today()}\n**Ação**: ${decision.action}${decision.ticker ? ` → ${decision.ticker}` : ""}\n**Confiança**: ${(decision.confidence * 100).toFixed(0)}%\n**Raciocínio**: ${decision.reasoning}\n**Riscos**: ${(decision.risks || []).join("; ")}\n`);
+        } catch (e) {
+          log("Claude reasoning falhou:", e.message, "— fallback para keyword scoring");
+        }
 
-      if (candidates.length === 0) {
-        log("Nenhum candidato com score positivo hoje (ou todos em blackout). Sem compras.");
-      }
-
-      for (const candidate of candidates) {
-        await executeBuy(candidate.ticker, equity, `Score ${candidate.score} — ${candidate.summary.slice(0, 120)}`);
+        if (decision?.action === "BUY" && decision.ticker) {
+          const ticker = decision.ticker.toUpperCase();
+          // Guardrails forçados em código — Claude não pode contorná-los
+          if (!isInWhitelist(ticker)) {
+            log(`GUARDRAIL: ${ticker} fora da whitelist S&P 500 — bloqueado`);
+          } else if (scores.find(s => s.ticker === ticker)?.earningsBlackout) {
+            log(`GUARDRAIL: ${ticker} em blackout de earnings — bloqueado`);
+          } else if (openTickers.has(ticker)) {
+            log(`${ticker} já em carteira — sem compra`);
+          } else {
+            await executeBuy(ticker, equity, `Claude Opus 4.7 — ${decision.reasoning.slice(0, 120)}`);
+          }
+        } else if (decision?.action === "NO_ACTION") {
+          log(`Claude: sem oportunidade hoje. Riscos: ${(decision.risks || []).join(", ")}`);
+        } else if (!decision) {
+          // Fallback: keyword scoring (quando Claude falha)
+          const candidates = scores
+            .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker) && !s.earningsBlackout)
+            .slice(0, 1);
+          if (candidates.length === 0) {
+            log("Nenhum candidato com score positivo hoje. Sem compras.");
+          }
+          for (const c of candidates) {
+            await executeBuy(c.ticker, equity, `Score ${c.score} — ${c.summary.slice(0, 120)}`);
+          }
+        }
+      } else {
+        // Sem ANTHROPIC_API_KEY: fallback para keyword scoring
+        log("AVISO: ANTHROPIC_API_KEY não definida — usando keyword scoring");
+        const candidates = scores
+          .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker) && !s.earningsBlackout)
+          .slice(0, 1);
+        if (candidates.length === 0) {
+          log("Nenhum candidato com score positivo hoje (ou todos em blackout). Sem compras.");
+        }
+        for (const c of candidates) {
+          await executeBuy(c.ticker, equity, `Score ${c.score} — ${c.summary.slice(0, 120)}`);
+        }
       }
     }
   }
