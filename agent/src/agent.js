@@ -306,6 +306,12 @@ async function runMarketClose() {
   log(`P&L do dia: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%) | SPY: ${spyPct.toFixed(2)}%`);
   log(`vs Benchmark: ${(pnlDayPct - spyPct).toFixed(2)}% (${pnlDayPct >= spyPct ? "✓ outperform" : "✗ underperform"})`);
 
+  // Max drawdown guardrail — verifica antes de tudo
+  if (await checkMaxDrawdown(equity, state.capital.initial)) {
+    atomicPush();
+    return;
+  }
+
   // Daily loss cap
   if (pnlDayPct < -settings.risk.daily_loss_cap_pct) {
     log(`DAILY LOSS CAP ATINGIDO: ${pnlDayPct.toFixed(2)}%. Cancelando ordens.`);
@@ -424,14 +430,18 @@ async function runWeeklyReview() {
 async function validateContext() {
   const state = readState();
 
+  // Verifica suspensão por max drawdown
+  if (state.suspended === true) {
+    const msg = `🚨 AGENTE SUSPENSO: max drawdown atingido. Retomar manualmente em agent/memory/state.json (suspended: false).`;
+    log(msg);
+    return false;
+  }
+
   // Verifica se o push anterior falhou
   if (state.persist_ok === false) {
     const msg = `⚠️ CONTEXTO INVÁLIDO: o push anterior falhou (ciclo ${state.cycle}). Trades suspensos até confirmação manual.`;
     log(msg);
     if (process.env.CLICKUP_API_TOKEN) {
-      const { alertDailyLossCap } = await import("../../scripts/clickup_alerts.js");
-      // Reutiliza alerta de alta prioridade para notificar
-      const { createTask } = await import("../../scripts/clickup_alerts.js").catch(() => null) || {};
       await fetch(`https://api.clickup.com/api/v2/list/${process.env.CLICKUP_LIST_ID}/task`, {
         method: "POST",
         headers: { Authorization: process.env.CLICKUP_API_TOKEN, "Content-Type": "application/json" },
@@ -441,6 +451,50 @@ async function validateContext() {
     return false;
   }
 
+  return true;
+}
+
+// ─── Max Drawdown Guardrail ──────────────────────────────────────────────────
+
+async function checkMaxDrawdown(equity, capitalInitial) {
+  const drawdownPct = ((capitalInitial - equity) / capitalInitial) * 100;
+  if (drawdownPct < settings.risk.max_drawdown_pct) return false;
+
+  log(`🚨 MAX DRAWDOWN ATINGIDO: -${drawdownPct.toFixed(2)}% (limite: -${settings.risk.max_drawdown_pct}%)`);
+
+  // Cancelar todas as ordens abertas e fechar posições
+  try {
+    await alpaca.cancelAllOrders();
+    const openPositions = await alpaca.getPositions();
+    for (const pos of openPositions) {
+      await alpaca.closePosition(pos.symbol);
+      log(`Posição fechada por max drawdown: ${pos.symbol}`);
+    }
+  } catch (e) {
+    log("Erro ao fechar posições no max drawdown:", e.message);
+  }
+
+  // Suspender agente
+  const state = readState();
+  writeState({ ...state, suspended: true });
+
+  const alertMsg = `Portfolio caiu -${drawdownPct.toFixed(2)}% desde início.\nCapital atual: $${equity.toFixed(2)} (inicial: $${capitalInitial.toFixed(2)})\nTodas as posições fechadas.\nReativar: editar suspended: false em agent/memory/state.json`;
+
+  if (process.env.TELEGRAM_BOT_TOKEN) {
+    const { sendAlert } = await import("../../scripts/telegram_alerts.js");
+    await sendAlert("🚨", "MAX DRAWDOWN — Agente Suspenso", alertMsg)
+      .catch(e => log("Telegram alert falhou:", e.message));
+  }
+
+  if (process.env.CLICKUP_API_TOKEN) {
+    await fetch(`https://api.clickup.com/api/v2/list/${process.env.CLICKUP_LIST_ID}/task`, {
+      method: "POST",
+      headers: { Authorization: process.env.CLICKUP_API_TOKEN, "Content-Type": "application/json" },
+      body: JSON.stringify({ name: `🚨 MAX DRAWDOWN ATINGIDO — Agente Suspenso`, description: alertMsg, priority: 1, status: "to do" }),
+    }).catch(e => log("ClickUp alert falhou:", e.message));
+  }
+
+  appendToResearchLog(`\n### 🚨 MAX DRAWDOWN — ${today()}\n${alertMsg}\n`);
   return true;
 }
 
