@@ -190,3 +190,11 @@
 **Confiança**: 55%
 **Raciocínio**: Análise da carteira atual: já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) totalizando ~2% de exposição com P&L positivo agregado. A concentração setorial em tech/AI é elevada (AMZN + MSFT + NVDA). Os top picks de hoje (NVDA, MSFT, JPM, GOOGL, LMT) incluem 3 tickers já em carteira. Adicionar GOOGL ou JPM seria possível, mas: (1) GOOGL score 3 não é suficientemente elevado para convicção ≥70%; (2) JPM score 4 é atrativo mas não tenho catalisador específico verificável no briefing — é qualidade genérica sem gatilho claro nos próximos 6-18 meses; (3) o contexto macro mostra valuations esticadas (S&P/Nasdaq em recordes, IBM -6% e ServiceNow -13% pós-earnings apesar de bons resultados) — a barra está elevada; (4) LMT reporta earnings HOJE, risco binário inaceitável. A disciplina dita esperar: sem catalisador claro e sem convicção ≥70%, cash é posição válida. Vou aguardar resultados de LMT (hoje), AMZN (29 abr) e evolução do sentimento pós-earnings tech antes de adicionar risco.
 **Riscos**: Concentração setorial em tech/AI já elevada na carteira; Valuations esticadas com S&P/Nasdaq em máximos históricos; Reação negativa do mercado a earnings tech sugere barra elevada para surpresas positivas
+
+
+### Fecho de Mercado — 2026-04-23
+**P&L dia**: $-134.16 (-0.13%)
+**SPY dia**: -0.14%
+**vs Benchmark**: 0.00% (outperform)
+**Capital final**: $99949.56
+**Daily cap atingido**: Não
