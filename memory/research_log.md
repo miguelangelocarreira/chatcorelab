@@ -158,3 +158,9 @@
 **vs Benchmark**: -0.26% (underperform)
 **Capital final**: $100028.70
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-23 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 23 de abril de 2026, os futuros do S&P 500 mantinham-se estáveis após o índice e o Nasdaq Composite atingirem novos recordes durante a sessão regular. As principais mudanças noturnas incluíram IBM e ServiceNow, que operavam 6% e 13% abaixo, respectivamente, após divulgarem seus resultados mais recentes. As notícias macro do dia incluíam a extensão do cessar-fogo entre os EUA e o Irã por parte do Presidente Donald Trump, que continuou a influenciar positivamente o mercado. Entre os principais discursos do Fed, os investidores aguardavam ansiosamente por atualizações que poderiam impactar as expectativas de política monetária. Os destaques das notícias de ações incluíam o desempenho recorde do Nasdaq, a queda significativa do ServiceNow apesar de um resultado trimestral positivo, e a expectativa em torno dos resultados da Tesla, com Elon Musk programado para falar sobre o futuro da empresa.
+**Top picks hoje**: NVDA (score 4), GEV (score 4), AMZN (score 3), LLY (score 3), LMT (score 3)

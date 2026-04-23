@@ -10,9 +10,9 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-23
-- **Ciclo #**: 15
-- **Status**: MARKET_OPEN_DONE
-- **Próxima rotina**: Midday Adjustment (12:00 ET)
+- **Ciclo #**: 17
+- **Status**: PREMARKET_DONE
+- **Próxima rotina**: Market Open (08:30 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -24,15 +24,15 @@
   "drawdown_pct": 0,
   "posicoes_abertas": 2,
   "max_posicoes": 6,
-  "status": "MARKET_OPEN_DONE",
+  "status": "PREMARKET_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Market open: 2 posições abertas.
+Pre-market concluído. Top picks: NVDA, GEV, AMZN, LLY, LMT
 
 ---
 
-_Próximo passo: Midday Adjustment (12:00 ET)_
+_Próximo passo: Market Open (08:30 ET)_
