@@ -5,7 +5,7 @@
   "phase": "SETUP",
   "status": "PREMARKET_DONE",
   "capital": {
-    "initial": 10000,
+    "initial": 100000,
     "current": 100032.92,
     "currency": "USD"
   },
@@ -18,5 +18,5 @@
   },
   "last_signal": null,
   "last_error": null,
-  "persist_ok": false
+  "persist_ok": true
 }
