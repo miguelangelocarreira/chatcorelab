@@ -10,7 +10,7 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-23
-- **Ciclo #**: 17
+- **Ciclo #**: 18
 - **Status**: PREMARKET_DONE
 - **Próxima rotina**: Market Open (08:30 ET)
 
@@ -31,7 +31,7 @@
 
 ## Nota do Último Ciclo
 
-Pre-market concluído. Top picks: NVDA, GEV, AMZN, LLY, LMT
+Pre-market concluído. Top picks: NVDA, MSFT, JPM, GOOGL, LMT
 
 ---
 
