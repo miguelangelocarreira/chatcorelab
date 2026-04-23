@@ -18,6 +18,7 @@ import {
   readState, writeState, readPositions, writePositions,
   appendTrade, appendToTradeLog, appendToResearchLog,
   appendToLessons, updateTradingStrategy, updateAgentStateMd, readMemoryFiles,
+  readTradeStats,
 } from "./memory.js";
 import { validateOrder, calcPositionSize, stopLossPrice } from "./risk.js";
 import settings from "../config/settings.json" with { type: "json" };
@@ -42,6 +43,15 @@ const VALID_ROUTINES = ["premarket", "market_open", "midday", "close", "weekly"]
 function isInWhitelist(ticker) {
   const { tickers } = loadJson("data/sp500_whitelist.json");
   return tickers.includes(ticker.toUpperCase());
+}
+
+function getSector(ticker) {
+  try {
+    const { stocks } = loadJson("data/watchlist.json");
+    return stocks.find(s => s.ticker === ticker.toUpperCase())?.sector || "Unknown";
+  } catch {
+    return "Unknown";
+  }
 }
 
 // ─── Rotinas ────────────────────────────────────────────────────────────────
@@ -167,7 +177,7 @@ async function runMarketOpen() {
             briefing: mem.researchLog.split("\n").slice(-30).join("\n"),
             stats: tradesDb.stats,
             recentTrades: tradesDb.trades.slice(-5),
-            lessons: mem.lessons,
+            tradeStats: readTradeStats(),
           });
           log(`Claude: ${decision.action}${decision.ticker ? ` → ${decision.ticker}` : ""} | confiança ${(decision.confidence * 100).toFixed(0)}%`);
           log(`Claude: ${decision.reasoning}`);
@@ -297,6 +307,7 @@ async function runMidday() {
         exit_price: parseFloat(pos.current_price),
         pnl: realizedPnl,
         pnl_pct: pnlPct,
+        sector: getSector(pos.symbol),
       });
       appendToTradeLog(`
 ### Corte Mandatório — ${pos.symbol} (${pnlPct.toFixed(2)}%)
@@ -324,6 +335,7 @@ async function runMidday() {
         exit_price: exitPrice,
         pnl: partialPnl,
         pnl_pct: pnlPct,
+        sector: getSector(pos.symbol),
       });
       appendToTradeLog(`
 ### Take-Profit Parcial — ${pos.symbol} (+${pnlPct.toFixed(2)}%)

@@ -54,6 +54,7 @@
     "agent_state": "AGENT_STATE.md",
     "state_json": "agent/memory/state.json",
     "positions_json": "agent/memory/positions.json",
-    "trades_json": "agent/memory/trades.json"
+    "trades_json": "agent/memory/trades.json",
+    "trade_stats_json": "agent/memory/trade_stats.json"
   }
 }

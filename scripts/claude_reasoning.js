@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 
 export async function analyzeAndDecide({
-  date, equity, capitalInitial, positions, scores, tradeLog, strategy, instructions, briefing, stats, recentTrades, lessons,
+  date, equity, capitalInitial, positions, scores, tradeLog, strategy, instructions, briefing, stats, recentTrades, tradeStats,
 }) {
   if (!process.env.ANTHROPIC_API_KEY) {
     throw new Error("ANTHROPIC_API_KEY não definida");
@@ -29,78 +29,77 @@ ${strategy}
 - Proibido: Opções, Leveraged ETFs
 - Earnings Blackout: sem compras nos 5 dias antes de earnings`;
 
-  const openLines = positions.length > 0
-    ? positions.map(p =>
-        `  ${p.symbol}: ${(parseFloat(p.unrealized_plpc) * 100).toFixed(2)}% | P&L $${parseFloat(p.unrealized_pl).toFixed(2)} | ${p.qty} shares`
-      ).join("\n")
-    : "  Nenhuma";
+  // ── Terminal-format context (compact, ~300 tokens) ──────────────────────────
+  const eq = parseFloat(equity);
+  const init = parseFloat(capitalInitial || equity);
+  const totalPnl = eq - init;
+  const totalPnlPct = init ? (totalPnl / init * 100) : 0;
+  const pnlStr = `${totalPnl >= 0 ? "+" : ""}$${totalPnl.toFixed(0)}(${totalPnl >= 0 ? "+" : ""}${totalPnlPct.toFixed(2)}%)`;
+  const dd = eq < init ? ((init - eq) / init * 100).toFixed(1) : "0.0";
 
-  const scoresLines = scores.slice(0, 10).map(s =>
-    `  ${s.ticker} (score ${s.score}${s.earningsBlackout ? " — BLACKOUT EARNINGS" : ""}): ${s.summary.slice(0, 200)}`
-  ).join("\n");
+  const posLine = positions.length > 0
+    ? positions.map(p => {
+        const pct = parseFloat(p.unrealized_plpc) * 100;
+        const pnl = parseFloat(p.unrealized_pl);
+        return `${p.symbol}×${p.qty}@$${parseFloat(p.avg_entry_price).toFixed(0)} ${pct >= 0 ? "+" : ""}${pct.toFixed(1)}%(${pnl >= 0 ? "+" : ""}$${Math.abs(pnl).toFixed(0)})`;
+      }).join("  ")
+    : "none";
 
-  const recentLog = (tradeLog || "Sem trades recentes").split("\n").slice(-25).join("\n");
+  const perfBase = stats?.total > 0
+    ? `wr:${stats.win_rate_pct}%(${stats.wins}W/${stats.losses}L) | pnl:${parseFloat(stats.total_pnl) >= 0 ? "+" : ""}$${parseFloat(stats.total_pnl).toFixed(0)}`
+    : "wr:—(0W/0L) | pnl:$0";
 
-  // Bloco de desempenho — feedback explícito sobre decisões passadas
-  const totalPnl = parseFloat(equity) - parseFloat(capitalInitial || equity);
-  const totalPnlPct = capitalInitial ? (totalPnl / capitalInitial * 100).toFixed(2) : "0.00";
-  const pnlSign = totalPnl >= 0 ? "+" : "";
-
-  let performanceBlock;
-  if (stats && stats.total > 0) {
-    const recentSummary = (recentTrades || []).slice(-5).map(t =>
-      `  ${t.side === "buy" ? "COMPRA" : "VENDA"} ${t.ticker} — ${t.pnl >= 0 ? "GANHO" : "PERDA"} ${t.pnl >= 0 ? "+" : ""}$${parseFloat(t.pnl).toFixed(2)} (${t.reason || "—"})`
-    ).join("\n") || "  Nenhum";
-
-    performanceBlock = `📊 O TEU HISTORIAL DE DESEMPENHO (feedback das tuas decisões anteriores):
-Capital inicial: $${parseFloat(capitalInitial).toFixed(2)} → Atual: $${parseFloat(equity).toFixed(2)} (${pnlSign}$${totalPnl.toFixed(2)}, ${pnlSign}${totalPnlPct}%)
-Win rate: ${stats.win_rate_pct}% | Trades: ${stats.total} (${stats.wins} ganhos, ${stats.losses} perdas) | P&L total: ${pnlSign}$${parseFloat(stats.total_pnl).toFixed(2)}
-Últimos trades:
-${recentSummary}
-
-${stats.win_rate_pct < 50 ? "⚠️ WIN RATE ABAIXO DE 50% — as tuas últimas seleções estão a destruir capital. Eleva o threshold de convicção." : ""}
-${totalPnl < 0 ? "⚠️ P&L NEGATIVO — estás a perder dinheiro real. Só entras com convicção ≥ 80% hoje." : ""}`;
-  } else {
-    performanceBlock = `📊 Historial: sem trades concluídos ainda. Capital inicial: $${parseFloat(capitalInitial || equity).toFixed(2)}`;
-  }
-
-  const lessonsBlock = lessons && lessons.trim().length > 200
-    ? `📚 LIÇÕES DOS DIAS ANTERIORES (memória de longo prazo — aprende com estes erros e acertos):\n${lessons.split("\n").slice(-60).join("\n")}`
+  const SECTOR_ABBR = { Technology: "TECH", Healthcare: "HLTH", Defense: "DEF", Industrials: "IND", Energy: "ENRG", Financials: "FIN" };
+  const sectorStr = tradeStats?.by_sector
+    ? Object.entries(tradeStats.by_sector)
+        .filter(([, v]) => v.trades > 0)
+        .map(([k, v]) => {
+          const abbr = SECTOR_ABBR[k] || k.slice(0, 4).toUpperCase();
+          const p = `${v.total_pnl >= 0 ? "+" : ""}$${Math.abs(v.total_pnl).toFixed(0)}`;
+          return `${abbr}:${v.wins}W/${v.losses}L(${p})`;
+        }).join(" ")
     : "";
 
-  // User message (dinâmico) — estado atual do mercado e portfolio
-  const userText = `Data: ${date}
-Capital atual: $${parseFloat(equity).toFixed(2)}
-Posições abertas (${positions.length}):
-${openLines}
+  const tradesLine = (recentTrades || []).length > 0
+    ? (recentTrades || []).slice(-4).map(t => {
+        const p = `${t.pnl >= 0 ? "+" : ""}$${Math.abs(parseFloat(t.pnl)).toFixed(0)}`;
+        const r = { stop_loss: "sl", take_profit_partial: "tp", trailing_stop: "ts" }[t.reason] || (t.reason || "?").slice(0, 4);
+        return `${t.ticker}:SELL${p}(${r})`;
+      }).join("  ")
+    : "none";
 
-Briefing macro hoje:
-${briefing || "Não disponível"}
+  const topScores = scores.slice(0, 6).map(s =>
+    `${s.ticker}:${s.score}${s.earningsBlackout ? `(BKOUT${s.earningsDaysAway != null ? `-${s.earningsDaysAway}d` : ""})` : ""}`
+  ).join(" ");
+  const blackoutList = scores
+    .filter(s => s.earningsBlackout)
+    .map(s => `${s.ticker}(${s.earningsDaysAway === 0 ? "today" : `${s.earningsDaysAway}d`})`)
+    .join(" ");
 
-Scores premarket (por ordem decrescente de score):
-${scoresLines}
+  const macroSnippet = (briefing || "n/a").replace(/\n+/g, " ").trim().slice(0, 180);
 
-${performanceBlock}
+  // User message (dinâmico) — terminal notation, estado atual
+  const userText = `DATE ${date}
 
-${lessonsBlock}
-
-Atividade recente (últimas entradas do trade log):
-${recentLog}
+PORTFOLIO  eq:$${eq.toFixed(0)} | init:$${init.toFixed(0)} | pnl:${pnlStr} | dd:-${dd}% | slots:${6 - positions.length}/6
+POSITIONS  ${posLine}
+PERF       ${perfBase}${sectorStr ? ` | ${sectorStr}` : ""}
+TRADES     ${tradesLine}
+SCORES     ${topScores}${blackoutList ? ` | BKOUT:${blackoutList}` : ""}
+MACRO      ${macroSnippet}
 
 ---
 
-Analisa os dados acima e decide se devo executar uma compra hoje.
-Este é dinheiro real. Cada erro fica no historial para sempre.
-Raciocina sobre: (1) qual ativo tem a melhor tese fundamentalista; (2) o score é suportado por catalisadores concretos e verificáveis; (3) qual é o risco de perda permanente de capital; (4) a tua convicção é ≥ 70%? Se não, a resposta é NO_ACTION.
-Considera apenas 1 compra por ciclo. Em caso de dúvida, NO_ACTION.
+Decide: (1) melhor tese fundamentalista; (2) score suportado por catalisadores concretos; (3) risco de perda permanente; (4) convicção ≥ 70%? Se não → NO_ACTION.
+1 compra por ciclo. Em dúvida → NO_ACTION. Capital real — cada erro é permanente.
 
-Responde EXCLUSIVAMENTE neste formato JSON (sem markdown, sem código, sem texto antes ou depois):
+Responde EXCLUSIVAMENTE neste JSON (sem markdown, sem texto antes ou depois):
 {
   "action": "BUY" ou "NO_ACTION",
   "ticker": "TICKER" ou null,
-  "reasoning": "Raciocínio em português europeu (máx 200 palavras)",
+  "reasoning": "Raciocínio em português europeu (máx 150 palavras)",
   "confidence": 0.0,
-  "risks": ["risco 1", "risco 2", "risco 3"]
+  "risks": ["risco 1", "risco 2"]
 }`;
 
   const stream = client.messages.stream({

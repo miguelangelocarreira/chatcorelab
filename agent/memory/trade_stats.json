@@ -1,0 +1,16 @@
+{
+  "by_sector": {
+    "Technology":  { "trades": 0, "wins": 0, "losses": 0, "win_rate_pct": 0, "total_pnl": 0.0 },
+    "Healthcare":  { "trades": 0, "wins": 0, "losses": 0, "win_rate_pct": 0, "total_pnl": 0.0 },
+    "Defense":     { "trades": 0, "wins": 0, "losses": 0, "win_rate_pct": 0, "total_pnl": 0.0 },
+    "Industrials": { "trades": 0, "wins": 0, "losses": 0, "win_rate_pct": 0, "total_pnl": 0.0 },
+    "Energy":      { "trades": 0, "wins": 0, "losses": 0, "win_rate_pct": 0, "total_pnl": 0.0 },
+    "Financials":  { "trades": 0, "wins": 0, "losses": 0, "win_rate_pct": 0, "total_pnl": 0.0 }
+  },
+  "by_exit_reason": {
+    "stop_loss":           { "trades": 0, "total_pnl": 0.0 },
+    "take_profit_partial": { "trades": 0, "total_pnl": 0.0 },
+    "trailing_stop":       { "trades": 0, "total_pnl": 0.0 },
+    "other":               { "trades": 0, "total_pnl": 0.0 }
+  }
+}

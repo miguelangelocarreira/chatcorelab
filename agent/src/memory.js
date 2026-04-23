@@ -43,6 +43,36 @@ export function writePositions(positions) {
   save(settings.paths.positions_json, positions);
 }
 
+export function readTradeStats() {
+  try {
+    return load(settings.paths.trade_stats_json);
+  } catch {
+    return { by_sector: {}, by_exit_reason: {} };
+  }
+}
+
+function updateTradeStats(trade) {
+  const db = readTradeStats();
+
+  if (trade.sector && trade.pnl !== undefined) {
+    const s = db.by_sector[trade.sector] || { trades: 0, wins: 0, losses: 0, win_rate_pct: 0, total_pnl: 0 };
+    s.trades++;
+    if (trade.pnl > 0) s.wins++; else s.losses++;
+    s.win_rate_pct = s.trades ? Math.round((s.wins / s.trades) * 100) : 0;
+    s.total_pnl = parseFloat((s.total_pnl + (trade.pnl || 0)).toFixed(2));
+    db.by_sector[trade.sector] = s;
+  }
+
+  const reason = trade.reason || "other";
+  const reasonKey = ["stop_loss", "take_profit_partial", "trailing_stop"].includes(reason) ? reason : "other";
+  const r = db.by_exit_reason[reasonKey] || { trades: 0, total_pnl: 0 };
+  r.trades++;
+  r.total_pnl = parseFloat((r.total_pnl + (trade.pnl || 0)).toFixed(2));
+  db.by_exit_reason[reasonKey] = r;
+
+  save(settings.paths.trade_stats_json, db);
+}
+
 export function appendTrade(trade) {
   const db = load(settings.paths.trades_json);
   db.trades.push({ ...trade, timestamp: new Date().toISOString() });
@@ -55,6 +85,10 @@ export function appendTrade(trade) {
     total_pnl: parseFloat(db.trades.reduce((s, t) => s + (t.pnl || 0), 0).toFixed(2)),
   };
   save(settings.paths.trades_json, db);
+
+  if (trade.side === "sell" && trade.pnl !== undefined) {
+    updateTradeStats(trade);
+  }
 }
 
 // --- Markdown memory files ---
