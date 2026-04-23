@@ -49,6 +49,15 @@ export const getOrders = (status = "open") =>
   request("GET", `/v2/orders?status=${status}&limit=50`);
 export const cancelAllOrders = () => request("DELETE", "/v2/orders");
 
+export async function cancelOrdersForTicker(symbol) {
+  const orders = await getOrders("open");
+  const toCancel = orders.filter(o => o.symbol === symbol);
+  for (const o of toCancel) {
+    await request("DELETE", `/v2/orders/${o.id}`);
+  }
+  return toCancel.length;
+}
+
 export async function submitMarketOrder(symbol, qty, side) {
   return request("POST", "/v2/orders", {
     symbol,

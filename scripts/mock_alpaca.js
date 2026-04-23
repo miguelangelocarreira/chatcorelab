@@ -131,6 +131,20 @@ export function cancelAllOrders() {
   return Promise.resolve({ cancelled_orders: acc.orders.length });
 }
 
+export function cancelOrdersForTicker(symbol) {
+  const acc = loadMockAccount();
+  let count = 0;
+  acc.orders = acc.orders.map(o => {
+    if (o.symbol === symbol && o.status === "pending") {
+      count++;
+      return { ...o, status: "cancelled" };
+    }
+    return o;
+  });
+  saveMockAccount(acc);
+  return Promise.resolve(count);
+}
+
 export function submitMarketOrder(symbol, qty, side) {
   const acc = loadMockAccount();
   const price = mockPrice(symbol);

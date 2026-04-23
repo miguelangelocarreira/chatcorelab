@@ -215,6 +215,10 @@ async function runMarketOpen() {
 
   async function executeBuy(ticker, portfolioEquity, rationale) {
     try {
+      // Cancelar ordens abertas para este ticker antes de comprar (evita conflitos)
+      const cancelled = await alpaca.cancelOrdersForTicker(ticker);
+      if (cancelled > 0) log(`${ticker}: ${cancelled} ordem(ns) abertas canceladas`);
+
       const snap = await alpaca.getSnapshot(ticker);
       const price = snap.latestTrade.p;
       const qty = calcPositionSize(portfolioEquity, price);
