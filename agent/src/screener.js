@@ -23,13 +23,17 @@ const BULLISH = [
   "upgrade", "outperform", "buy rating", "beat", "exceeded", "raised guidance",
   "strong earnings", "record revenue", "margin expansion", "growth", "catalyst",
   "contract win", "approval", "partnership", "buyback", "positive", "top line",
-  "ahead of estimates", "accelerating", "momentum", "new high"
+  "ahead of estimates", "accelerating", "momentum", "new high",
+  "market share", "raised price target", "strong demand", "backlog", "record orders"
 ];
 
 const BEARISH = [
   "downgrade", "underperform", "sell", "missed", "below expectations",
   "cut guidance", "declining", "investigation", "lawsuit", "regulatory risk",
-  "concern", "warning", "net loss", "layoffs", "debt concern", "bankruptcy"
+  "concern", "warning", "net loss", "layoffs", "debt concern", "bankruptcy",
+  "overvalued", "stretched valuation", "priced to perfection", "expensive",
+  "overbought", "crowded trade", "rich valuation", "lofty", "frothy",
+  "margin compression", "slowdown", "disappointing", "headwinds"
 ];
 
 function scoreText(text) {
@@ -45,8 +49,8 @@ export async function screenWatchlist(researchFn) {
   );
 
   const results = [];
-  // Max 12 stocks para não consumir demasiados créditos Tavily
-  for (const stock of stocks.slice(0, 12)) {
+  // Max 15 stocks — cobre toda a watchlist (~330 calls/mês, dentro do limite free tier)
+  for (const stock of stocks.slice(0, 15)) {
     try {
       const research = await researchFn(stock.ticker);
       const score = scoreText(research);
