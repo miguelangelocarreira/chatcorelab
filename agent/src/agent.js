@@ -298,6 +298,10 @@ async function runMarketClose() {
   const pnlDay = equity - lastEquity;
   const pnlDayPct = (pnlDay / lastEquity) * 100;
   const spyPct = await getSPYDailyChangePct();
+  const positions = await alpaca.getPositions();
+  const tradesDb = loadJson(settings.paths.trades_json);
+  const closedToday = tradesDb.trades.filter(t => t.timestamp?.slice(0, 10) === today()).length;
+  const totalPnl = equity - state.capital.initial;
 
   log(`P&L do dia: $${pnlDay.toFixed(2)} (${pnlDayPct.toFixed(2)}%) | SPY: ${spyPct.toFixed(2)}%`);
   log(`vs Benchmark: ${(pnlDayPct - spyPct).toFixed(2)}% (${pnlDayPct >= spyPct ? "✓ outperform" : "✗ underperform"})`);
@@ -323,7 +327,7 @@ async function runMarketClose() {
   if (process.env.TELEGRAM_BOT_TOKEN) {
     log("Telegram: a enviar resumo diário...");
     const { sendDailySummary: telegramSummary } = await import("../../scripts/telegram_alerts.js");
-    await telegramSummary(today(), pnlDay, pnlDayPct, spyPct, equity)
+    await telegramSummary(today(), pnlDay, pnlDayPct, spyPct, equity, positions, closedToday, totalPnl)
       .catch(e => log("Telegram summary falhou:", e.message));
     log("Telegram: enviado.");
   } else {
