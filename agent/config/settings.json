@@ -50,6 +50,7 @@
     "trading_strategy": "memory/trading_strategy.md",
     "trade_log": "memory/trade_log.md",
     "research_log": "memory/research_log.md",
+    "lessons_md": "memory/lessons.md",
     "agent_state": "AGENT_STATE.md",
     "state_json": "agent/memory/state.json",
     "positions_json": "agent/memory/positions.json",

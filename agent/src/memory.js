@@ -65,7 +65,17 @@ export function readMemoryFiles() {
     strategy:     loadText(settings.paths.trading_strategy),
     tradeLog:     loadText(settings.paths.trade_log),
     researchLog:  loadText(settings.paths.research_log),
+    lessons:      loadText(settings.paths.lessons_md),
   };
+}
+
+export function appendToLessons(entry) {
+  const current = loadText(settings.paths.lessons_md);
+  saveText(settings.paths.lessons_md, current + "\n" + entry);
+}
+
+export function updateTradingStrategy(text) {
+  saveText(settings.paths.trading_strategy, text);
 }
 
 export function appendToTradeLog(entry) {

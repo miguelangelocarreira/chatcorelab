@@ -17,7 +17,7 @@ import { resolve } from "path";
 import {
   readState, writeState, readPositions, writePositions,
   appendTrade, appendToTradeLog, appendToResearchLog,
-  updateAgentStateMd, readMemoryFiles,
+  appendToLessons, updateTradingStrategy, updateAgentStateMd, readMemoryFiles,
 } from "./memory.js";
 import { validateOrder, calcPositionSize, stopLossPrice } from "./risk.js";
 import settings from "../config/settings.json" with { type: "json" };
@@ -167,6 +167,7 @@ async function runMarketOpen() {
             briefing: mem.researchLog.split("\n").slice(-30).join("\n"),
             stats: tradesDb.stats,
             recentTrades: tradesDb.trades.slice(-5),
+            lessons: mem.lessons,
           });
           log(`Claude: ${decision.action}${decision.ticker ? ` → ${decision.ticker}` : ""} | confiança ${(decision.confidence * 100).toFixed(0)}%`);
           log(`Claude: ${decision.reasoning}`);
@@ -435,6 +436,29 @@ async function runMarketClose() {
     nextRoutine: "Pre-Market Research (amanhã 06:00 ET)",
   });
 
+  // Reflexão de fim de dia — Claude escreve lição em memory/lessons.md
+  if (process.env.ANTHROPIC_API_KEY) {
+    try {
+      const { reflectOnDay } = await import("../../scripts/claude_reasoning.js");
+      const mem = readMemoryFiles();
+      const todayDecision = mem.researchLog.split("### Claude Decision").at(-1)?.slice(0, 600) || "";
+      const closedToday2 = tradesDb.trades.filter(t => t.timestamp?.slice(0, 10) === today());
+      log("Claude: a escrever reflexão do dia...");
+      const lesson = await reflectOnDay({
+        date: today(), pnlDay, pnlDayPct, spyPct,
+        positions, closedTrades: closedToday2,
+        todayDecision: `### Claude Decision${todayDecision}`,
+        strategy: mem.strategy, instructions: mem.instructions,
+      });
+      if (lesson) {
+        appendToLessons(lesson);
+        log("Reflexão escrita em memory/lessons.md");
+      }
+    } catch (e) {
+      log("Reflexão de fim de dia falhou:", e.message);
+    }
+  }
+
   // Persistência atómica — push para GitHub
   atomicPush();
   log(`Concluído. Capital: $${equity.toFixed(2)}. Memória persistida.`);
@@ -492,6 +516,28 @@ async function runWeeklyReview() {
     note: `Weekly review: ${stats.total} trades | $${stats.total_pnl} P&L`,
     nextRoutine: "Pre-Market Research (segunda 06:00 ET)",
   });
+
+  // Claude revê as lições da semana e atualiza a estratégia se necessário
+  if (process.env.ANTHROPIC_API_KEY) {
+    try {
+      const { reviewWeekAndUpdateStrategy } = await import("../../scripts/claude_reasoning.js");
+      const mem = readMemoryFiles();
+      log("Claude: a rever lições e estratégia...");
+      const review = await reviewWeekAndUpdateStrategy({
+        date: today(), grade, stats, totalReturnPct,
+        lessons: mem.lessons, strategy: mem.strategy, instructions: mem.instructions,
+      });
+      if (review?.updateNeeded && review.updatedStrategy) {
+        updateTradingStrategy(review.updatedStrategy);
+        log(`Estratégia atualizada. Mudanças: ${(review.changes || []).join("; ")}`);
+        appendToResearchLog(`\n### Estratégia Atualizada — ${today()}\n**Motivo**: ${review.reasoning}\n**Mudanças**: ${(review.changes || []).join(", ")}\n`);
+      } else {
+        log(`Estratégia mantida. Motivo: ${review?.reasoning || "sem dados"}`);
+      }
+    } catch (e) {
+      log("Revisão de estratégia falhou:", e.message);
+    }
+  }
 
   writeState({ ...state, cycle: state.cycle + 1 });
   atomicPush();
