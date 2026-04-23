@@ -61,6 +61,19 @@ async function runPremarket() {
 
   log("Briefing macro:", briefing);
 
+  // Atualizar calendário de earnings via Tavily (1 call, antes do screener)
+  if (!USE_MOCK && process.env.TAVILY_API_KEY) {
+    try {
+      const { updateEarningsCalendar } = await import("../../scripts/earnings_updater.js");
+      const { stocks } = loadJson("data/watchlist.json");
+      const tickers = stocks.map(s => s.ticker);
+      const result = await updateEarningsCalendar(tickers);
+      if (result) log(`Earnings calendar atualizado: ${result.found} datas encontradas (${result.earnings.map(e => `${e.ticker} ${e.date}`).join(", ") || "nenhuma"})`);
+    } catch (e) {
+      log("AVISO: atualização do earnings calendar falhou:", e.message, "— a usar dados existentes");
+    }
+  }
+
   // Scoring fundamentalista da watchlist
   let topPicks = [];
   if (!USE_MOCK && process.env.TAVILY_API_KEY) {

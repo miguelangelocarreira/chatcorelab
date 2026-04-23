@@ -45,7 +45,7 @@ export function researchStock(ticker) {
 
 export function getEarningsCalendar(tickers) {
   return search(
-    `Earnings next 2 weeks for: ${tickers.join(", ")}. Format: TICKER — DATE — EPS est.`,
+    `Next confirmed earnings date for each: ${tickers.join(", ")}. Reply ONLY as comma-separated "TICKER YYYY-MM-DD". Example: "NVDA 2026-05-20, AMZN 2026-04-29". Omit stocks with no confirmed date.`,
     "finance"
   );
 }
