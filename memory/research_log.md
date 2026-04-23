@@ -170,3 +170,9 @@
 **Fonte**: Tavily
 **Contexto macro**: O índice S&P 500 futuros manteve-se estável após o índice e o Nasdaq Composite atingirem novos recordes durante a sessão regular. As principais mudanças incluíram IBM e ServiceNow, que operaram 6% e 13% abaixo, respectivamente, após divulgarem seus resultados mais recentes. O mercado abriu misto na noite de quarta-feira. As principais notícias do dia incluem Tesla, Intel e Broadcom, com a expectativa de resultados e a volatilidade relacionada à guerra com o Irã continuando a influenciar o mercado.
 **Top picks hoje**: NVDA (score 4), MSFT (score 4), JPM (score 4), GOOGL (score 3), LMT (score 3)
+
+
+### Research 2026-04-23 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: S&P 500 futures mantiveram-se praticamente inalterados na noite de quarta-feira, seguindo um dia recorde para o índice. IBM e ServiceNow foram alguns dos maiores movimentos, com quedas de 6% e 13% respectivamente após divulgarem seus resultados. O mercado abriu misto na noite de quarta-feira, com futuros do S&P 500 e do Nasdaq Composite caindo 0,2% e menos de 0,1%, respectivamente. O Dow, S&P 500 e Nasdaq estão previstos para declínio à medida que Trump não estabelece um prazo para o fim da guerra com o Irã. Intel e Tesla são destaques com resultados e movimentos de ações.
+**Top picks hoje**: NVDA (score 4), MSFT (score 4), JPM (score 4), GOOGL (score 3), LMT (score 3)
