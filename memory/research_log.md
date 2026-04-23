@@ -150,3 +150,11 @@
 **vs Benchmark**: -0.26% (underperform)
 **Capital final**: $100032.92
 **Daily cap atingido**: Não
+
+
+### Fecho de Mercado — 2026-04-23
+**P&L dia**: $28.70 (0.03%)
+**SPY dia**: 0.29%
+**vs Benchmark**: -0.26% (underperform)
+**Capital final**: $100028.70
+**Daily cap atingido**: Não
