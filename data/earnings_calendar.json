@@ -2,6 +2,7 @@
   "updated": "2026-04-23",
   "note": "Atualizar manualmente na Weekly Review. Fonte: Alpaca news / earnings whispers.",
   "earnings": [
+    { "ticker": "LMT",  "date": "2026-04-23" },
     { "ticker": "AMZN", "date": "2026-04-29" },
     { "ticker": "LLY",  "date": "2026-04-30" },
     { "ticker": "CEG",  "date": "2026-05-07" },
