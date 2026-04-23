@@ -129,12 +129,17 @@ async function runMarketOpen() {
     if (!scores) {
       log("AVISO: scores de premarket não disponíveis para hoje. Sem novas compras.");
     } else {
+      // Log stocks em earnings blackout
+      scores
+        .filter(s => s.earningsBlackout)
+        .forEach(s => log(`BLACKOUT: ${s.ticker} tem earnings em ${s.earningsDaysAway} dia(s) — excluído`));
+
       const candidates = scores
-        .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker))
+        .filter(s => s.score > 0 && !openTickers.has(s.ticker) && isInWhitelist(s.ticker) && !s.earningsBlackout)
         .slice(0, 1); // 1 compra por ciclo — evita conflitos de ordens
 
       if (candidates.length === 0) {
-        log("Nenhum candidato com score positivo hoje. Sem compras.");
+        log("Nenhum candidato com score positivo hoje (ou todos em blackout). Sem compras.");
       }
 
       for (const candidate of candidates) {
