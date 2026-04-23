@@ -197,8 +197,6 @@ async function runMidday() {
   const state = readState();
   const positions = await alpaca.getPositions();
   let cuts = 0;
-
-  let cuts = 0;
   let partials = 0;
 
   for (const pos of positions) {
