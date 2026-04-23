@@ -154,15 +154,19 @@ async function runMarketOpen() {
         let decision = null;
         try {
           log("Claude: a analisar mercado com Opus 4.7...");
+          const tradesDb = loadJson(settings.paths.trades_json);
           decision = await analyzeAndDecide({
             date: today(),
             equity,
+            capitalInitial: state.capital.initial,
             positions,
             scores: scores.filter(s => isInWhitelist(s.ticker)),
             tradeLog: mem.tradeLog,
             strategy: mem.strategy,
             instructions: mem.instructions,
             briefing: mem.researchLog.split("\n").slice(-30).join("\n"),
+            stats: tradesDb.stats,
+            recentTrades: tradesDb.trades.slice(-5),
           });
           log(`Claude: ${decision.action}${decision.ticker ? ` → ${decision.ticker}` : ""} | confiança ${(decision.confidence * 100).toFixed(0)}%`);
           log(`Claude: ${decision.reasoning}`);

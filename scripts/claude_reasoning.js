@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 
 export async function analyzeAndDecide({
-  date, equity, positions, scores, tradeLog, strategy, instructions, briefing,
+  date, equity, capitalInitial, positions, scores, tradeLog, strategy, instructions, briefing, stats, recentTrades,
 }) {
   if (!process.env.ANTHROPIC_API_KEY) {
     throw new Error("ANTHROPIC_API_KEY não definida");
@@ -41,6 +41,29 @@ ${strategy}
 
   const recentLog = (tradeLog || "Sem trades recentes").split("\n").slice(-25).join("\n");
 
+  // Bloco de desempenho — feedback explícito sobre decisões passadas
+  const totalPnl = parseFloat(equity) - parseFloat(capitalInitial || equity);
+  const totalPnlPct = capitalInitial ? (totalPnl / capitalInitial * 100).toFixed(2) : "0.00";
+  const pnlSign = totalPnl >= 0 ? "+" : "";
+
+  let performanceBlock;
+  if (stats && stats.total > 0) {
+    const recentSummary = (recentTrades || []).slice(-5).map(t =>
+      `  ${t.side === "buy" ? "COMPRA" : "VENDA"} ${t.ticker} — ${t.pnl >= 0 ? "GANHO" : "PERDA"} ${t.pnl >= 0 ? "+" : ""}$${parseFloat(t.pnl).toFixed(2)} (${t.reason || "—"})`
+    ).join("\n") || "  Nenhum";
+
+    performanceBlock = `📊 O TEU HISTORIAL DE DESEMPENHO (feedback das tuas decisões anteriores):
+Capital inicial: $${parseFloat(capitalInitial).toFixed(2)} → Atual: $${parseFloat(equity).toFixed(2)} (${pnlSign}$${totalPnl.toFixed(2)}, ${pnlSign}${totalPnlPct}%)
+Win rate: ${stats.win_rate_pct}% | Trades: ${stats.total} (${stats.wins} ganhos, ${stats.losses} perdas) | P&L total: ${pnlSign}$${parseFloat(stats.total_pnl).toFixed(2)}
+Últimos trades:
+${recentSummary}
+
+${stats.win_rate_pct < 50 ? "⚠️ WIN RATE ABAIXO DE 50% — as tuas últimas seleções estão a destruir capital. Eleva o threshold de convicção." : ""}
+${totalPnl < 0 ? "⚠️ P&L NEGATIVO — estás a perder dinheiro real. Só entras com convicção ≥ 80% hoje." : ""}`;
+  } else {
+    performanceBlock = `📊 Historial: sem trades concluídos ainda. Capital inicial: $${parseFloat(capitalInitial || equity).toFixed(2)}`;
+  }
+
   // User message (dinâmico) — estado atual do mercado e portfolio
   const userText = `Data: ${date}
 Capital atual: $${parseFloat(equity).toFixed(2)}
@@ -53,13 +76,17 @@ ${briefing || "Não disponível"}
 Scores premarket (por ordem decrescente de score):
 ${scoresLines}
 
+${performanceBlock}
+
 Atividade recente (últimas entradas do trade log):
 ${recentLog}
 
 ---
 
 Analisa os dados acima e decide se devo executar uma compra hoje.
-Raciocina sobre: (1) qual ativo tem a melhor tese fundamentalista no contexto macro atual; (2) se o score do screener é suportado por catalisadores reais; (3) se há riscos não capturados pelo screener. Considera apenas 1 compra por ciclo.
+Este é dinheiro real. Cada erro fica no historial para sempre.
+Raciocina sobre: (1) qual ativo tem a melhor tese fundamentalista; (2) o score é suportado por catalisadores concretos e verificáveis; (3) qual é o risco de perda permanente de capital; (4) a tua convicção é ≥ 70%? Se não, a resposta é NO_ACTION.
+Considera apenas 1 compra por ciclo. Em caso de dúvida, NO_ACTION.
 
 Responde EXCLUSIVAMENTE neste formato JSON (sem markdown, sem código, sem texto antes ou depois):
 {
