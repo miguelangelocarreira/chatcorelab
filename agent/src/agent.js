@@ -213,11 +213,23 @@ async function runMidday() {
     if (pnlPct <= -settings.risk.stop_loss_pct) {
       log(`CORTE OBRIGATÓRIO: ${pos.symbol} ${pnlPct.toFixed(2)}%`);
       await alpaca.closePosition(pos.symbol);
+      const realizedPnl = parseFloat(pos.unrealized_pl);
+      appendTrade({
+        ticker: pos.symbol,
+        side: "sell",
+        reason: "stop_loss",
+        qty,
+        entry_price: parseFloat(pos.avg_entry_price),
+        exit_price: parseFloat(pos.current_price),
+        pnl: realizedPnl,
+        pnl_pct: pnlPct,
+      });
       appendToTradeLog(`
 ### Corte Mandatório — ${pos.symbol} (${pnlPct.toFixed(2)}%)
 - **Data**: ${now()}
 - **Motivo**: Guardrail -${settings.risk.stop_loss_pct}% atingido
 - **Preço saída**: $${pos.current_price}
+- **P&L realizado**: $${realizedPnl.toFixed(2)}
 `);
       cuts++;
 
@@ -226,11 +238,25 @@ async function runMidday() {
       const sellQty = Math.floor(qty / 2);
       log(`TAKE-PROFIT PARCIAL: ${pos.symbol} +${pnlPct.toFixed(2)}% — vendendo ${sellQty} de ${qty} shares`);
       await alpaca.submitMarketOrder(pos.symbol, sellQty, "sell");
+      const entryPrice = parseFloat(pos.avg_entry_price);
+      const exitPrice = parseFloat(pos.current_price);
+      const partialPnl = (exitPrice - entryPrice) * sellQty;
+      appendTrade({
+        ticker: pos.symbol,
+        side: "sell",
+        reason: "take_profit_partial",
+        qty: sellQty,
+        entry_price: entryPrice,
+        exit_price: exitPrice,
+        pnl: partialPnl,
+        pnl_pct: pnlPct,
+      });
       appendToTradeLog(`
 ### Take-Profit Parcial — ${pos.symbol} (+${pnlPct.toFixed(2)}%)
 - **Data**: ${now()}
 - **Motivo**: Target +${settings.risk.partial_tp_pct}% atingido
 - **Vendido**: ${sellQty} shares (50%) @ $${pos.current_price}
+- **P&L realizado**: $${partialPnl.toFixed(2)}
 - **Mantido**: ${qty - sellQty} shares (deixar correr com trailing stop ${settings.risk.trailing_stop_pct}%)
 `);
       partials++;
