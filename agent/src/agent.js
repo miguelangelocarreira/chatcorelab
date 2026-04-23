@@ -290,9 +290,13 @@ async function runMarketClose() {
 
   // Resumo diário no Telegram
   if (process.env.TELEGRAM_BOT_TOKEN) {
+    log("Telegram: a enviar resumo diário...");
     const { sendDailySummary: telegramSummary } = await import("../../scripts/telegram_alerts.js");
     await telegramSummary(today(), pnlDay, pnlDayPct, spyPct, equity)
       .catch(e => log("Telegram summary falhou:", e.message));
+    log("Telegram: enviado.");
+  } else {
+    log("Telegram: TELEGRAM_BOT_TOKEN não definido — a saltar.");
   }
 
   appendToResearchLog(`
