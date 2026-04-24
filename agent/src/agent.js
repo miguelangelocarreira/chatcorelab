@@ -633,16 +633,22 @@ async function checkMaxDrawdown(equity, capitalInitial) {
 
 async function atomicPush() {
   const state = readState();
+
+  // Em GitHub Actions o push é feito pelo step "Persist memory" com credenciais próprias
+  if (process.env.GITHUB_ACTIONS === "true") {
+    writeState({ ...readState(), persist_ok: true });
+    log("GitHub Actions: push delegado ao workflow step — persist_ok: true");
+    return;
+  }
+
   try {
     const msg = `chore: atomic persist — ciclo ${state.cycle} [${now()}]`;
     execSync(`git add memory/ AGENT_STATE.md agent/memory/ && git commit -m "${msg}" --allow-empty`, { stdio: "pipe" });
     execSync("git push origin HEAD", { stdio: "pipe" });
-    // Marca persist como OK
     writeState({ ...readState(), persist_ok: true });
     log("Git push atómico: OK");
   } catch (e) {
     log("AVISO: git push falhou —", e.message.slice(0, 100));
-    // Marca falha — o workflow Persist memory vai commitar este flag
     writeState({ ...readState(), persist_ok: false });
     if (process.env.CLICKUP_API_TOKEN) {
       await fetch(`https://api.clickup.com/api/v2/list/${process.env.CLICKUP_LIST_ID}/task`, {
