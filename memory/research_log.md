@@ -218,3 +218,11 @@
 **Confiança**: 40%
 **Raciocínio**: Portfólio já tem 4 posições ativas (AMZN, LMT, MSFT, NVDA) com exposição concentrada em tech/AI e defesa. Contexto macro é adverso: reação negativa severa do mercado a earnings tech (IBM -6%, ServiceNow -13%) eleva a barra para novas entradas e sugere que valuations estão esticadas. AMZN tem earnings em 5 dias (29 abr) — blackout. GOOGL apresenta score mais alto (4) mas estou em blackout de 5 dias antes de earnings e adicionar mais tech agravaria concentração setorial num momento de derating. LMT e MSFT estão em ligeira perda, não é prudente aumentar exposição sem confirmar tese. Convicção abaixo de 70% para qualquer novo ticker. Preservar capital e aguardar earnings AMZN/LLY antes de alocar os 2 slots restantes é a decisão correta. Cash é posição válida.
 **Riscos**: Concentração setorial tech/AI já elevada com NVDA+MSFT+AMZN; Derating de múltiplos pós-earnings tech pode pressionar posições existentes
+
+
+### Fecho de Mercado — 2026-04-24
+**P&L dia**: $296.57 (0.30%)
+**SPY dia**: 0.42%
+**vs Benchmark**: -0.13% (underperform)
+**Capital final**: $100246.68
+**Daily cap atingido**: Não
