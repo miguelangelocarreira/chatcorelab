@@ -10,7 +10,7 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-24
-- **Ciclo #**: 25
+- **Ciclo #**: 26
 - **Status**: MARKET_OPEN_DONE
 - **Próxima rotina**: Midday Adjustment (12:00 ET)
 
@@ -18,7 +18,7 @@
 
 ```json
 {
-  "capital_atual": 99986.39,
+  "capital_atual": 100006.68,
   "capital_inicial": 100000,
   "moeda": "USD",
   "drawdown_pct": 0,

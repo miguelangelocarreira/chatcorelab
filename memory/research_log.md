@@ -211,3 +211,10 @@
 **Confiança**: 0%
 **Raciocínio**: Portfolio já tem 4 posições ativas (AMZN, LMT, MSFT, NVDA) representando exposição significativa a tech/AI e defesa. Os top picks de hoje (NVDA, MSFT) já estão em carteira — aumentar sizing viola disciplina de concentração. GOOGL tem score 4 mas em blackout de earnings (5d). LLY e ABBV com score 3 não atingem convicção mínima de 70%. Contexto: acabei de abrir LMT ontem com apenas 62% de confiança (abaixo do threshold) e já está -2.7%. Sinal claro para elevar disciplina, não forçar mais trades. Cash (slots 2/6) é posição válida — aguardar setup com convicção ≥70% e catalisador concreto. Próximos earnings (AMZN 29 abr, LLY 30 abr) podem trazer oportunidades mais claras.
 **Riscos**: Over-concentração em tech/AI se adicionar NVDA/MSFT; Entrar em GOOGL durante blackout de earnings expõe a binary event
+
+
+### Claude Decision — 2026-04-24
+**Ação**: NO_ACTION
+**Confiança**: 40%
+**Raciocínio**: Portfólio já tem 4 posições ativas (AMZN, LMT, MSFT, NVDA) com exposição concentrada em tech/AI e defesa. Contexto macro é adverso: reação negativa severa do mercado a earnings tech (IBM -6%, ServiceNow -13%) eleva a barra para novas entradas e sugere que valuations estão esticadas. AMZN tem earnings em 5 dias (29 abr) — blackout. GOOGL apresenta score mais alto (4) mas estou em blackout de 5 dias antes de earnings e adicionar mais tech agravaria concentração setorial num momento de derating. LMT e MSFT estão em ligeira perda, não é prudente aumentar exposição sem confirmar tese. Convicção abaixo de 70% para qualquer novo ticker. Preservar capital e aguardar earnings AMZN/LLY antes de alocar os 2 slots restantes é a decisão correta. Cash é posição válida.
+**Riscos**: Concentração setorial tech/AI já elevada com NVDA+MSFT+AMZN; Derating de múltiplos pós-earnings tech pode pressionar posições existentes
