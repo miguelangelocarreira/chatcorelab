@@ -198,3 +198,9 @@
 **vs Benchmark**: 0.00% (outperform)
 **Capital final**: $99949.56
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-24 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 24 de abril de 2026, os futuros do S&P 500 subiram levemente, enquanto os do Dow Jones Industrial Average (DJIA) caíram ligeiramente. As preocupações com a falta de progresso nas negociações de paz no Oriente Médio e o aumento dos preços do petróleo Brent continuaram a pesar sobre os mercados. A Intel teve um destaque positivo com ganhos substanciais nas ações após resultados do primeiro trimestre surpreendentes. A Tesla, no entanto, foi um ponto de atenção negativo devido a preocupações sobre seus gastos com a construção de fábricas. Além disso, a alta dos preços do petróleo e a tensão geopolítica entre os EUA e o Irã também influenciaram a atmosfera do mercado.
+**Top picks hoje**: GOOGL (score 4), NVDA (score 3), MSFT (score 3), LLY (score 3), ABBV (score 3)
