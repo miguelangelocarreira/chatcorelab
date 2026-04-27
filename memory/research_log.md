@@ -233,3 +233,9 @@
 **Win rate**: 0% | **Trades**: 0 (0 wins, 0 losses)
 **Auto-avaliação**: C
 **SPY hoje**: 0.45%
+
+
+### Research 2026-04-27 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Os futuros do S&P 500 estão em alta de 0,33% enquanto os do Nasdaq 100 também subiram 0,11%, mas os do Dow Jones Industrial Average caíram 0,09%. Hoje, o FHFA Home Price Index e dados de inventários no varejo e pedidos de bens duráveis serão divulgados. O presidente do Fed, Jerome Powell, fará uma conferência de imprensa após a decisão da política monetária da Fed. As principais notícias de ações incluem o aumento de 106,2% no interesse curto em Murata Manufacturing, as expectativas em torno dos resultados das grandes empresas de tecnologia e a preocupação com a perda de empregos devido ao avanço da inteligência artificial.
+**Top picks hoje**: LMT (score 5), NVDA (score 4), MSFT (score 4), GOOGL (score 4), VST (score 4)
