@@ -239,3 +239,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Os futuros do S&P 500 estão em alta de 0,33% enquanto os do Nasdaq 100 também subiram 0,11%, mas os do Dow Jones Industrial Average caíram 0,09%. Hoje, o FHFA Home Price Index e dados de inventários no varejo e pedidos de bens duráveis serão divulgados. O presidente do Fed, Jerome Powell, fará uma conferência de imprensa após a decisão da política monetária da Fed. As principais notícias de ações incluem o aumento de 106,2% no interesse curto em Murata Manufacturing, as expectativas em torno dos resultados das grandes empresas de tecnologia e a preocupação com a perda de empregos devido ao avanço da inteligência artificial.
 **Top picks hoje**: LMT (score 5), NVDA (score 4), MSFT (score 4), GOOGL (score 4), VST (score 4)
+
+
+### Claude Decision — 2026-04-27
+**Ação**: NO_ACTION
+**Confiança**: 40%
+**Raciocínio**: Carteira já tem 4 posições abertas com forte enviesamento tech/AI (AMZN, MSFT, NVDA) — adicionar mais tech viola gestão de risco por concentração. Os tickers com scores mais altos estão maioritariamente em earnings blackout: MSFT, META, AMZN, AAPL (2d), LLY (3d), UNH (2d). GOOGL com score 4 também enfrenta risco de binary event próximo. VST (nuclear/AI power) é tese atrativa e alinhada com setores em foco, mas score 4 sem catalisador imediato concreto não suporta convicção ≥70%. LMT e NVDA, com scores mais altos, já estão em carteira. AMZN reporta em 2 dias — devo monitorizar e não acrescentar exposição pré-earnings. Preservar capital e aguardar pós-earnings (29-30 abr) quando o panorama macro e os catalisadores ficarem mais claros é a decisão racional. Cash é posição válida.
+**Riscos**: Over-concentração tech/AI se adicionar nova posição do top scores; Earnings blackout amplo cria risco de binary events não planeados
