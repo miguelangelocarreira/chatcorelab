@@ -246,3 +246,11 @@
 **Confiança**: 40%
 **Raciocínio**: Carteira já tem 4 posições abertas com forte enviesamento tech/AI (AMZN, MSFT, NVDA) — adicionar mais tech viola gestão de risco por concentração. Os tickers com scores mais altos estão maioritariamente em earnings blackout: MSFT, META, AMZN, AAPL (2d), LLY (3d), UNH (2d). GOOGL com score 4 também enfrenta risco de binary event próximo. VST (nuclear/AI power) é tese atrativa e alinhada com setores em foco, mas score 4 sem catalisador imediato concreto não suporta convicção ≥70%. LMT e NVDA, com scores mais altos, já estão em carteira. AMZN reporta em 2 dias — devo monitorizar e não acrescentar exposição pré-earnings. Preservar capital e aguardar pós-earnings (29-30 abr) quando o panorama macro e os catalisadores ficarem mais claros é a decisão racional. Cash é posição válida.
 **Riscos**: Over-concentração tech/AI se adicionar nova posição do top scores; Earnings blackout amplo cria risco de binary events não planeados
+
+
+### Fecho de Mercado — 2026-04-27
+**P&L dia**: $136.04 (0.14%)
+**SPY dia**: 0.28%
+**vs Benchmark**: -0.14% (underperform)
+**Capital final**: $100413.07
+**Daily cap atingido**: Não

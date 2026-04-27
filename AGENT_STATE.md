@@ -10,29 +10,29 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-27
-- **Ciclo #**: 33
-- **Status**: MIDDAY_DONE
-- **Próxima rotina**: Market Close (15:00 ET)
+- **Ciclo #**: 34
+- **Status**: IDLE
+- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
 
 ## Capital & Risco (PAPER)
 
 ```json
 {
-  "capital_atual": 100335.74,
+  "capital_atual": 100413.07,
   "capital_inicial": 100000,
   "moeda": "USD",
-  "drawdown_pct": 0,
+  "drawdown_pct": -0.41307000000000693,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
-  "status": "MIDDAY_DONE",
+  "status": "IDLE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Midday: 0 corte(s), 0 take-profit(s) parcial(is). 4 posições mantidas.
+Fecho: P&L 0.14% | Capital $100413.07
 
 ---
 
-_Próximo passo: Market Close (15:00 ET)_
+_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
