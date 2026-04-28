@@ -39,3 +39,13 @@
 **O que falhou**: Underperformance vs SPY num dia em que NVDA fez +7.58% é alarmante — significa que LMT (-2.93%) e cash parado estão a destruir alpha. A tese LMT (earnings 23 abr, bateu 4x consecutivo) materializou-se em perda — ou o earnings desiludiu, ou a reação de mercado foi negativa apesar do beat. Não revi a posição LMT após o earnings de 23 abr — isso é um erro de gestão ativa.
 
 **Aprendizagem**: Pós-earnings, qualquer
+### Lição — 2026-04-28
+**Decisão de manhã**: NO_ACTION com confiança 40%. Justificação: 4 posições já abertas com concentração em tech/AI (AMZN, MSFT, NVDA) e defesa (LMT); AMZN e LLY dentro da blackout window de 5 dias pré-earnings; AAPL e CEG/JPM sem catalisador suficiente para convicção ≥70%.
+
+**Resultado**: P&L -$77.38 (-0.08%) vs SPY -0.01% → underperform de 7 bps. Dia praticamente flat para o mercado, mas a carteira sofreu drag marginal sobretudo da LMT (-3.25% acumulado) que continua a sangrar após o earnings de 23 abr.
+
+**O que funcionou**: A disciplina de não abrir 5ª posição foi correta — concentração já em 4 nomes com exposição setorial sobreposta (NVDA+MSFT+AMZN são todos AI plays correlacionados). Respeitar a blackout window pré-earnings de AMZN evitou risco binário desnecessário a 24h do reporte. NVDA continua a entregar (+5.99%) validando a tese de AI infrastructure.
+
+**O que falhou**: LMT a -3.25% indica que a tese pós-earnings não materializou como esperado — bateu estimativas mas o mercado castigou (provavelmente guidance fraco ou expectativas demasiado altas). Não revi a tese de LMT após o earnings de 23 abr, o que é uma falha de processo. O stop-loss está a -7%, mas devia estar a reavaliar fundamentalmente, não apenas a esperar o stop.
+
+**Aprendizagem**: Após earnings de uma posição em

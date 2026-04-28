@@ -267,3 +267,11 @@
 **Confiança**: 40%
 **Raciocínio**: Já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) com exposição significativa a tech/AI e defesa. AMZN reporta earnings em 29 abr (amanhã) e LLY em 30 abr — ambos dentro da blackout window de 5 dias, o que exclui novas entradas nesses nomes. AAPL com score 5 e breakout em 3 dias merece monitorização, mas o catalisador ainda não está confirmado e não tenho tese fundamentalista robusta sem ler últimos resultados. CEG e JPM com score 4 não têm catalisador imediato suficientemente forte para justificar convicção ≥70%. Portfolio com PnL marginal (+0.26%) e 0 trades fechados — não há urgência em adicionar risco. Cash é posição válida. Aguardar resultados AMZN/LLY esta semana para reavaliar setup macro antes de abrir 5ª posição.
 **Riscos**: Concentração setorial em AI/tech caso adicione mais nomes correlacionados; Earnings season pode gerar volatilidade adversa nas posições atuais
+
+
+### Fecho de Mercado — 2026-04-28
+**P&L dia**: $-77.38 (-0.08%)
+**SPY dia**: -0.01%
+**vs Benchmark**: -0.07% (underperform)
+**Capital final**: $100346.58
+**Daily cap atingido**: Não
