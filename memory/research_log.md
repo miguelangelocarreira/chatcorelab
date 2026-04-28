@@ -254,3 +254,9 @@
 **vs Benchmark**: -0.14% (underperform)
 **Capital final**: $100413.07
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-28 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: O mercado de ações está em uma fase de incerteza, com futuros do S&P 500 e Nasdaq mostrando variações leves após o índice S&P 500 atingir outro recorde. As negociações de paz entre os EUA e o Irã estão estagnadas, mas os investidores estão focados nas próximas divulgações de resultados das grandes empresas de tecnologia, conhecidas como "Magnificent Seven". Os principais discursos do Federal Reserve nesta semana também estão em foco. Entre as notícias de destaque, a Intel impulsionou os índices, enquanto a expectativa por um acordo de paz continua a influenciar o mercado.
+**Top picks hoje**: AAPL (score 5), CEG (score 4), JPM (score 4), MSFT (score 3), GOOGL (score 3)
