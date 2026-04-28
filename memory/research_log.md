@@ -260,3 +260,10 @@
 **Fonte**: Tavily
 **Contexto macro**: O mercado de ações está em uma fase de incerteza, com futuros do S&P 500 e Nasdaq mostrando variações leves após o índice S&P 500 atingir outro recorde. As negociações de paz entre os EUA e o Irã estão estagnadas, mas os investidores estão focados nas próximas divulgações de resultados das grandes empresas de tecnologia, conhecidas como "Magnificent Seven". Os principais discursos do Federal Reserve nesta semana também estão em foco. Entre as notícias de destaque, a Intel impulsionou os índices, enquanto a expectativa por um acordo de paz continua a influenciar o mercado.
 **Top picks hoje**: AAPL (score 5), CEG (score 4), JPM (score 4), MSFT (score 3), GOOGL (score 3)
+
+
+### Claude Decision — 2026-04-28
+**Ação**: NO_ACTION
+**Confiança**: 40%
+**Raciocínio**: Já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) com exposição significativa a tech/AI e defesa. AMZN reporta earnings em 29 abr (amanhã) e LLY em 30 abr — ambos dentro da blackout window de 5 dias, o que exclui novas entradas nesses nomes. AAPL com score 5 e breakout em 3 dias merece monitorização, mas o catalisador ainda não está confirmado e não tenho tese fundamentalista robusta sem ler últimos resultados. CEG e JPM com score 4 não têm catalisador imediato suficientemente forte para justificar convicção ≥70%. Portfolio com PnL marginal (+0.26%) e 0 trades fechados — não há urgência em adicionar risco. Cash é posição válida. Aguardar resultados AMZN/LLY esta semana para reavaliar setup macro antes de abrir 5ª posição.
+**Riscos**: Concentração setorial em AI/tech caso adicione mais nomes correlacionados; Earnings season pode gerar volatilidade adversa nas posições atuais
