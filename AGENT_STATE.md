@@ -10,9 +10,9 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-04-29
-- **Ciclo #**: 39
-- **Status**: MARKET_OPEN_DONE
-- **Próxima rotina**: Midday Adjustment (12:00 ET)
+- **Ciclo #**: 41
+- **Status**: MIDDAY_DONE
+- **Próxima rotina**: Market Close (15:00 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -24,15 +24,15 @@
   "drawdown_pct": 0,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
-  "status": "MARKET_OPEN_DONE",
+  "status": "MIDDAY_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Market open: 4 posições abertas.
+Midday: 0 corte(s), 0 take-profit(s) parcial(is). 4 posições mantidas.
 
 ---
 
-_Próximo passo: Midday Adjustment (12:00 ET)_
+_Próximo passo: Market Close (15:00 ET)_
