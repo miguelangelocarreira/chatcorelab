@@ -275,3 +275,9 @@
 **vs Benchmark**: -0.07% (underperform)
 **Capital final**: $100346.58
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-29 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Os futuros do S&P 500 subiram ligeiramente enquanto o mercado aguarda os resultados das "Magnificent Seven" e a decisão do Fed. As expectativas para as grandes empresas de tecnologia e a última reunião de política monetária de Jerome Powell como presidente do Fed impulsionaram a alta. Os futuros do S&P 500 permaneceram praticamente inalterados na noite de terça-feira, à medida que os investidores esperavam pelos resultados das quatro grandes empresas e a decisão do Fed. O trigo atingiu o preço mais alto desde junho de 2024, e os futuros de milho também subiram. As principais notícias de ações incluíram o aumento das ações de empresas de armazenamento após previsões fortes de receita e lucro da Seagate Technology, e a recuperação do ouro após quedas anteriores devido às negociações entre os EUA e o Irã.
+**Top picks hoje**: MSFT (score 4), VST (score 4), JPM (score 4), NVDA (score 3), LLY (score 3)
