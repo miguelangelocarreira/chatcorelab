@@ -288,3 +288,11 @@
 **Confiança**: 0%
 **Raciocínio**: Carteira já tem 4 posições ativas (AMZN, LMT, MSFT, NVDA) com exposição concentrada em tech/AI e defesa. AMZN reporta earnings amanhã (29 abr) — não posso aumentar exposição em earnings blackout. LLY reporta dia 30 abr (blackout). MSFT já em carteira com BKOUT-1d, mas adicionar violaria diversificação. VST e JPM têm score 4 mas sem catalisador concreto identificado no briefing. O macro context está truncado, reduzindo qualidade da análise. Win rate 0W/0L — sem histórico para validar tese atual. Convicção abaixo de 70% para qualquer candidato. Cash é posição válida; aguardar resultados de AMZN (29 abr) e LLY (30 abr) que podem reprecificar todo o setor AI/healthcare antes de comprometer mais capital.
 **Riscos**: Earnings blackout em múltiplos candidatos (AMZN, LLY); Concentração setorial elevada se adicionar mais tech/AI
+
+
+### Fecho de Mercado — 2026-04-29
+**P&L dia**: $-64.95 (-0.06%)
+**SPY dia**: 0.09%
+**vs Benchmark**: -0.15% (underperform)
+**Capital final**: $100288.66
+**Daily cap atingido**: Não

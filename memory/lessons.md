@@ -49,3 +49,20 @@
 **O que falhou**: LMT a -3.25% indica que a tese pós-earnings não materializou como esperado — bateu estimativas mas o mercado castigou (provavelmente guidance fraco ou expectativas demasiado altas). Não revi a tese de LMT após o earnings de 23 abr, o que é uma falha de processo. O stop-loss está a -7%, mas devia estar a reavaliar fundamentalmente, não apenas a esperar o stop.
 
 **Aprendizagem**: Após earnings de uma posição em
+### Lição — 2026-04-29
+**Decisão de manhã**: NO_ACTION. Carteira já com 4 posições (AMZN, LMT, MSFT, NVDA), AMZN e LLY em earnings blackout, candidatos secundários (VST, JPM) sem catalisador concreto. Convicção abaixo de 70%.
+
+**Resultado**: P&L -$64.95 (-0.06%), underperform SPY em 15 bps (SPY +0.09%). Dia praticamente flat, mas com drag relativo causado por LMT (-3.87% acumulado, posição em prejuízo desde entrada pós-earnings de 23 abr).
+
+**O que funcionou**:
+- Respeitar o blackout de earnings em AMZN (reporta hoje após fecho — assimetria de risco binário evitada).
+- Não forçar trade por FOMO: VST e JPM com score 4 mas sem catalisador identificável foram corretamente descartados.
+- Diversificação não foi sacrificada para "estar ativo".
+- AMZN (+4.76%) e NVDA (+4.21%) continuam a validar a tese AI infrastructure.
+
+**O que falhou**:
+- LMT em -3.87% após earnings beat (23 abr) — a tese "bateu 4x consecutivo = alta probabilidade" não se traduziu em performance pós-evento. Possível "sell the news" ou guidance fraco que não foi reavaliado.
+- Não revi a tese de LMT após o earnings: continuo a segurar uma posição que já reportou e perdeu o catalisador principal.
+- Macro context truncado no briefing foi aceite passivamente em vez de procurar fontes alternativas.
+
+**Aprendizagem**: Earnings beat ≠ performance posit
