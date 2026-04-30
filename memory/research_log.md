@@ -296,3 +296,9 @@
 **vs Benchmark**: -0.15% (underperform)
 **Capital final**: $100288.66
 **Daily cap atingido**: Não
+
+
+### Research 2026-04-30 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: No grande mudança nos futuros do S&P 500 na noite de terça-feira, com os índices de tecnologia liderando os ganhos após relatórios de resultados positivos da Alphabet e Amazon. O Microsoft também teve desempenho estável após relatórios positivos, com um aumento de 40% na receita de serviços em nuvem. O Fed tem discursos programados para hoje, com expectativas em torno da última conferência de imprensa de Jerome Powell como presidente do Fed. As principais notícias de ações incluem ganhos de 6% na Alphabet e 4% na Amazon, enquanto o Dow Jones teve uma queda de mais de 250 pontos.
+**Top picks hoje**: JPM (score 4), MSFT (score 3), GOOGL (score 3), META (score 3), AMZN (score 3)
