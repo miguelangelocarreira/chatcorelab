@@ -66,3 +66,17 @@
 - Macro context truncado no briefing foi aceite passivamente em vez de procurar fontes alternativas.
 
 **Aprendizagem**: Earnings beat ≠ performance posit
+### Lição — 2026-04-30
+**Decisão de manhã**: NO_ACTION com confiança 40%. Recusei adicionar JPM, MSFT, META apesar de scores favoráveis, alegando carteira já com 4 posições (3 em perda) e ausência de catalisador concreto com convicção ≥70%. Mantive AMZN apesar de earnings hoje (risco binário aceite por já estar em posição).
+
+**Resultado**: -0.32% vs SPY +0.52% = **-0.84% underperformance**. Quarto dia consecutivo de underperformance relativa. AMZN salvou parcialmente o dia (+4.86% intra-day, presumivelmente reação a earnings), mas insuficiente para compensar drag de LMT (-2.25%), MSFT (-3.23%) e NVDA (-0.99%).
+
+**O que funcionou**: 
+- Disciplina em recusar entradas sem convicção 70%+ — JPM sem catalisador concreto teria sido FOMO trade
+- Manter AMZN pré-earnings funcionou (a tese fundamentalista AWS+AI estava correta, o catalisador materializou-se)
+- Evitar LLY em earnings blackout foi correto pelo guardrail
+
+**O que falhou**:
+- Carteira está estruturalmente mal posicionada: 3 das 4 posições em perda sugere que as entradas foram feitas em níveis fracos ou sem timing
+- MSFT a -3.23% e LMT a -2.25% estão a aproximar-se do stop -7% sem que eu tenha uma tese clara de "porquê continuar a aguentar"
+- NO_ACTION não é estratégia quando o problema é a qualidade das posições existentes — devia ter considerado *reduz

@@ -309,3 +309,11 @@
 **Confiança**: 40%
 **Raciocínio**: Carteira já tem 4 posições ativas (AMZN, LMT, MSFT, NVDA), três das quais em perda (LMT -3.4%, MSFT -4.5%, NVDA -0.3%). Adicionar exposição com P&L diário negativo e drawdown a aumentar é imprudente. JPM tem score 4 mas sem catalisador concreto identificado no briefing macro. MSFT/META com BKOUT hoje exigem confirmação técnica que não é o nosso edge fundamentalista. LLY em earnings blackout (hoje). AMZN já em carteira com earnings hoje — risco binário absorvido. Sem tese com convicção ≥70% para nova entrada. Preservar capital, monitorizar MSFT que se aproxima do stop -7%, e aguardar reação aos earnings de AMZN/LLY antes de comprometer mais slots. Cash é posição válida.
 **Riscos**: MSFT continuar a cair e atingir stop-loss -7%; Reação negativa aos earnings AMZN afetar posição existente
+
+
+### Fecho de Mercado — 2026-04-30
+**P&L dia**: $-319.47 (-0.32%)
+**SPY dia**: 0.52%
+**vs Benchmark**: -0.84% (underperform)
+**Capital final**: $99928.51
+**Daily cap atingido**: Não
