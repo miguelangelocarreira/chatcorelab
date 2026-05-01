@@ -338,3 +338,15 @@
 **vs Benchmark**: 0.15% (outperform)
 **Capital final**: $99988.98
 **Daily cap atingido**: Não
+
+
+### Weekly Review — 2026-05-01
+**Performance total**: $0 (-0.01% desde início)
+**Win rate**: 0% | **Trades**: 0 (0 wins, 0 losses)
+**Auto-avaliação**: D
+**SPY hoje**: -0.10%
+
+
+### Estratégia Atualizada — 2026-05-01
+**Motivo**: Padrões claros nas lições: (1) LMT continua a sangrar há 6+ sessões pós-earnings sem revisão de tese — falha sistemática de gestão ativa; (2) NO_ACTION é usado como default mesmo quando o problema real é qualidade das posições existentes (3 de 4 em perda); (3) concentração setorial tech/AI repetidamente identificada mas nunca limitada formalmente; (4) convicção de 40% é incoerente com manter portfólio de 4 posições. Precisamos de regras explícitas de post-earnings review, limite de concentração setorial, e clarificar que reduzir é ação válida.
+**Mudanças**: Nova regra: Post-earnings thesis review obrigatório dentro de 48h após report de qualquer posição em carteira, Limite formal de concentração setorial: máximo 40% do capital exposto a um único setor (tech/AI, defesa, etc.), Clarificação: NO_ACTION ≠ não reavaliar. Se >50% das posições estão em perda, sessão deve incluir revisão de saída antes de qualquer entrada nova, Nova regra: posições com perda >3% sem catalisador futuro identificável devem ser reduzidas (não esperar pelo stop -7%), Adicionado setor a evitar: Defesa pura sem exposição AI (lição LMT post-earnings)
