@@ -1,12 +1,30 @@
 {
-  "date": "2026-04-30",
+  "date": "2026-05-01",
   "scores": [
+    {
+      "ticker": "GOOGL",
+      "sector": "Technology",
+      "thesis": "Search + cloud + Gemini AI",
+      "score": 4,
+      "summary": "Google's (GOOGL) revenue growth year-over-year is forecasted at 11.1%, surpassing the US market average, driven by significant margin expansion and strong performance in its Cloud division. The operating margin has improved to 32.2% from 27.7% a year ago, and the Free Cash Flow (FCF) yield is projected to climb to about $140.7 billion by 2029. The main catalyst for GOOGL's growth is the accelerate",
+      "earningsBlackout": false,
+      "earningsDaysAway": null
+    },
+    {
+      "ticker": "LMT",
+      "sector": "Defense",
+      "thesis": "NATO budget expansion, F-35 program",
+      "score": 4,
+      "summary": "Lockheed Martin (LMT) has demonstrated robust revenue growth year-over-year, beating analysts' consensus estimates by 2.1% in the last quarter. The company's free cash flow yield is strong, reflecting its efficient management of capital. The operating margin has shown significant improvement, driven by higher non-GAAP gross margins and operating margins. The main catalyst for LMT's performance is ",
+      "earningsBlackout": false,
+      "earningsDaysAway": null
+    },
     {
       "ticker": "JPM",
       "sector": "Financials",
       "thesis": "Rate environment + investment banking strength",
       "score": 4,
-      "summary": "Based on the provided data, here is a concise analysis of JPM's fundamental aspects:\n\nJPM's revenue growth is projected to be in the high-single digits in the coming years, driven by favorable earnings drivers and margin expansion. However, recent analyst updates indicate a downward revision in revenue growth projections from 3.40% to 1.85%, while the net profit margin has improved from 14.83% to ",
+      "summary": "Here's a concise analysis of J.P. Morgan's (JPM) fundamental aspects based on the provided data:\n\nJPM's revenue is expected to grow in high-single digits in the coming years, driven by favorable earnings and margin expansion. The latest close price for JPM is $313.23, showing a significant total return of 70.29% over the past two years with an annualized return of 30.50%. The company's free cash f",
       "earningsBlackout": false,
       "earningsDaysAway": null
     },
@@ -15,34 +33,16 @@
       "sector": "Technology",
       "thesis": "Azure cloud + Copilot AI monetization",
       "score": 3,
-      "summary": "Microsoft's revenue growth year-over-year (YoY) is projected to be around 34% for fiscal year 2027, driven by strong performance in its cloud computing segment. The company's free cash flow (FCF) yield is solid, reflecting efficient capital management. The operating margin is also healthy, indicating strong profitability. The main catalyst for MSFT's growth is its robust Cloud segment, particularl",
-      "earningsBlackout": true,
-      "earningsDaysAway": 0
-    },
-    {
-      "ticker": "GOOGL",
-      "sector": "Technology",
-      "thesis": "Search + cloud + Gemini AI",
-      "score": 3,
-      "summary": "Alphabet Inc. (GOOGL) has demonstrated robust revenue growth year-over-year, with a quarterly increase of 18%. The company's operating margin stands at 31.57%, reflecting a significant improvement from the previous year's 27.7%, as highlighted in recent analyst reports. The Free Cash Flow (FCF) yield is projected to climb to approximately $140.7 billion by 2029, indicating strong financial health.",
+      "summary": "Microsoft's revenue growth year-over-year has been robust, driven by strong performance in its cloud computing segment, Azure. The company's free cash flow yield remains healthy, reflecting efficient management of its cash resources. The operating margin is solid, indicating effective cost control and strong profitability. The main catalyst for MSFT's growth is its continued investment in artifici",
       "earningsBlackout": false,
-      "earningsDaysAway": 86
-    },
-    {
-      "ticker": "META",
-      "sector": "Technology",
-      "thesis": "Ad revenue growth + Llama AI ecosystem",
-      "score": 3,
-      "summary": "META's fundamental analysis reveals a robust revenue growth year-over-year (YoY) of 23.80%, indicating strong business expansion. The company's trailing-twelve-months (ttm) operating margin stands at 41.31%, reflecting efficient cost management. However, there is a notable decline in net profit margins, which have tightened to 30.9% from last year's 35.6%, and analysts project further margin contr",
-      "earningsBlackout": true,
-      "earningsDaysAway": 0
+      "earningsDaysAway": null
     },
     {
       "ticker": "AMZN",
       "sector": "Technology",
       "thesis": "AWS cloud + retail margin expansion",
       "score": 3,
-      "summary": "Based on the provided data, here is a fundamental analysis of Amazon (AMZN):\n\nAmazon has demonstrated robust revenue growth year-over-year, with a CAGR of 22.60% over the past two years. The company's latest free cash flow stands at $37.6 billion, indicating strong financial health and operational efficiency. The operating margin reflects Amazon's competitive edge in the market, showcasing its abi",
+      "summary": "Based on the provided data, Amazon's (AMZN) fundamental analysis reveals several key metrics. The company's revenue is projected to grow by 8.74% year-over-year, reaching an estimated $693.74 billion in 2025. Amazon's free cash flow (FCF) stands at $37.6 billion, indicating robust liquidity and financial health. The operating margin is not directly provided, but the company's strong revenue growth",
       "earningsBlackout": false,
       "earningsDaysAway": null
     },
@@ -51,16 +51,7 @@
       "sector": "Technology",
       "thesis": "Services growth + AI iPhone supercycle",
       "score": 3,
-      "summary": "Apple Inc. (AAPL) has demonstrated robust revenue growth year-over-year, with a notable surge in Q3 revenue and a substantial cash pile, which could be a game-changer for the company's future initiatives. The free cash flow yield remains strong, reflecting efficient management of operational expenses and capital. The operating margin showcases Apple's ability to maintain profitability across its d",
-      "earningsBlackout": true,
-      "earningsDaysAway": 1
-    },
-    {
-      "ticker": "LLY",
-      "sector": "Healthcare",
-      "thesis": "GLP-1 obesity/diabetes market leader",
-      "score": 3,
-      "summary": "For LLY's fundamental analysis, revenue growth year-over-year (YoY) is a key metric to consider. While specific YoY revenue growth figures for the latest period are not provided in the data, Eli Lilly typically reports quarterly earnings which include detailed financial metrics. Free cash flow (FCF) yield is another important aspect, reflecting the company's ability to generate cash from operation",
+      "summary": "Based on the user's query, here is a concise analysis of Apple Inc. (AAPL) in paragraph format:\n\nApple Inc. (AAPL) has demonstrated strong revenue growth year-over-year, driven by robust iPhone sales and increasing demand in the Chinese market. The company's free cash flow yield remains healthy, indicating efficient management of its cash resources. The operating margin showcases Apple's strong pr",
       "earningsBlackout": true,
       "earningsDaysAway": 0
     },
@@ -69,25 +60,25 @@
       "sector": "Healthcare",
       "thesis": "Post-Humira diversification + oncology pipeline",
       "score": 3,
-      "summary": "ABBV's fundamental analysis reveals a robust financial performance with a significant total return of 34.15% over the past two years, translating to an annualized return of 15.82% and a CAGR of the same rate. The company's Sharpe Ratio of 0.68 indicates a favorable risk-adjusted return. The latest close price of 203.89 reflects a high of 238.71 and a low of 144.65 over the same period, with a stan",
+      "summary": "ABBV's financial performance showcases a robust revenue growth year-over-year, with a notable increase in its operating margin. The company's free cash flow yield remains competitive, indicating efficient management of its cash resources. Analysts generally hold a positive consensus on ABBV, reflecting confidence in its operational capabilities and future growth prospects. The main catalyst for AB",
       "earningsBlackout": false,
       "earningsDaysAway": null
     },
     {
-      "ticker": "LMT",
-      "sector": "Defense",
-      "thesis": "NATO budget expansion, F-35 program",
+      "ticker": "UNH",
+      "sector": "Healthcare",
+      "thesis": "Managed care + Optum data services",
       "score": 3,
-      "summary": "Lockheed Martin (LMT) has demonstrated a robust revenue growth year-over-year, with analysts projecting a significant increase driven by strong demand for defense systems and services. The company's free cash flow yield remains competitive, reflecting efficient management of capital resources. The operating margin is healthy, indicating effective cost control and operational efficiency. The main c",
-      "earningsBlackout": true,
-      "earningsDaysAway": 1
+      "summary": "UnitedHealth's fundamental analysis reveals a revenue growth year-over-year (YoY) that has been robust, driven by its diversified healthcare services. The company generated over $17 billion in trailing free cash flow, indicating a strong FCF yield. The operating margin has remained healthy, reflecting efficient cost management. The main catalyst for UNH's performance is its consistent dividend gro",
+      "earningsBlackout": false,
+      "earningsDaysAway": null
     },
     {
       "ticker": "GEV",
       "sector": "Industrials",
       "thesis": "GE Vernova grid infrastructure + energy transition",
       "score": 3,
-      "summary": "Based on the provided data, here is a concise analysis of GEV's fundamental aspects:\n\nGEV's financial performance over the past two years shows significant growth, with a total return of 594.20% and an annualized return of 163.48%. The company's revenue growth year-over-year (YoY) is not directly provided in the data, but the substantial total return suggests strong performance. The free cash flow",
+      "summary": "Here's a concise fundamental analysis of GEV based on the provided data:\n\nGEV's revenue growth year-over-year has shown a positive trend, although specific figures are not provided in the data. The company's free cash flow yield and operating margin are not directly mentioned, but the context suggests a robust financial health with significant investments and strategic moves. The main catalyst for",
       "earningsBlackout": false,
       "earningsDaysAway": null
     },
@@ -96,25 +87,43 @@
       "sector": "Energy",
       "thesis": "Nuclear power + AI data center contracts",
       "score": 3,
-      "summary": "Based on the provided data, here is a concise analysis of CEG's fundamental aspects:\n\nCEG's revenue has shown a robust growth trend, with a 35% year-over-year increase projected for the full year, driven significantly by organic growth. The company's financial health is supported by a positive free cash flow yield, although specific figures are not provided in the data. The operating margin reflec",
+      "summary": "Based on the provided data, here is a concise analysis of CEG's fundamental aspects:\n\nCEG's revenue growth year-over-year (YoY) has shown a positive trend, with a notable 19.4% increase in revenue to $41.7 million in the latest reported period. The company's free cash flow (FCF) yield and operating margin are not directly provided in the data but are crucial for a comprehensive analysis. The main ",
       "earningsBlackout": false,
-      "earningsDaysAway": 7
+      "earningsDaysAway": 6
     },
     {
       "ticker": "VST",
       "sector": "Energy",
       "thesis": "Power generation + data center demand",
       "score": 3,
-      "summary": "VST Industries Ltd's revenue growth year-over-year (YoY) was -1.60% in the year ended March 2025, compared to a 9.85% growth in the previous year. The free cash flow (FCF) yield for the last year was approximately 59.0%, indicating a strong cash generation capability. The operating margin stood at 19.99%, showing the company's efficiency in managing its operating costs relative to its revenue. The",
+      "summary": "Here's a concise analysis of VST based on the provided data:\n\nVST's financial performance over the past two years has been robust, with a total return of 108.13% and an annualized return of 44.27%. The company boasts a high free cash flow yield of 45%, indicating strong financial health. The operating margin is also positive, suggesting efficient cost management. The main catalyst for VST's growth",
       "earningsBlackout": false,
       "earningsDaysAway": null
     },
     {
-      "ticker": "UNH",
-      "sector": "Healthcare",
-      "thesis": "Managed care + Optum data services",
+      "ticker": "NVDA",
+      "sector": "Technology",
+      "thesis": "AI infrastructure leader, data center demand",
       "score": 2,
-      "summary": "UnitedHealth's (UNH) fundamental analysis reveals a company with robust financial metrics. The company generated over $17 billion in trailing free cash flow, indicating strong liquidity and operational efficiency. The operating margin stands out, reflecting effective cost management and profitability. The main catalyst for UNH's performance is its consistent revenue growth, although specific year-",
+      "summary": "Based on the provided data, here is a concise fundamental analysis of NVDA: \n\nNVDA has shown significant revenue growth year-over-year, driven by its strong performance in the AI sector. The company's free cash flow (FCF) yield and operating margin have also been robust, reflecting its efficient operational model and strong market position. The main catalyst for NVDA's growth is its leadership in ",
+      "earningsBlackout": false,
+      "earningsDaysAway": 19
+    },
+    {
+      "ticker": "META",
+      "sector": "Technology",
+      "thesis": "Ad revenue growth + Llama AI ecosystem",
+      "score": 2,
+      "summary": "META's year-over-year revenue growth stands at 33.10%, indicating robust expansion. The company's free cash flow yield and operating margin are currently 5.1% and 30.9%, respectively, although these figures are down from last year's 35.6%. The main catalyst for META's performance is its strategic management of AI spending to maintain margins and earnings, as highlighted by analysts. However, the m",
+      "earningsBlackout": false,
+      "earningsDaysAway": null
+    },
+    {
+      "ticker": "LLY",
+      "sector": "Healthcare",
+      "thesis": "GLP-1 obesity/diabetes market leader",
+      "score": 2,
+      "summary": "LLY's revenue growth is projected to be strong, with a Zacks Consensus Estimate indicating a 26.2% year-over-year increase in earnings per share for 2026. The company's free cash flow yield and operating margin are expected to benefit from its massive 2025 profits and expansion projects. The main catalyst for LLY's performance is anticipated to be its growth in the pharmaceutical sector, driven by",
       "earningsBlackout": false,
       "earningsDaysAway": null
     },
@@ -123,18 +132,9 @@
       "sector": "Defense",
       "thesis": "Defense + commercial aerospace recovery",
       "score": 2,
-      "summary": "Based on the provided data, here is a concise fundamental analysis of RTX:\n\nRTX has shown significant revenue growth over the past two years, with a CAGR of 32.99%. The company's operating margin is expected to improve from the current 7.4% to 9.1% by 2027, reflecting better cost management and operational efficiencies. The Free Cash Flow (FCF) yield is not directly provided but can be inferred fr",
+      "summary": "RTX's revenue growth year-over-year (YoY) has shown significant improvement, with the company boosting its net profit margin to 7.7% from 6% last year, indicating stronger profitability. The free cash flow (FCF) yield is not directly provided in the data, but the company's strong performance in profitability and revenue growth suggests a healthy cash flow generation capability. The operating margi",
       "earningsBlackout": false,
       "earningsDaysAway": null
-    },
-    {
-      "ticker": "NVDA",
-      "sector": "Technology",
-      "thesis": "AI infrastructure leader, data center demand",
-      "score": 1,
-      "summary": "For NVDA's fundamental analysis, revenue growth has shown a notable slowdown, declining from 86.17% in Q1 2026 to 65.47% in Q4 2026. Free cash flow (FCF) has turned negative, indicating potential cash flow issues. The operating margin remains strong, reflecting efficient cost management. The main catalyst for NVDA's performance is its leading position in the AI market, driven by robust demand for ",
-      "earningsBlackout": false,
-      "earningsDaysAway": 20
     }
   ]
 }

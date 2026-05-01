@@ -317,3 +317,9 @@
 **vs Benchmark**: -0.84% (underperform)
 **Capital final**: $99928.51
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-01 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: O índice S&P 500 e o Nasdaq avançaram ligeiramente na quinta-feira, refletindo uma pausa no rally recente que levou os índices de Wall Street a novos máximos, impulsionados por fortes resultados de empresas de tecnologia. O Dow Jones Industrial Average também registrou ganhos significativos. As perspectivas macroeconômicas foram moderadas por dados econômicos e relatórios de ganhos que indicaram uma economia dos EUA em crescimento, apesar de pressões de preços e incertezas globais. As principais palestras do Fed não foram mencionadas, mas a atenção permaneceu focada nos próximos relatórios de ganhos corporativos e dados macroeconômicos. Entre as notícias de destaque, a Microsoft continuou a surpreender com resultados acima das expectativas, enquanto a Alphabet e a Meta apresentaram variações nos desempenhos das ações.
+**Top picks hoje**: GOOGL (score 4), LMT (score 4), JPM (score 4), MSFT (score 3), AMZN (score 3)
