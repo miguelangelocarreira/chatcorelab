@@ -323,3 +323,10 @@
 **Fonte**: Tavily
 **Contexto macro**: O índice S&P 500 e o Nasdaq avançaram ligeiramente na quinta-feira, refletindo uma pausa no rally recente que levou os índices de Wall Street a novos máximos, impulsionados por fortes resultados de empresas de tecnologia. O Dow Jones Industrial Average também registrou ganhos significativos. As perspectivas macroeconômicas foram moderadas por dados econômicos e relatórios de ganhos que indicaram uma economia dos EUA em crescimento, apesar de pressões de preços e incertezas globais. As principais palestras do Fed não foram mencionadas, mas a atenção permaneceu focada nos próximos relatórios de ganhos corporativos e dados macroeconômicos. Entre as notícias de destaque, a Microsoft continuou a surpreender com resultados acima das expectativas, enquanto a Alphabet e a Meta apresentaram variações nos desempenhos das ações.
 **Top picks hoje**: GOOGL (score 4), LMT (score 4), JPM (score 4), MSFT (score 3), AMZN (score 3)
+
+
+### Claude Decision — 2026-05-01
+**Ação**: NO_ACTION
+**Confiança**: 40%
+**Raciocínio**: Já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) com exposição significativa a tech/AI e defesa. AMZN reporta hoje (30 abr) e LLY também — earnings blackout impede entrada nestes nomes. AAPL aparece em breakout mas score 3 é insuficiente e Apple enfrenta pressão regulatória + falta de catalisador AI claro. GOOGL e JPM com score 4 são candidatos, mas sem catalisador imediato documentado nesta sessão e prefiro esperar pela reação ao earnings de AMZN/LLY hoje para reavaliar contexto macro. Portfolio está praticamente flat (+0.04%) com 3 das 4 posições no vermelho — prudente consolidar antes de adicionar risco. Convicção abaixo de 70% para qualquer nome. Cash é posição válida.
+**Riscos**: Concentração já elevada em AI/tech via NVDA+MSFT+AMZN; Reação adversa ao earnings AMZN hoje pode arrastar carteira
