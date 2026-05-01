@@ -330,3 +330,11 @@
 **Confiança**: 40%
 **Raciocínio**: Já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) com exposição significativa a tech/AI e defesa. AMZN reporta hoje (30 abr) e LLY também — earnings blackout impede entrada nestes nomes. AAPL aparece em breakout mas score 3 é insuficiente e Apple enfrenta pressão regulatória + falta de catalisador AI claro. GOOGL e JPM com score 4 são candidatos, mas sem catalisador imediato documentado nesta sessão e prefiro esperar pela reação ao earnings de AMZN/LLY hoje para reavaliar contexto macro. Portfolio está praticamente flat (+0.04%) com 3 das 4 posições no vermelho — prudente consolidar antes de adicionar risco. Convicção abaixo de 70% para qualquer nome. Cash é posição válida.
 **Riscos**: Concentração já elevada em AI/tech via NVDA+MSFT+AMZN; Reação adversa ao earnings AMZN hoje pode arrastar carteira
+
+
+### Fecho de Mercado — 2026-05-01
+**P&L dia**: $44.98 (0.05%)
+**SPY dia**: -0.10%
+**vs Benchmark**: 0.15% (outperform)
+**Capital final**: $99988.98
+**Daily cap atingido**: Não

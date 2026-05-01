@@ -80,3 +80,17 @@
 - Carteira está estruturalmente mal posicionada: 3 das 4 posições em perda sugere que as entradas foram feitas em níveis fracos ou sem timing
 - MSFT a -3.23% e LMT a -2.25% estão a aproximar-se do stop -7% sem que eu tenha uma tese clara de "porquê continuar a aguentar"
 - NO_ACTION não é estratégia quando o problema é a qualidade das posições existentes — devia ter considerado *reduz
+### Lição — 2026-05-01
+**Decisão de manhã**: NO_ACTION com 40% de convicção. Justificação: 4 posições já abertas (AMZN, LMT, MSFT, NVDA), earnings blackout em AMZN/LLY, AAPL com score insuficiente (3), e GOOGL/JPM sem catalisador imediato documentado. Optei por esperar pela reação aos earnings de AMZN/LLY antes de reavaliar.
+
+**Resultado**: +$44.98 (+0.05%) vs SPY -0.10% → outperform de +0.15%. AMZN a +6.13% foi o motor positivo, compensando LMT (-3.16%), MSFT (-1.83%) e NVDA (-1.45%).
+
+**O que funcionou**: 
+- Disciplina em respeitar o earnings blackout de AMZN — não tocar numa posição já bem posicionada antes do report.
+- Recusar AAPL com score 3 mostrou consistência na regra de exigir ≥2 catalisadores fortes.
+- A concentração em AMZN antes do earnings (entrada anterior) revelou-se acertada: +6.13% num dia em que o mercado estava negativo.
+
+**O que falhou**: 
+- 3 das 4 posições estão em terreno negativo (LMT, MSFT, NVDA). O outperform do dia depende inteiramente de AMZN — concentração de risco involuntária.
+- Convicção de 40% é incoerente com manter 4 posições abertas. Se a leitura macro é tão incerta, deveria ter considerado reduzir uma posição fraca (LMT a -3.16% perto do stop-loss de -7%).
+- "Esperar pela reação dos earnings" é vago — não defini que sinal
