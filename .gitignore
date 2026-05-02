@@ -1,3 +1,7 @@
 node_modules
 .env.DS_Store
 .env
+video-studio/edit/*.mp4
+video-studio/edit/*.mov
+video-studio/edit/*.wav
+video-studio/edit/transcripts/
