@@ -363,3 +363,11 @@
 **Confiança**: 30%
 **Raciocínio**: Já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) com 3 em perda ligeira. A regra de gestão ativa é clara: quando a maioria das posições sangra, a prioridade é rever saídas, não adicionar exposição. LMT tem tese quebrada pós-earnings (REDUCE pendente), MSFT está em review pós-earnings, e NVDA entra em blackout em 3 dias (earnings 20 mai). Exposição tech/AI já próxima do limite setorial de 40%. Confiança macro a 40% — incoerente adicionar risco. Convicção em qualquer nova entrada está abaixo de 70%. CEG (top watch) está em blackout de earnings (7 mai). Cash é posição válida; foco da sessão deve ser executar REDUCE em LMT e decidir tese MSFT, não abrir 5ª posição.
 **Riscos**: Sobreexposição setorial tech/AI se adicionar mais nomes do mesmo cluster; Dispersão de atenção com 4 posições já a precisar de gestão ativa pós-earnings
+
+
+### Fecho de Mercado — 2026-05-04
+**P&L dia**: $80.05 (0.08%)
+**SPY dia**: -0.27%
+**vs Benchmark**: 0.35% (outperform)
+**Capital final**: $100084.43
+**Daily cap atingido**: Não

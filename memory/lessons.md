@@ -94,3 +94,13 @@
 - 3 das 4 posições estão em terreno negativo (LMT, MSFT, NVDA). O outperform do dia depende inteiramente de AMZN — concentração de risco involuntária.
 - Convicção de 40% é incoerente com manter 4 posições abertas. Se a leitura macro é tão incerta, deveria ter considerado reduzir uma posição fraca (LMT a -3.16% perto do stop-loss de -7%).
 - "Esperar pela reação dos earnings" é vago — não defini que sinal
+### Lição — 2026-05-04
+**Decisão de manhã**: NO_ACTION com confiança de 30%. Justificação: 3 das 4 posições em perda ligeira, LMT com tese quebrada pendente de REDUCE, MSFT em review pós-earnings, NVDA a entrar em blackout pré-earnings, exposição tech/AI próxima do limite setorial de 40%, convicção macro a 40%. Sem entradas novas com convicção ≥70%.
+
+**Resultado**: +$80.05 (+0.08%) vs SPY -0.27% → outperform de +0.35pp. Dia ligeiramente positivo conduzido pelo cushion de AMZN (+7.59%), que compensou as perdas marginais em LMT, MSFT e NVDA.
+
+**O que funcionou**: A disciplina de não adicionar risco com convicção macro a 40% e 3 de 4 posições no vermelho. AMZN continua a validar a tese pós-earnings (AWS +24%) e a ser o motor de outperformance. Evitar nova entrada em CEG antes do earnings de 7 mai foi correto — respeitou a regra dos 5 dias.
+
+**O que falhou**: A REDUCE pendente em LMT continua por executar — é o segundo dia consecutivo a arrastar uma decisão já tomada (tese quebrada pós-earnings 23 abr). Isto é exatamente o padrão "esperar pelo stop" que a regra de Post-Earnings Review proíbe. MSFT também sem conclusão escrita do review. NO_ACTION foi usado como conforto operacional em vez de forçar a revisão de saídas que a regra exige quando >50% do book sangra (3 de 4 = 75%).
+
+**Aprendiz
