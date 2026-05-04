@@ -9,10 +9,10 @@
 ## Estado Atual
 
 - **Fase**: `SETUP`
-- **Última atualização**: 2026-05-01
-- **Ciclo #**: 51
-- **Status**: IDLE
-- **Próxima rotina**: Pre-Market Research (segunda 06:00 ET)
+- **Última atualização**: 2026-05-04
+- **Ciclo #**: 52
+- **Status**: PREMARKET_DONE
+- **Próxima rotina**: Market Open (08:30 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -24,15 +24,15 @@
   "drawdown_pct": 0,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
-  "status": "IDLE",
+  "status": "PREMARKET_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Weekly review: 0 trades | $0 P&L
+Pre-market concluído. Top picks: NVDA, GOOGL, AMZN, LMT, AAPL
 
 ---
 
-_Próximo passo: Pre-Market Research (segunda 06:00 ET)_
+_Próximo passo: Market Open (08:30 ET)_
