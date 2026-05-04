@@ -356,3 +356,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Na manhã de 4 de maio de 2026, os futuros do S&P 500 mantiveram-se estáveis, refletindo esperanças de reabertura do Estreito de Hormuz e um possível acordo de paz entre Irã e Estados Unidos. Os futuros do Nasdaq 100 e do S&P 500 subiram 0,40% e 0,17%, respectivamente, enquanto os futuros do Dow Jones Industrial Average diminuíram 0,07%. A notícia de um plano do presidente Trump para ajudar navios comerciais não envolvidos no conflito do Oriente Médio foi um fator de apoio. No entanto, relatos de um ataque iraniano a um navio da Marinha dos EUA causaram volatilidade nos mercados, com futuros do Dow Jones caindo e o petróleo subindo. As principais notícias macroeconômicas do dia incluem a expectativa do relatório de empregos de abril, que pode influenciar as próximas decisões da Fed. Entre os destaques das notícias de ações, estão os ganhos de Palantir e SoundHound AI, com expectativas de grandes movimentos
 **Top picks hoje**: NVDA (score 5), GOOGL (score 4), AMZN (score 4), LMT (score 4), AAPL (score 3)
+
+
+### Claude Decision — 2026-05-04
+**Ação**: NO_ACTION
+**Confiança**: 30%
+**Raciocínio**: Já tenho 4 posições abertas (AMZN, LMT, MSFT, NVDA) com 3 em perda ligeira. A regra de gestão ativa é clara: quando a maioria das posições sangra, a prioridade é rever saídas, não adicionar exposição. LMT tem tese quebrada pós-earnings (REDUCE pendente), MSFT está em review pós-earnings, e NVDA entra em blackout em 3 dias (earnings 20 mai). Exposição tech/AI já próxima do limite setorial de 40%. Confiança macro a 40% — incoerente adicionar risco. Convicção em qualquer nova entrada está abaixo de 70%. CEG (top watch) está em blackout de earnings (7 mai). Cash é posição válida; foco da sessão deve ser executar REDUCE em LMT e decidir tese MSFT, não abrir 5ª posição.
+**Riscos**: Sobreexposição setorial tech/AI se adicionar mais nomes do mesmo cluster; Dispersão de atenção com 4 posições já a precisar de gestão ativa pós-earnings
