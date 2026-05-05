@@ -377,3 +377,10 @@
 **Fonte**: Tavily
 **Contexto macro**: O índice S&P 500 e o Dow Jones caíram na segunda-feira, refletindo a tensão entre os EUA e o Irã que preocupou os investidores. As notícias de um navio de guerra americano perto do Estreito de Ormuz e a afirmação do Irã de ter forçado um navio americano a recuar contribuíram para a incerteza. As ações da AMD e da Palantir são esperadas para mover o mercado, com os traders de opções apostando fortemente em movimentos significativos para ambas as ações. Além disso, a GameStop está considerando uma oferta para comprar a eBay por $56 bilhões, enquanto a Berkshire Hathaway detém um recorde de $397 bilhões em caixa. O mercado também está atento às declarações da Fed e a dados macroeconômicos importantes que podem influenciar a direção futura das ações.
 **Top picks hoje**: ABBV (score 4), MSFT (score 3), META (score 3), AMZN (score 3), AAPL (score 3)
+
+
+### Claude Decision — 2026-05-05
+**Ação**: NO_ACTION
+**Confiança**: 40%
+**Raciocínio**: O portfólio tem 4 posições abertas, 3 em perda (LMT, MSFT, NVDA) e apenas AMZN positiva. A regra explícita do trading_strategy.md determina que quando >50% das posições estão em perda, a sessão DEVE começar pela revisão de saídas antes de novas entradas. LMT está em perda há 6+ sessões pós-earnings sem post-earnings review executado — tese quebrada por confirmar. Adicionar uma 5ª posição (ABBV score 4 ou MSFT/META/AMZN score 3) seria incoerente: aumentaria exposição com convicção macro baixa e ignoraria o problema de gestão ativa identificado. ABBV com BKOUT-2d é sinal técnico, não catalisador fundamentalista concreto. Nenhum candidato atinge convicção ≥70%. Prioridade desta sessão deveria ser REDUCE/EXIT em LMT, não BUY. Cash e disciplina protegem capital — não fazer nada é decisão válida.
+**Riscos**: Custo de oportunidade se ABBV continuar breakout; Posições existentes continuarem a sangrar sem revisão
