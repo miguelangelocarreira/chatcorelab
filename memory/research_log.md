@@ -384,3 +384,11 @@
 **Confiança**: 40%
 **Raciocínio**: O portfólio tem 4 posições abertas, 3 em perda (LMT, MSFT, NVDA) e apenas AMZN positiva. A regra explícita do trading_strategy.md determina que quando >50% das posições estão em perda, a sessão DEVE começar pela revisão de saídas antes de novas entradas. LMT está em perda há 6+ sessões pós-earnings sem post-earnings review executado — tese quebrada por confirmar. Adicionar uma 5ª posição (ABBV score 4 ou MSFT/META/AMZN score 3) seria incoerente: aumentaria exposição com convicção macro baixa e ignoraria o problema de gestão ativa identificado. ABBV com BKOUT-2d é sinal técnico, não catalisador fundamentalista concreto. Nenhum candidato atinge convicção ≥70%. Prioridade desta sessão deveria ser REDUCE/EXIT em LMT, não BUY. Cash e disciplina protegem capital — não fazer nada é decisão válida.
 **Riscos**: Custo de oportunidade se ABBV continuar breakout; Posições existentes continuarem a sangrar sem revisão
+
+
+### Fecho de Mercado — 2026-05-05
+**P&L dia**: $-26.38 (-0.03%)
+**SPY dia**: 0.26%
+**vs Benchmark**: -0.29% (underperform)
+**Capital final**: $99978.00
+**Daily cap atingido**: Não

@@ -104,3 +104,13 @@
 **O que falhou**: A REDUCE pendente em LMT continua por executar — é o segundo dia consecutivo a arrastar uma decisão já tomada (tese quebrada pós-earnings 23 abr). Isto é exatamente o padrão "esperar pelo stop" que a regra de Post-Earnings Review proíbe. MSFT também sem conclusão escrita do review. NO_ACTION foi usado como conforto operacional em vez de forçar a revisão de saídas que a regra exige quando >50% do book sangra (3 de 4 = 75%).
 
 **Aprendiz
+### Lição — 2026-05-05
+**Decisão de manhã**: NO_ACTION com confiança de 40%, justificada pela regra de >50% das posições em perda exigir revisão de saídas antes de novas entradas. Recusei adicionar uma 5ª posição (ABBV/MSFT/META/AMZN) por incoerência convicção/exposição.
+
+**Resultado**: -$26.38 (-0.03%) vs SPY +0.26% → underperform de -0.29pp. Dia praticamente flat em valor absoluto, mas perdi alpha relativo num dia em que o mercado subiu.
+
+**O que funcionou**: A disciplina de não adicionar uma 5ª posição com convicção macro baixa foi correta — evitou diluir capital em ideias score 3-4. AMZN continua a sustentar o portfólio (+8.28%), validando a tese AWS+AI pós-earnings beat de 29 abr.
+
+**O que falhou**: Identifiquei explicitamente que LMT precisa de post-earnings review (6+ sessões em perda, tese quebrada por confirmar) e MSFT está "EM REVIEW" — mas NÃO executei nenhuma das duas revisões hoje. A regra do trading_strategy.md diz que NO_ACTION quando a maioria sangra é negligência se não houver revisão de saídas. Diagnostiquei o problema certo e depois ignorei-o. SPY +0.26% num dia em que estou -2.5% a -3.9% em 3 posições significa que o mercado subiu sem mim — exposição direcional errada.
+
+**Aprendizagem**: NO_ACTION sobre novas entradas não dispensa AÇÃO sobre posições existentes. Quando o raciocínio identifica "t
