@@ -371,3 +371,9 @@
 **vs Benchmark**: 0.35% (outperform)
 **Capital final**: $100084.43
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-05 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: O índice S&P 500 e o Dow Jones caíram na segunda-feira, refletindo a tensão entre os EUA e o Irã que preocupou os investidores. As notícias de um navio de guerra americano perto do Estreito de Ormuz e a afirmação do Irã de ter forçado um navio americano a recuar contribuíram para a incerteza. As ações da AMD e da Palantir são esperadas para mover o mercado, com os traders de opções apostando fortemente em movimentos significativos para ambas as ações. Além disso, a GameStop está considerando uma oferta para comprar a eBay por $56 bilhões, enquanto a Berkshire Hathaway detém um recorde de $397 bilhões em caixa. O mercado também está atento às declarações da Fed e a dados macroeconômicos importantes que podem influenciar a direção futura das ações.
+**Top picks hoje**: ABBV (score 4), MSFT (score 3), META (score 3), AMZN (score 3), AAPL (score 3)
