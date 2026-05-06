@@ -392,3 +392,9 @@
 **vs Benchmark**: -0.29% (underperform)
 **Capital final**: $99978.00
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-06 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: O índice S&P 500 e o Nasdaq atingiram novos recordes, com o setor de tecnologia liderando o aumento no comércio de IA, enquanto os preços do petróleo caíram. As ações dos EUA subiram para máximos históricos na terça-feira, enquanto os preços do petróleo recuaram, à medida que os mercados monitoravam um frágil cessar-fogo entre os EUA e o Irã e avaliavam a mais recente onda de resultados. Os principais destaques das notícias de ações incluem ganhos pós-resultados para AMD e SMCI, enquanto o BigBear.ai caiu 5% apesar de um aumento nas receitas. As principais palestras do Fed hoje não foram mencionadas.
+**Top picks hoje**: GOOGL (score 4), LMT (score 4), RTX (score 4), GEV (score 4), NVDA (score 3)
