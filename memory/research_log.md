@@ -398,3 +398,10 @@
 **Fonte**: Tavily
 **Contexto macro**: O índice S&P 500 e o Nasdaq atingiram novos recordes, com o setor de tecnologia liderando o aumento no comércio de IA, enquanto os preços do petróleo caíram. As ações dos EUA subiram para máximos históricos na terça-feira, enquanto os preços do petróleo recuaram, à medida que os mercados monitoravam um frágil cessar-fogo entre os EUA e o Irã e avaliavam a mais recente onda de resultados. Os principais destaques das notícias de ações incluem ganhos pós-resultados para AMD e SMCI, enquanto o BigBear.ai caiu 5% apesar de um aumento nas receitas. As principais palestras do Fed hoje não foram mencionadas.
 **Top picks hoje**: GOOGL (score 4), LMT (score 4), RTX (score 4), GEV (score 4), NVDA (score 3)
+
+
+### Claude Decision — 2026-05-06
+**Ação**: NO_ACTION
+**Confiança**: 30%
+**Raciocínio**: Carteira já com 4 posições abertas, sendo 3 em Tech/AI (AMZN, MSFT, NVDA) — concentração setorial perto do limite de 40%. LMT está em perda com tese quebrada pós-earnings e exige revisão/redução antes de adicionar risco novo. NVDA reporta a 20 mai (blackout em 14 dias, mas score baixo agora). GOOGL e RTX têm scores 4 mas sem catalisador imediato que justifique convicção ≥70%. LMT score 4 com breakout 1d é tecnical-driven, não fundamentalista, e contradiz a regra recém-adicionada de evitar defesa pura pós sell-the-news. Macro frágil (S&P e Dow em queda) reforça prudência. Conforme regra NO_ACTION ≠ Passividade: foco da sessão deve ser revisão de LMT e MSFT, não nova entrada. Convicção em qualquer compra hoje <70%.
+**Riscos**: Concentração Tech/AI próxima de 40% limita novas entradas no setor com maior momentum; LMT em perda sem plano de saída ativo expõe capital adicional sem tese válida
