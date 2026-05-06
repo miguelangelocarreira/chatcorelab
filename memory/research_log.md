@@ -405,3 +405,11 @@
 **Confiança**: 30%
 **Raciocínio**: Carteira já com 4 posições abertas, sendo 3 em Tech/AI (AMZN, MSFT, NVDA) — concentração setorial perto do limite de 40%. LMT está em perda com tese quebrada pós-earnings e exige revisão/redução antes de adicionar risco novo. NVDA reporta a 20 mai (blackout em 14 dias, mas score baixo agora). GOOGL e RTX têm scores 4 mas sem catalisador imediato que justifique convicção ≥70%. LMT score 4 com breakout 1d é tecnical-driven, não fundamentalista, e contradiz a regra recém-adicionada de evitar defesa pura pós sell-the-news. Macro frágil (S&P e Dow em queda) reforça prudência. Conforme regra NO_ACTION ≠ Passividade: foco da sessão deve ser revisão de LMT e MSFT, não nova entrada. Convicção em qualquer compra hoje <70%.
 **Riscos**: Concentração Tech/AI próxima de 40% limita novas entradas no setor com maior momentum; LMT em perda sem plano de saída ativo expõe capital adicional sem tese válida
+
+
+### Fecho de Mercado — 2026-05-06
+**P&L dia**: $385.34 (0.39%)
+**SPY dia**: 0.78%
+**vs Benchmark**: -0.40% (underperform)
+**Capital final**: $100375.21
+**Daily cap atingido**: Não

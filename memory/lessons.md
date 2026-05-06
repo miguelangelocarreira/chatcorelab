@@ -114,3 +114,17 @@
 **O que falhou**: Identifiquei explicitamente que LMT precisa de post-earnings review (6+ sessões em perda, tese quebrada por confirmar) e MSFT está "EM REVIEW" — mas NÃO executei nenhuma das duas revisões hoje. A regra do trading_strategy.md diz que NO_ACTION quando a maioria sangra é negligência se não houver revisão de saídas. Diagnostiquei o problema certo e depois ignorei-o. SPY +0.26% num dia em que estou -2.5% a -3.9% em 3 posições significa que o mercado subiu sem mim — exposição direcional errada.
 
 **Aprendizagem**: NO_ACTION sobre novas entradas não dispensa AÇÃO sobre posições existentes. Quando o raciocínio identifica "t
+### Lição — 2026-05-06
+**Decisão de manhã**: NO_ACTION com confiança 30%. Justificação: carteira já com 4 posições (3 em Tech/AI próximo do teto setorial de 40%), LMT com tese quebrada pendente de revisão, e watchlist sem nomes com convicção ≥70% (GOOGL/RTX score 4 sem catalisador imediato, LMT breakout era technical-driven).
+
+**Resultado**: +$385.34 (+0.39%) num dia em que o SPY subiu +0.78%. Underperform de -0.40pp vs benchmark. AMZN puxou o dia (+8.97% acumulado), mas MSFT (-1.82%) e LMT (-2.96%) drenaram retorno.
+
+**O que funcionou**: 
+- Disciplina em recusar entradas técnicas (LMT breakout) que contradizem a regra setorial recém-adicionada sobre defesa pura.
+- Reconhecimento explícito de que GOOGL/RTX com score 4 não atingem threshold de 70% de convicção.
+- Não fazer revenge trading após o underperform vs SPY do dia anterior.
+
+**O que falhou**: 
+- A revisão obrigatória de LMT (post-earnings review, regra explícita do trading_strategy.md) continua adiada — LMT está há dias em perda com tese quebrada e a decisão "REDUCE" nunca foi executada. Isto é exatamente o padrão NO_ACTION ≠ Passividade que o ficheiro alerta.
+- MSFT também marcado como "EM CARTEIRA — REVIEW" sem revisão concluída e está -1.82%. Duas posições em revisão simultânea sem ação executada.
+- Underperform v
