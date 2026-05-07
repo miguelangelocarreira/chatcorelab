@@ -419,3 +419,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Na manhã de 7 de maio de 2026, os futuros do S&P 500 avançaram após o índice registrar outro recorde, enquanto os investidores acompanhavam os desenvolvimentos em relação a um possível acordo de paz entre os EUA e o Irã. Os dados macro de hoje indicam um aumento de 109.000 nos empregos privados em abril, superando as expectativas. Entre os principais discursos do Fed, os investidores prestaram atenção às declarações que poderiam influenciar a política monetária. As notícias de destaque do setor de ações incluem a afirmação do CEO da AMD de que os agentes estão impulsionando uma enorme demanda no ciclo de IA, os resultados do primeiro trimestre da Uber e a intensificação da corrida por tecnologias de IA nos EUA.
 **Top picks hoje**: NVDA (score 4), MSFT (score 4), AMZN (score 4), AAPL (score 4), GEV (score 4)
+
+
+### Claude Decision — 2026-05-07
+**Ação**: NO_ACTION
+**Confiança**: 40%
+**Raciocínio**: Portfolio com 4 posições abertas e exposição significativa a Tech/AI (NVDA+MSFT+AMZN). LMT em perda -4% com tese quebrada pós-earnings (23 abr) — prioridade da sessão deveria ser revisão de saída de LMT, não nova entrada. CEG está em earnings hoje (blackout absoluto). NVDA aproxima-se de earnings (20 mai). Top scores (NVDA/MSFT/AMZN) já em carteira. AAPL com score 4 mas sem catalisador concreto identificado nos próximos 30 dias e exposição Tech já no limite de concentração setorial. Adicionar nova posição sem resolver LMT primeiro viola a regra de gestão ativa: 'NO_ACTION ≠ Passividade' aplica-se a entradas, não a revisão de perdas existentes. Convicção <70% para qualquer compra hoje. Aguardar reação CEG e revisar LMT no próximo ciclo.
+**Riscos**: LMT continuar a deteriorar sem revisão de tese; Concentração Tech/AI próxima de 40% limita novas entradas no setor com maior momentum
