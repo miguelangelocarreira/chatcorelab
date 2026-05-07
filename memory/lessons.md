@@ -128,3 +128,13 @@
 - A revisão obrigatória de LMT (post-earnings review, regra explícita do trading_strategy.md) continua adiada — LMT está há dias em perda com tese quebrada e a decisão "REDUCE" nunca foi executada. Isto é exatamente o padrão NO_ACTION ≠ Passividade que o ficheiro alerta.
 - MSFT também marcado como "EM CARTEIRA — REVIEW" sem revisão concluída e está -1.82%. Duas posições em revisão simultânea sem ação executada.
 - Underperform v
+### Lição — 2026-05-07
+**Decisão de manhã**: NO_ACTION com confiança 40%. Justificada por (i) exposição Tech/AI já no limite setorial, (ii) LMT com tese quebrada exigindo revisão prioritária, (iii) CEG em blackout de earnings, (iv) NVDA a aproximar-se de earnings (20 mai), (v) AAPL sem catalisador concreto nos próximos 30 dias.
+
+**Resultado**: +$98.03 (+0.10%) vs SPY -0.48% → outperformance de +0.58pp. Dia positivo em mercado negativo, com AMZN (+7.60% acumulado) e NVDA (+5.15%) a compensarem LMT (-3.23%) e MSFT (~flat).
+
+**O que funcionou**: Disciplina de não adicionar exposição Tech adicional num dia de risk-off do mercado. O screener identificou correctamente que os top scores já estavam em carteira — não forçar trade redundante preservou capital. As posições core (AMZN, NVDA) entregaram beta defensivo positivo num dia SPY negativo, validando a tese QARP.
+
+**O que falhou**: Pelo terceiro dia consecutivo, LMT continua em carteira com tese explicitamente quebrada pós-earnings (23 abr). A decisão da manhã *identificou* LMT como prioridade mas a sessão fechou sem ação sobre ela — exactamente o padrão "NO_ACTION ≠ Passividade" que o playbook condena. A confiança de 40% também é incoerente com manter 4 posições abertas: se a convicção macro é baixa, a regra diz para reduzir exposição, não apenas evitar adicionar.
+
+**Aprend

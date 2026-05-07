@@ -426,3 +426,11 @@
 **Confiança**: 40%
 **Raciocínio**: Portfolio com 4 posições abertas e exposição significativa a Tech/AI (NVDA+MSFT+AMZN). LMT em perda -4% com tese quebrada pós-earnings (23 abr) — prioridade da sessão deveria ser revisão de saída de LMT, não nova entrada. CEG está em earnings hoje (blackout absoluto). NVDA aproxima-se de earnings (20 mai). Top scores (NVDA/MSFT/AMZN) já em carteira. AAPL com score 4 mas sem catalisador concreto identificado nos próximos 30 dias e exposição Tech já no limite de concentração setorial. Adicionar nova posição sem resolver LMT primeiro viola a regra de gestão ativa: 'NO_ACTION ≠ Passividade' aplica-se a entradas, não a revisão de perdas existentes. Convicção <70% para qualquer compra hoje. Aguardar reação CEG e revisar LMT no próximo ciclo.
 **Riscos**: LMT continuar a deteriorar sem revisão de tese; Concentração Tech/AI próxima de 40% limita novas entradas no setor com maior momentum
+
+
+### Fecho de Mercado — 2026-05-07
+**P&L dia**: $98.03 (0.10%)
+**SPY dia**: -0.48%
+**vs Benchmark**: 0.58% (outperform)
+**Capital final**: $100463.53
+**Daily cap atingido**: Não
