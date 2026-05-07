@@ -413,3 +413,9 @@
 **vs Benchmark**: -0.40% (underperform)
 **Capital final**: $100375.21
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-07 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 7 de maio de 2026, os futuros do S&P 500 avançaram após o índice registrar outro recorde, enquanto os investidores acompanhavam os desenvolvimentos em relação a um possível acordo de paz entre os EUA e o Irã. Os dados macro de hoje indicam um aumento de 109.000 nos empregos privados em abril, superando as expectativas. Entre os principais discursos do Fed, os investidores prestaram atenção às declarações que poderiam influenciar a política monetária. As notícias de destaque do setor de ações incluem a afirmação do CEO da AMD de que os agentes estão impulsionando uma enorme demanda no ciclo de IA, os resultados do primeiro trimestre da Uber e a intensificação da corrida por tecnologias de IA nos EUA.
+**Top picks hoje**: NVDA (score 4), MSFT (score 4), AMZN (score 4), AAPL (score 4), GEV (score 4)
