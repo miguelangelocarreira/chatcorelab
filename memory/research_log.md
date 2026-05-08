@@ -447,3 +447,11 @@
 **Confiança**: 30%
 **Raciocínio**: Carteira já com 4 posições em 2 setores (Tech AI: AMZN+MSFT+NVDA ~75% da exposição; Defesa: LMT). Adicionar nova posição Tech (LLY excluída de Tech, mas top scores são VST/MSFT/GOOGL/META) violaria o limite de 40% por setor. LMT está em -4% com tese quebrada pós-earnings — prioridade da sessão devia ser revisão de saídas (REDUCE LMT) antes de novas entradas, conforme regra 'NO_ACTION ≠ Passividade'. Adicionalmente, NVDA earnings a 20 mai entra em blackout window dentro de poucos dias, aumentando risco macro da carteira já concentrada em AI. LLY (score 4) seria candidato em healthcare, mas sem confirmação de catalisador concreto pós-earnings 30 abr no briefing. Convicção <70% para qualquer entrada hoje. Disciplina: cash + revisão LMT em vez de FOMO.
 **Riscos**: Concentração setorial Tech/AI já próxima de 40%; LMT com tese quebrada exige reduce, não nova exposição
+
+
+### Fecho de Mercado — 2026-05-08
+**P&L dia**: $-4.84 (-0.00%)
+**SPY dia**: 0.35%
+**vs Benchmark**: -0.35% (underperform)
+**Capital final**: $100434.42
+**Daily cap atingido**: Não

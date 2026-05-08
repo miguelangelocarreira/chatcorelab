@@ -138,3 +138,13 @@
 **O que falhou**: Pelo terceiro dia consecutivo, LMT continua em carteira com tese explicitamente quebrada pós-earnings (23 abr). A decisão da manhã *identificou* LMT como prioridade mas a sessão fechou sem ação sobre ela — exactamente o padrão "NO_ACTION ≠ Passividade" que o playbook condena. A confiança de 40% também é incoerente com manter 4 posições abertas: se a convicção macro é baixa, a regra diz para reduzir exposição, não apenas evitar adicionar.
 
 **Aprend
+### Lição — 2026-05-08
+**Decisão de manhã**: NO_ACTION com 30% de confiança. Raciocínio: carteira já concentrada (~75% Tech AI + LMT em Defesa), adicionar nova posição violaria limite de 40% por setor, e LMT com tese quebrada exigia revisão de saída antes de qualquer entrada nova.
+
+**Resultado**: P&L -$4.84 (-0.00%) vs SPY +0.35% → underperform de 0.35pp. Dia praticamente flat em valor absoluto, mas perda relativa ao benchmark num dia de mercado positivo.
+
+**O que funcionou**: Reconhecimento correto do limite setorial (40% Tech) — evitou adicionar mais uma posição Tech ao topo dos ~75% existentes. Identificação explícita do blackout NVDA (earnings 20 mai) como risco macro da carteira. AMZN (+7.94%) e NVDA (+6.83%) continuam a validar a tese AI infrastructure.
+
+**O que falhou**: A decisão identificou LMT como "prioridade da sessão" mas NÃO foi executada. LMT fechou em -4.34% (piorou vs manhã), sem ação corretiva. Isto é exatamente o padrão que a regra "NO_ACTION ≠ Passividade" tenta combater: diagnosticar o problema e não agir é pior que não diagnosticar. MSFT em -1.49% sob "review pós-earnings" também sem decisão documentada. Em dia de SPY +0.35%, ter duas posições negativas sem mexer custou outperform fácil.
+
+**Aprendizagem**: NO_ACTION sobre novas entradas é válido; NO_ACTION sobre posições
