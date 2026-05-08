@@ -440,3 +440,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Na manhã de 8 de maio de 2026, os futuros do S&P 500 registraram uma leve alta de 0,23%, refletindo uma ligeira recuperação após o fechamento anterior em baixa. Os dados macro do dia incluem a expectativa de relatórios de empregos de abril, que são aguardados com atenção pelos investidores. Entre os principais discursos do Fed, os comentários de Lisa Su, CEO da AMD, destacaram a forte performance da empresa e a crescente demanda por seus processadores de AI. As notícias de destaque do mercado incluíram a AMD, que continuou a impulsionar o Nasdaq, e a expectativa de uma resposta do Irã a uma proposta de paz dos EUA, que manteve os investidores em alerta.
 **Top picks hoje**: NVDA (score 5), LLY (score 4), VST (score 4), MSFT (score 3), GOOGL (score 3)
+
+
+### Claude Decision — 2026-05-08
+**Ação**: NO_ACTION
+**Confiança**: 30%
+**Raciocínio**: Carteira já com 4 posições em 2 setores (Tech AI: AMZN+MSFT+NVDA ~75% da exposição; Defesa: LMT). Adicionar nova posição Tech (LLY excluída de Tech, mas top scores são VST/MSFT/GOOGL/META) violaria o limite de 40% por setor. LMT está em -4% com tese quebrada pós-earnings — prioridade da sessão devia ser revisão de saídas (REDUCE LMT) antes de novas entradas, conforme regra 'NO_ACTION ≠ Passividade'. Adicionalmente, NVDA earnings a 20 mai entra em blackout window dentro de poucos dias, aumentando risco macro da carteira já concentrada em AI. LLY (score 4) seria candidato em healthcare, mas sem confirmação de catalisador concreto pós-earnings 30 abr no briefing. Convicção <70% para qualquer entrada hoje. Disciplina: cash + revisão LMT em vez de FOMO.
+**Riscos**: Concentração setorial Tech/AI já próxima de 40%; LMT com tese quebrada exige reduce, não nova exposição
