@@ -9,10 +9,10 @@
 ## Estado Atual
 
 - **Fase**: `SETUP`
-- **Última atualização**: 2026-05-07
-- **Ciclo #**: 67
-- **Status**: IDLE
-- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
+- **Última atualização**: 2026-05-08
+- **Ciclo #**: 68
+- **Status**: PREMARKET_DONE
+- **Próxima rotina**: Market Open (08:30 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -21,18 +21,18 @@
   "capital_atual": 100463.53,
   "capital_inicial": 100000,
   "moeda": "USD",
-  "drawdown_pct": -0.4635299999999988,
+  "drawdown_pct": 0,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
-  "status": "IDLE",
+  "status": "PREMARKET_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Fecho: P&L 0.10% | Capital $100463.53
+Pre-market concluído. Top picks: NVDA, LLY, VST, MSFT, GOOGL
 
 ---
 
-_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
+_Próximo passo: Market Open (08:30 ET)_

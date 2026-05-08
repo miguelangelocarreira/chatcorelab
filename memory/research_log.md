@@ -434,3 +434,9 @@
 **vs Benchmark**: 0.58% (outperform)
 **Capital final**: $100463.53
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-08 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 8 de maio de 2026, os futuros do S&P 500 registraram uma leve alta de 0,23%, refletindo uma ligeira recuperação após o fechamento anterior em baixa. Os dados macro do dia incluem a expectativa de relatórios de empregos de abril, que são aguardados com atenção pelos investidores. Entre os principais discursos do Fed, os comentários de Lisa Su, CEO da AMD, destacaram a forte performance da empresa e a crescente demanda por seus processadores de AI. As notícias de destaque do mercado incluíram a AMD, que continuou a impulsionar o Nasdaq, e a expectativa de uma resposta do Irã a uma proposta de paz dos EUA, que manteve os investidores em alerta.
+**Top picks hoje**: NVDA (score 5), LLY (score 4), VST (score 4), MSFT (score 3), GOOGL (score 3)
