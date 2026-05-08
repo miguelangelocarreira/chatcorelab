@@ -455,3 +455,15 @@
 **vs Benchmark**: -0.35% (underperform)
 **Capital final**: $100434.42
 **Daily cap atingido**: Não
+
+
+### Weekly Review — 2026-05-08
+**Performance total**: $0 (0.43% desde início)
+**Win rate**: 0% | **Trades**: 0 (0 wins, 0 losses)
+**Auto-avaliação**: C
+**SPY hoje**: 0.35%
+
+
+### Estratégia Atualizada — 2026-05-08
+**Motivo**: Padrão crítico identificado: em 10 sessões consecutivas (23 abr - 8 mai) o agente diagnostica LMT como 'tese quebrada' e MSFT como 'EM REVIEW' mas NUNCA executa as decisões. A regra 'NO_ACTION ≠ Passividade' já existe mas é ignorada porque é qualitativa. É preciso uma forcing function quantitativa: posições marcadas REVIEW/REDUCE por >2 sessões devem ser auto-executadas na sessão seguinte, sem mais análise. Sem isto, a estratégia continua a falhar pelo mesmo motivo todos os dias.
+**Mudanças**: Nova regra: Auto-Execution Trigger — qualquer posição flagged REVIEW/REDUCE por >2 sessões consecutivas é executada automaticamente na 3ª sessão (REDUCE 50% mínimo, EXIT se tese quebrada confirmada), LMT marcado para EXIT imediato na próxima sessão (já passou >10 sessões em estado REDUCE pendente), MSFT marcado para REDUCE 50% na próxima sessão (já passou >5 sessões em REVIEW pendente), Watchlist atualizada com prazos de decisão obrigatórios para evitar reincidência
