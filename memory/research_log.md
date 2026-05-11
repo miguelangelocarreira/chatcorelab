@@ -480,3 +480,11 @@
 **Confiança**: 20%
 **Raciocínio**: Sessão deve começar pela EXECUÇÃO de auto-trades pendentes, não por novas compras. LMT (tese quebrada >10 sessões) exige EXIT 100% e MSFT (review pendente >5 sessões) exige REDUCE 50% — conforme regra de Auto-Execution Trigger da estratégia. Adicionar nova posição antes de resolver estas saídas violaria a hierarquia de prioridades. Adicionalmente: confiança macro 30% (<50%) recomenda reduzir exposição, não adicionar; Tech AI já representa ~75% do capital exposto, próximo do cap setorial de 40% (já violado); nenhum candidato no screener atinge score ≥5 com catalisador imediato. Convicção em qualquer compra hoje <50%. Cash e disciplina de execução das saídas são a decisão correcta.
 **Riscos**: Adiar novamente execução de LMT/MSFT perpetua paralisia diagnóstico-sem-acção; Sobre-concentração Tech AI amplifica risco sistémico se sentimento AI reverter
+
+
+### Fecho de Mercado — 2026-05-11
+**P&L dia**: $41.76 (0.04%)
+**SPY dia**: 0.36%
+**vs Benchmark**: -0.32% (underperform)
+**Capital final**: $100483.26
+**Daily cap atingido**: Não
