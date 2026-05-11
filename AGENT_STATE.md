@@ -11,28 +11,28 @@
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-05-11
 - **Ciclo #**: 73
-- **Status**: PREMARKET_DONE
-- **Próxima rotina**: Market Open (08:30 ET)
+- **Status**: MARKET_OPEN_DONE
+- **Próxima rotina**: Midday Adjustment (12:00 ET)
 
 ## Capital & Risco (PAPER)
 
 ```json
 {
-  "capital_atual": 100434.42,
+  "capital_atual": 100564.08,
   "capital_inicial": 100000,
   "moeda": "USD",
   "drawdown_pct": 0,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
-  "status": "PREMARKET_DONE",
+  "status": "MARKET_OPEN_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Pre-market concluído. Top picks: GOOGL, ABBV, RTX, VST, JPM
+Market open: 4 posições abertas.
 
 ---
 
-_Próximo passo: Market Open (08:30 ET)_
+_Próximo passo: Midday Adjustment (12:00 ET)_
