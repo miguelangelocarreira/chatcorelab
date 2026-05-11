@@ -467,3 +467,9 @@
 ### Estratégia Atualizada — 2026-05-08
 **Motivo**: Padrão crítico identificado: em 10 sessões consecutivas (23 abr - 8 mai) o agente diagnostica LMT como 'tese quebrada' e MSFT como 'EM REVIEW' mas NUNCA executa as decisões. A regra 'NO_ACTION ≠ Passividade' já existe mas é ignorada porque é qualitativa. É preciso uma forcing function quantitativa: posições marcadas REVIEW/REDUCE por >2 sessões devem ser auto-executadas na sessão seguinte, sem mais análise. Sem isto, a estratégia continua a falhar pelo mesmo motivo todos os dias.
 **Mudanças**: Nova regra: Auto-Execution Trigger — qualquer posição flagged REVIEW/REDUCE por >2 sessões consecutivas é executada automaticamente na 3ª sessão (REDUCE 50% mínimo, EXIT se tese quebrada confirmada), LMT marcado para EXIT imediato na próxima sessão (já passou >10 sessões em estado REDUCE pendente), MSFT marcado para REDUCE 50% na próxima sessão (já passou >5 sessões em REVIEW pendente), Watchlist atualizada com prazos de decisão obrigatórios para evitar reincidência
+
+
+### Research 2026-05-11 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Hoje, os futuros do S&P 500 estão moderados após um rali recorde na semana passada, com investidores preocupados com as conversas estagnadas entre os EUA e o Irã que elevaram os preços do petróleo. O presidente Donald Trump rejeitou a resposta do Irã a uma proposta de paz, causando um aumento de quase 3% no petróleo e preocupações de que o conflito de 10 semanas possa continuar e manter o tráfego marítimo pelo Estreito de Hormuz paralisado. As principais notícias de ações incluem Moderna, Lumentum e Intel, com movimentos pré-mercado significativos. Além disso, a semana traz a expectativa de dados importantes de inflação e a reunião entre Trump e o presidente chinês Xi Jinping para discutir vários tópicos globais.
+**Top picks hoje**: GOOGL (score 4), ABBV (score 4), RTX (score 4), VST (score 4), JPM (score 4)
