@@ -494,3 +494,10 @@
 **Fonte**: Tavily
 **Contexto macro**: No grande mudança nas previsões para os futuros do S&P 500 e do Nasdaq, que permanecem praticamente estáveis à espera da leitura do índice de preços ao consumidor de abril. O Dow Jones Industrial Average também se mantém estável. As ações de tecnologia continuam a liderar os ganhos, com destaque para o setor de semicondutores. O presidente Trump rejeitou um acordo de cessar-fogo com o Irã, o que levou a um aumento dos preços do petróleo. As principais notícias de ações destacam-se por um forte desempenho do setor de tecnologia, com o S&P 500 e o Nasdaq a atingirem novos máximos históricos.
 **Top picks hoje**: RTX (score 5), GEV (score 4), JPM (score 4), NVDA (score 3), MSFT (score 3)
+
+
+### Claude Decision — 2026-05-12
+**Ação**: NO_ACTION
+**Confiança**: 0%
+**Raciocínio**: Auto-execution trigger ativo: LMT (EXIT 100%) e MSFT (REDUCE 50%) têm prioridade absoluta sobre qualquer nova compra nesta sessão. O agent_instructions.md exige executar saídas pendentes ANTES de avaliar entradas. Adicionar uma 5ª posição enquanto há duas posições com tese quebrada/em review por >5 sessões viola a hierarquia de decisão e perpetua o padrão de paralisia identificado. Além disso, slots:2/6 está incorrecto (já temos 4 posições activas), sugerindo que o capital exposto está próximo do limite prudente. Nenhum ticker da watchlist (RTX:5, JPM:4) atinge convicção ≥70% sem catalisador concreto documentado. Prioridade da próxima sessão: executar saídas LMT e MSFT, libertar capital, e só então reavaliar entradas com disciplina.
+**Riscos**: Manter LMT em tese quebrada = perda adicional se defesa continuar sell-the-news; MSFT sem decisão pós-earnings pode degradar se Azure guidance decepcionar
