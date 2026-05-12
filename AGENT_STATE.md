@@ -9,10 +9,10 @@
 ## Estado Atual
 
 - **Fase**: `SETUP`
-- **Última atualização**: 2026-05-11
-- **Ciclo #**: 76
-- **Status**: IDLE
-- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
+- **Última atualização**: 2026-05-12
+- **Ciclo #**: 77
+- **Status**: PREMARKET_DONE
+- **Próxima rotina**: Market Open (08:30 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -21,18 +21,18 @@
   "capital_atual": 100483.26,
   "capital_inicial": 100000,
   "moeda": "USD",
-  "drawdown_pct": -0.48325999999999475,
+  "drawdown_pct": 0,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
-  "status": "IDLE",
+  "status": "PREMARKET_DONE",
   "modo": "paper"
 }
 ```
 
 ## Nota do Último Ciclo
 
-Fecho: P&L 0.04% | Capital $100483.26
+Pre-market concluído. Top picks: RTX, GEV, JPM, NVDA, MSFT
 
 ---
 
-_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
+_Próximo passo: Market Open (08:30 ET)_

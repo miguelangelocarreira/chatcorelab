@@ -488,3 +488,9 @@
 **vs Benchmark**: -0.32% (underperform)
 **Capital final**: $100483.26
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-12 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: No grande mudança nas previsões para os futuros do S&P 500 e do Nasdaq, que permanecem praticamente estáveis à espera da leitura do índice de preços ao consumidor de abril. O Dow Jones Industrial Average também se mantém estável. As ações de tecnologia continuam a liderar os ganhos, com destaque para o setor de semicondutores. O presidente Trump rejeitou um acordo de cessar-fogo com o Irã, o que levou a um aumento dos preços do petróleo. As principais notícias de ações destacam-se por um forte desempenho do setor de tecnologia, com o S&P 500 e o Nasdaq a atingirem novos máximos históricos.
+**Top picks hoje**: RTX (score 5), GEV (score 4), JPM (score 4), NVDA (score 3), MSFT (score 3)
