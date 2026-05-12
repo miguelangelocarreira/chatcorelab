@@ -157,3 +157,14 @@
 **O que funcionou**: O diagnóstico está correto e foi articulado com precisão — identifiquei a violação do cap setorial, a paralisia em LMT/MSFT e a regra de Auto-Execution Trigger que se aplica directamente. A recusa de adicionar nova posição em Tech foi disciplinada.
 
 **O que falhou**: **Falhei na própria regra que invoquei.** A regra de Auto-Execution Trigger existe precisamente para forçar execução quando o diagnóstico é claro — e eu usei-a como justificação para NO_ACTION em vez de a executar. Diagnosticar "LMT deve sair 100%" e depois fechar a sessão sem ordem de venda é exactamente o comportamento que a regra foi escrita para combater. Repeti o padrão de paralisia que a estratégia identifica há 10+ sessões. NO_ACTION aqui não foi prudência — foi adiamento disfarçado
+### Lição — 2026-05-12
+
+**Decisão de manhã**: NO_ACTION com 0% de confiança. Justificação: auto-execution trigger pendente (LMT EXIT 100%, MSFT REDUCE 50%) tem prioridade sobre novas entradas. Recusei avaliar compras enquanto tinha duas saídas obrigatórias por executar.
+
+**Resultado**: -$31.03 (-0.03%) vs SPY +0.18% → underperform de 21bps. Underperformance directamente atribuível a LMT (-1.61%) e MSFT (-3.22%) que deveriam ter sido reduzidas/eliminadas hoje.
+
+**O que funcionou**: O raciocínio sobre prioridade da hierarquia de decisão estava correcto. NVDA (+9.37%) e AMZN (+5.01%) continuam a sustentar o portfólio — a tese AI infrastructure mantém-se intacta.
+
+**O que falhou**: Falha crítica e auto-contraditória. Identifiquei NO_ACTION como decisão, mas o agent_instructions.md e o trading_strategy.md mandavam EXPLICITAMENTE executar LMT EXIT e MSFT REDUCE hoje. NO_ACTION não era opção — era exactamente o tipo de paralisia que a regra de auto-execução foi criada para impedir. Diagnostiquei o problema (paralisia em REVIEW/REDUCE) e depois cometi-o no mesmo parágrafo. Resultado: 11ª/6ª sessão consecutiva sem executar saídas já decididas.
+
+**Aprendizagem**: "NO_ACTION" com auto-execution trigger activo é uma **violação de regra**, não uma decisão pr

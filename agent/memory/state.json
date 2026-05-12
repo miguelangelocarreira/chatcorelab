@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-12T17:59:42.844Z",
-  "cycle": 79,
+  "updated_at": "2026-05-12T20:28:08.460Z",
+  "cycle": 80,
   "phase": "SETUP",
   "status": "PREMARKET_DONE",
   "capital": {
     "initial": 100000,
-    "current": 100348.07,
+    "current": 100466.72,
     "currency": "USD"
   },
   "risk": {

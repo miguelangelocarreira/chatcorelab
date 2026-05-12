@@ -501,3 +501,11 @@
 **Confiança**: 0%
 **Raciocínio**: Auto-execution trigger ativo: LMT (EXIT 100%) e MSFT (REDUCE 50%) têm prioridade absoluta sobre qualquer nova compra nesta sessão. O agent_instructions.md exige executar saídas pendentes ANTES de avaliar entradas. Adicionar uma 5ª posição enquanto há duas posições com tese quebrada/em review por >5 sessões viola a hierarquia de decisão e perpetua o padrão de paralisia identificado. Além disso, slots:2/6 está incorrecto (já temos 4 posições activas), sugerindo que o capital exposto está próximo do limite prudente. Nenhum ticker da watchlist (RTX:5, JPM:4) atinge convicção ≥70% sem catalisador concreto documentado. Prioridade da próxima sessão: executar saídas LMT e MSFT, libertar capital, e só então reavaliar entradas com disciplina.
 **Riscos**: Manter LMT em tese quebrada = perda adicional se defesa continuar sell-the-news; MSFT sem decisão pós-earnings pode degradar se Azure guidance decepcionar
+
+
+### Fecho de Mercado — 2026-05-12
+**P&L dia**: $-31.03 (-0.03%)
+**SPY dia**: 0.18%
+**vs Benchmark**: -0.21% (underperform)
+**Capital final**: $100466.72
+**Daily cap atingido**: Não
