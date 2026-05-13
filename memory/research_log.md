@@ -509,3 +509,9 @@
 **vs Benchmark**: -0.21% (underperform)
 **Capital final**: $100466.72
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-13 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 13 de maio de 2026, os futuros do S&P 500 estão em alta à espera do relatório de inflação de abril. A inflação dos EUA atingiu 3,8% em abril, a mais alta desde maio de 2023, refletindo um aumento nos custos de energia impulsionado pela guerra entre os EUA e o Irã. O Senado confirmou Kevin Warsh como governador do Fed, e Gene Munster da Deepwater destaca que a inteligência artificial continuará a recompensar os investidores nos próximos anos. Entre as principais notícias de ações, destacam-se a rejeição da oferta de aquisição da GameStop pela eBay e a perspectiva de um IPO da SpaceX que pode se tornar a maior empresa do mundo.
+**Top picks hoje**: NVDA (score 3), MSFT (score 3), GOOGL (score 3), META (score 3), AAPL (score 3)
