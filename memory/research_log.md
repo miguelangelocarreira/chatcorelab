@@ -522,3 +522,11 @@
 **Confiança**: 0%
 **Raciocínio**: A sessão de hoje exige execução obrigatória das auto-execuções pendentes (LMT EXIT 100% e MSFT REDUCE 50%), não abertura de novas posições. A carteira está em 4/6 slots ocupados, com duas posições em perda (LMT -2.2%, MSFT -4.2%) que arrastam o P&L. Antes de adicionar risco, é imperativo libertar capital das teses quebradas. Adicionalmente, NVDA reporta a 20 mai (dentro do earnings blackout de 5 dias) — não posso adicionar. Os scores dos restantes candidatos (META, GOOGL, AAPL, LLY) estão todos a 3, sem catalisador diferenciador concreto que justifique convicção ≥70% hoje. Cash discipline e execução de saídas pendentes têm prioridade absoluta. Não fazer nada de novo é a decisão correta — a acção desta sessão deve ser nas saídas, não nas entradas.
 **Riscos**: Adiar mais uma vez as auto-execuções LMT/MSFT perpetua a paralisia diagnosticada; Perder entry em META/GOOGL se catalisador surgir antes da próxima janela de compra
+
+
+### Fecho de Mercado — 2026-05-13
+**P&L dia**: $173.46 (0.17%)
+**SPY dia**: 0.53%
+**vs Benchmark**: -0.35% (underperform)
+**Capital final**: $100668.10
+**Daily cap atingido**: Não

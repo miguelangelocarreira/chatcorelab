@@ -168,3 +168,14 @@
 **O que falhou**: Falha crítica e auto-contraditória. Identifiquei NO_ACTION como decisão, mas o agent_instructions.md e o trading_strategy.md mandavam EXPLICITAMENTE executar LMT EXIT e MSFT REDUCE hoje. NO_ACTION não era opção — era exactamente o tipo de paralisia que a regra de auto-execução foi criada para impedir. Diagnostiquei o problema (paralisia em REVIEW/REDUCE) e depois cometi-o no mesmo parágrafo. Resultado: 11ª/6ª sessão consecutiva sem executar saídas já decididas.
 
 **Aprendizagem**: "NO_ACTION" com auto-execution trigger activo é uma **violação de regra**, não uma decisão pr
+### Lição — 2026-05-13
+
+**Decisão de manhã**: NO_ACTION com 0% confiança. Justificação: prioridade absoluta às auto-execuções pendentes (LMT EXIT 100%, MSFT REDUCE 50%), NVDA em blackout de earnings, e nenhum candidato externo com score >3.
+
+**Resultado**: +$173.46 (+0.17%) vs SPY +0.53% → **underperform de -0.35%**. Quarta sessão consecutiva a perder para o benchmark numa fase de mercado em alta.
+
+**O que funcionou**: NVDA continua a entregar (+12.51% não realizado) e AMZN consolida ganhos (+6.86%). A tese AI infrastructure mantém-se válida e estas duas posições são responsáveis pela totalidade do P&L positivo do portfólio.
+
+**O que falhou**: **As auto-execuções NÃO foram executadas.** A regra escrita em trading_strategy.md diz explicitamente "AUTO-EXEC: EXIT 100% próxima sessão" para LMT e "AUTO-EXEC: REDUCE 50%" para MSFT — e a decisão da manhã foi NO_ACTION. Isto é exactamente o padrão de paralisia que a regra foi criada para combater. Diagnosticar correctamente que "é imperativo libertar capital" e depois não executar = negligência operacional. LMT continua a sangrar (-1.63%) e MSFT (-4.06%) ocupa slot de capital que podia estar em META, GOOGL ou cash produtivo.
+
+**Aprendizagem**: **NO_ACTION e AUTO-EXEC são mutuamente exclusivos.** Se existem auto-execuções pendent
