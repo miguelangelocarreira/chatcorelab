@@ -515,3 +515,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Na manhã de 13 de maio de 2026, os futuros do S&P 500 estão em alta à espera do relatório de inflação de abril. A inflação dos EUA atingiu 3,8% em abril, a mais alta desde maio de 2023, refletindo um aumento nos custos de energia impulsionado pela guerra entre os EUA e o Irã. O Senado confirmou Kevin Warsh como governador do Fed, e Gene Munster da Deepwater destaca que a inteligência artificial continuará a recompensar os investidores nos próximos anos. Entre as principais notícias de ações, destacam-se a rejeição da oferta de aquisição da GameStop pela eBay e a perspectiva de um IPO da SpaceX que pode se tornar a maior empresa do mundo.
 **Top picks hoje**: NVDA (score 3), MSFT (score 3), GOOGL (score 3), META (score 3), AAPL (score 3)
+
+
+### Claude Decision — 2026-05-13
+**Ação**: NO_ACTION
+**Confiança**: 0%
+**Raciocínio**: A sessão de hoje exige execução obrigatória das auto-execuções pendentes (LMT EXIT 100% e MSFT REDUCE 50%), não abertura de novas posições. A carteira está em 4/6 slots ocupados, com duas posições em perda (LMT -2.2%, MSFT -4.2%) que arrastam o P&L. Antes de adicionar risco, é imperativo libertar capital das teses quebradas. Adicionalmente, NVDA reporta a 20 mai (dentro do earnings blackout de 5 dias) — não posso adicionar. Os scores dos restantes candidatos (META, GOOGL, AAPL, LLY) estão todos a 3, sem catalisador diferenciador concreto que justifique convicção ≥70% hoje. Cash discipline e execução de saídas pendentes têm prioridade absoluta. Não fazer nada de novo é a decisão correta — a acção desta sessão deve ser nas saídas, não nas entradas.
+**Riscos**: Adiar mais uma vez as auto-execuções LMT/MSFT perpetua a paralisia diagnosticada; Perder entry em META/GOOGL se catalisador surgir antes da próxima janela de compra
