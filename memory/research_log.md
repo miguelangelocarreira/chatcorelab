@@ -543,3 +543,11 @@
 **Confiança**: 0%
 **Raciocínio**: Sessão de execução obrigatória, não de novas entradas. Conforme regra Auto-Execution Trigger da estratégia: LMT (tese quebrada >10 sessões em REDUCE) exige EXIT 100% e MSFT (review pendente >5 sessões pós-earnings) exige REDUCE 50% — ambas antes de qualquer compra nova. Adicionalmente, NVDA está em blackout pré-earnings (20 mai, dentro de 5 dias). Os scores actuais (GOOGL:5, LLY:5) não atingem o threshold de convicção ≥70% com catalisadores fundamentalistas concretos documentados. Slots disponíveis (2/6) não justificam preencher por preencher — cash é posição válida. Prioridade absoluta: limpar posições deterioradas antes de adicionar risco novo. Não fazer nada hoje em termos de compra é a decisão correcta; a acção pendente é vender LMT e reduzir MSFT.
 **Riscos**: Adiar execução de LMT/MSFT perpetua o problema de paralisia diagnosticada; Perder oportunidade em GOOGL/LLY se catalisador materializar antes de libertar capital
+
+
+### Fecho de Mercado — 2026-05-14
+**P&L dia**: $190.38 (0.19%)
+**SPY dia**: 0.60%
+**vs Benchmark**: -0.41% (underperform)
+**Capital final**: $100850.41
+**Daily cap atingido**: Não
