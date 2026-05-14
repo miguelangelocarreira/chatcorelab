@@ -536,3 +536,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Na manhã de 14 de maio de 2026, os futuros do S&P 500 mantinham-se praticamente inalterados após um rally impulsionado pelas tecnologias que levou o índice a novos recordes. As ações da Doximity despencaram 19% após a empresa divulgar previsões de receita para o trimestre e ano que não atingiram as expectativas. O presidente dos Estados Unidos, Donald Trump, iniciou sua visita à China acompanhado por uma delegação que incluía o CEO da Nvidia, Jensen Huang, e Elon Musk. As principais notícias do setor de tecnologia destacam-se com a recuperação dos futuros do S&P 500 e Nasdaq, à espera de dados econômicos cruciais e da visita de Trump à China. O S&P 500 e o Nasdaq fecharam em alta, apesar de uma leve queda nas inflações dos produtores, que reforçaram as apostas de que a política monetária da Federal Reserve permanecerá restritiva.
 **Top picks hoje**: GOOGL (score 5), LLY (score 5), MSFT (score 4), UNH (score 4), GEV (score 4)
+
+
+### Claude Decision — 2026-05-14
+**Ação**: NO_ACTION
+**Confiança**: 0%
+**Raciocínio**: Sessão de execução obrigatória, não de novas entradas. Conforme regra Auto-Execution Trigger da estratégia: LMT (tese quebrada >10 sessões em REDUCE) exige EXIT 100% e MSFT (review pendente >5 sessões pós-earnings) exige REDUCE 50% — ambas antes de qualquer compra nova. Adicionalmente, NVDA está em blackout pré-earnings (20 mai, dentro de 5 dias). Os scores actuais (GOOGL:5, LLY:5) não atingem o threshold de convicção ≥70% com catalisadores fundamentalistas concretos documentados. Slots disponíveis (2/6) não justificam preencher por preencher — cash é posição válida. Prioridade absoluta: limpar posições deterioradas antes de adicionar risco novo. Não fazer nada hoje em termos de compra é a decisão correcta; a acção pendente é vender LMT e reduzir MSFT.
+**Riscos**: Adiar execução de LMT/MSFT perpetua o problema de paralisia diagnosticada; Perder oportunidade em GOOGL/LLY se catalisador materializar antes de libertar capital
