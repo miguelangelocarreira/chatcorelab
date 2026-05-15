@@ -10,9 +10,9 @@
 
 - **Fase**: `SETUP`
 - **Última atualização**: 2026-05-15
-- **Ciclo #**: 91
+- **Ciclo #**: 92
 - **Status**: IDLE
-- **Próxima rotina**: Pre-Market Research (amanhã 06:00 ET)
+- **Próxima rotina**: Pre-Market Research (segunda 06:00 ET)
 
 ## Capital & Risco (PAPER)
 
@@ -21,7 +21,7 @@
   "capital_atual": 100635.77,
   "capital_inicial": 100000,
   "moeda": "USD",
-  "drawdown_pct": -0.635770000000004,
+  "drawdown_pct": 0,
   "posicoes_abertas": 4,
   "max_posicoes": 6,
   "status": "IDLE",
@@ -31,8 +31,8 @@
 
 ## Nota do Último Ciclo
 
-Fecho: P&L -0.26% | Capital $100635.77
+Weekly review: 0 trades | $0 P&L
 
 ---
 
-_Próximo passo: Pre-Market Research (amanhã 06:00 ET)_
+_Próximo passo: Pre-Market Research (segunda 06:00 ET)_

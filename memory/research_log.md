@@ -572,3 +572,10 @@
 **vs Benchmark**: 0.12% (outperform)
 **Capital final**: $100635.77
 **Daily cap atingido**: Não
+
+
+### Weekly Review — 2026-05-15
+**Performance total**: $0 (0.64% desde início)
+**Win rate**: 0% | **Trades**: 0 (0 wins, 0 losses)
+**Auto-avaliação**: C
+**SPY hoje**: -0.37%
