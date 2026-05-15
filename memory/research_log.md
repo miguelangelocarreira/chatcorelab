@@ -564,3 +564,11 @@
 **Confiança**: 85%
 **Raciocínio**: Sessão bloqueada para novas compras. Auto-Execution Trigger ativo: LMT (tese quebrada, REDUCE >10 sessões) exige EXIT 100% e MSFT (REVIEW pós-earnings >5 sessões) exige REDUCE 50% ANTES de qualquer entrada nova. Adicionar uma 5ª posição enquanto duas posições com diagnóstico negativo continuam em carteira viola a regra de coerência da estratégia e agrava a concentração Tech (>40% capital exposto entre AMZN+MSFT+NVDA). NVDA está em blackout (earnings 20 mai, 5 dias). AMZN score 5 mas já em carteira com +4.1%. ABBV score 5 mereceria research dedicado mas não em sessão com saídas pendentes. Slots 2/6 disponíveis são irrelevantes se o capital alocado está mal posicionado. Prioridade absoluta: executar SELLs de LMT e MSFT na próxima janela operacional, libertar capital, reavaliar entradas em sessão limpa.
 **Riscos**: Adiar SELLs de LMT/MSFT agrava perdas permanentes; Concentração Tech excede limite setorial 40% se adicionar mais AI
+
+
+### Fecho de Mercado — 2026-05-15
+**P&L dia**: $-257.46 (-0.26%)
+**SPY dia**: -0.37%
+**vs Benchmark**: 0.12% (outperform)
+**Capital final**: $100635.77
+**Daily cap atingido**: Não

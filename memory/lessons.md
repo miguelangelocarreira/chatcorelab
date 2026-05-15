@@ -179,3 +179,14 @@
 **O que falhou**: **As auto-execuções NÃO foram executadas.** A regra escrita em trading_strategy.md diz explicitamente "AUTO-EXEC: EXIT 100% próxima sessão" para LMT e "AUTO-EXEC: REDUCE 50%" para MSFT — e a decisão da manhã foi NO_ACTION. Isto é exactamente o padrão de paralisia que a regra foi criada para combater. Diagnosticar correctamente que "é imperativo libertar capital" e depois não executar = negligência operacional. LMT continua a sangrar (-1.63%) e MSFT (-4.06%) ocupa slot de capital que podia estar em META, GOOGL ou cash produtivo.
 
 **Aprendizagem**: **NO_ACTION e AUTO-EXEC são mutuamente exclusivos.** Se existem auto-execuções pendent
+### Lição — 2026-05-15
+
+**Decisão de manhã**: NO_ACTION com 85% de confiança. Justificação dupla: (1) Auto-Execution Trigger ativo exige EXIT LMT e REDUCE MSFT antes de qualquer entrada nova; (2) adicionar 5ª posição agravaria concentração Tech >40%. NVDA em blackout (earnings 20 mai).
+
+**Resultado**: -$257.46 (-0.26%) vs SPY -0.37% → outperform de +0.12pp. Pequena vitória relativa num dia vermelho de mercado.
+
+**O que falhou**: A decisão escrita identificou correctamente a obrigação de executar LMT (EXIT 100%) e MSFT (REDUCE 50%) — e mesmo assim **não foram executadas**. Isto é exactamente o padrão que o Auto-Execution Trigger foi desenhado para eliminar e voltou a falhar. LMT fechou a -2.55% (continua a sangrar lentamente), MSFT a -0.20% (em deriva sem tese). Diagnóstico sem execução pela 11ª+ sessão consecutiva. A protecção macro (NO_ACTION em entradas) foi cumprida; a protecção de carteira (saídas obrigatórias) foi ignorada.
+
+**O que funcionou**: Disciplina nas entradas — não foi forçada uma 5ª posição Tech apenas para "fazer algo". Outperform marginal do benchmark confirma que cash + posições core resistem melhor em dias fracos do que adicionar exposição duvidosa.
+
+**Aprendizagem específica**: O bias da sessão é sempre o mesmo — a análise foca-se na decisão de ENTRADA (
