@@ -551,3 +551,9 @@
 **vs Benchmark**: -0.41% (underperform)
 **Capital final**: $100850.41
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-15 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 15 de maio de 2026, os futuros do S&P 500 caíram 1,06% refletindo preocupações com rendimentos mais altos e aumento dos preços do petróleo. O Dow Jones Industrial Average recuperou a barreira dos 50.000 pontos, enquanto o S&P 500 fechou acima de 7.500 pela primeira vez. As principais notícias de ações destacam Cisco, Intel e Nvidia, com destaque para a aprovação de vendas da Nvidia para a China. Dados macro importantes incluem relatórios de produção industrial e dados de posições especulativas da CFTC.
+**Top picks hoje**: AMZN (score 5), ABBV (score 5), RTX (score 4), GEV (score 4), NVDA (score 3)
