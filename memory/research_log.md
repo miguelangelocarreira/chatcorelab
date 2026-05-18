@@ -579,3 +579,9 @@
 **Win rate**: 0% | **Trades**: 0 (0 wins, 0 losses)
 **Auto-avaliação**: C
 **SPY hoje**: -0.37%
+
+
+### Research 2026-05-18 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: O índice S&P 500 futuros caiu 0,45% e os futuros do Nasdaq 100 recuaram 0,40%, refletindo uma abertura em baixa após uma semana recorde. O Dow Jones Industrial Average futuros também mostrou queda de 0,69%. Os dados macro de hoje indicam preocupações com a economia global devido à guerra no Oriente Médio, que continua a causar turbulência nos mercados de energia. O presidente do Fed, Jerome Powell, foi eleito como Fed Chair Pro Tempore. As principais notícias de ações destacam a expectativa em torno dos resultados da Nvidia e a crescente preocupação com a crise do combustível de aviação na Europa, com a Ryanair prevendo falências aéreas.
+**Top picks hoje**: NVDA (score 5), ABBV (score 5), LMT (score 5), MSFT (score 4), META (score 4)
