@@ -585,3 +585,10 @@
 **Fonte**: Tavily
 **Contexto macro**: O índice S&P 500 futuros caiu 0,45% e os futuros do Nasdaq 100 recuaram 0,40%, refletindo uma abertura em baixa após uma semana recorde. O Dow Jones Industrial Average futuros também mostrou queda de 0,69%. Os dados macro de hoje indicam preocupações com a economia global devido à guerra no Oriente Médio, que continua a causar turbulência nos mercados de energia. O presidente do Fed, Jerome Powell, foi eleito como Fed Chair Pro Tempore. As principais notícias de ações destacam a expectativa em torno dos resultados da Nvidia e a crescente preocupação com a crise do combustível de aviação na Europa, com a Ryanair prevendo falências aéreas.
 **Top picks hoje**: NVDA (score 5), ABBV (score 5), LMT (score 5), MSFT (score 4), META (score 4)
+
+
+### Claude Decision — 2026-05-18
+**Ação**: NO_ACTION
+**Confiança**: 80%
+**Raciocínio**: Carteira tem 4 posições ocupadas, das quais duas estão sob auto-execução pendente: LMT (EXIT 100% por tese quebrada >10 sessões) e MSFT (REDUCE 50% por review pós-earnings não concluída). NVDA em blackout de earnings (20 mai, -2d). Abrir nova posição antes de executar saídas obrigatórias viola a hierarquia de gestão activa do trading_strategy.md — diagnóstico sem execução é negligência. ABBV (score 5) é candidato interessante mas requer research fundamentalista próprio (FCF yield, pipeline pós-Humira, Skyrizi/Rinvoq momentum) que não foi feito. Sem convicção ≥70% em nenhum nome novo, e com capital comprometido em posições que devem ser libertadas primeiro, a única decisão coerente é NO_ACTION e priorizar limpeza da carteira na sessão de execução.
+**Riscos**: Perder entrada em ABBV/AMZN se rally continuar enquanto se executa limpeza; NVDA earnings binário em 2 dias pode arrastar mercado em qualquer direcção
