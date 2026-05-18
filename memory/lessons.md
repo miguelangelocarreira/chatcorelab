@@ -190,3 +190,12 @@
 **O que funcionou**: Disciplina nas entradas — não foi forçada uma 5ª posição Tech apenas para "fazer algo". Outperform marginal do benchmark confirma que cash + posições core resistem melhor em dias fracos do que adicionar exposição duvidosa.
 
 **Aprendizagem específica**: O bias da sessão é sempre o mesmo — a análise foca-se na decisão de ENTRADA (
+### Lição — 2026-05-18
+
+**Decisão de manhã**: NO_ACTION com confiança 80%. Justificação foi a hierarquia de gestão activa: existem duas auto-execuções pendentes (LMT EXIT 100%, MSFT REDUCE 50%) que devem ser executadas ANTES de qualquer nova entrada. ABBV apareceu como candidato no screener mas foi descartado por falta de research próprio.
+
+**Resultado**: +$58.98 (+0.06%) vs SPY -0.19% → outperformance de +0.25pp. NVDA (10.36%) e AMZN (4.89%) seguraram o dia; MSFT marginalmente positivo (+0.49%); LMT continua negativo (-0.34%) mas não sangrou.
+
+**O que funcionou**: Recusa de abrir nova posição com a casa por arrumar foi a decisão coerente — adicionar ABBV sem research fundamentalista seria FOMO disfarçado. NVDA a +10.36% pré-earnings valida a tese de manter blackout em vez de tentar timing. Outperformance face ao SPY num dia vermelho mostra que a carteira tem exposição defensiva suficiente.
+
+**O que falhou**: A decisão de manhã reconheceu explicitamente as auto-execuções pendentes (LMT, MSFT) mas… NÃO AS EXECUTOU. Isto é exactamente o padrão que a regra de auto-execution foi criada para quebrar. Diagnosticei correctamente "diagnóstico sem execução é negligência" e depois cometi precisamente essa negligência. A regra dos >2 sessões consecutivas em REDUCE/REVIEW está activada há muito mais tempo — LMT devia
