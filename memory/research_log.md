@@ -606,3 +606,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Na manhã de 19 de maio de 2026, os futuros do S&P 500 abriram em queda, refletindo preocupações persistentes com inflação e um declínio contínuo nos preços das ações de chips. O índice de 10 anos caiu para 4.573%, aliviando um pouco a onda de vendas do mercado de títulos. O presidente do Fed, Jerome Powell, foi eleito como Fed Chair Pro Tempore, enquanto analistas discutem o impacto da crise de combustível de aviação na Europa, com previsões de falências aéreas. As principais notícias de ações destacam a recuperação dos semicondutores, a queda nos preços do petróleo e a expectativa de relatórios de ganhos da Walmart.
 **Top picks hoje**: NVDA (score 4), AAPL (score 4), GEV (score 4), MSFT (score 3), GOOGL (score 3)
+
+
+### Claude Decision — 2026-05-19
+**Ação**: NO_ACTION
+**Confiança**: 0%
+**Raciocínio**: Aplicação estrita das regras de auto-execução: LMT e MSFT estão em status REVIEW/REDUCE há várias sessões e DEVEM ser executadas (EXIT LMT 100%, REDUCE MSFT 50%) antes de qualquer nova compra. Adicionar uma nova posição sem primeiro limpar posições com tese quebrada seria negligência e violação directa da regra Auto-Execution Trigger. Além disso, NVDA está em earnings blackout (20 mai, T-1), AMZN já em carteira a performar, e o macro está negativo (SPY -0.37%, futuros -0.45%). Slots disponíveis (2/6) não justificam compra precipitada — cash é posição válida. Prioridade absoluta da próxima sessão: executar saídas pendentes. Sem convicção ≥70% em qualquer novo ticker da watchlist neste contexto.
+**Riscos**: Adiar execuções pendentes (LMT/MSFT) perpetua a paralisia que a regra anti-paralisia visa eliminar; Entrar em nova posição com macro negativo e earnings NVDA iminente aumenta risco de drawdown agregado
