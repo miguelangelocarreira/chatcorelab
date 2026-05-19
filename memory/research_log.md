@@ -600,3 +600,9 @@
 **vs Benchmark**: 0.25% (outperform)
 **Capital final**: $100741.40
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-19 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Na manhã de 19 de maio de 2026, os futuros do S&P 500 abriram em queda, refletindo preocupações persistentes com inflação e um declínio contínuo nos preços das ações de chips. O índice de 10 anos caiu para 4.573%, aliviando um pouco a onda de vendas do mercado de títulos. O presidente do Fed, Jerome Powell, foi eleito como Fed Chair Pro Tempore, enquanto analistas discutem o impacto da crise de combustível de aviação na Europa, com previsões de falências aéreas. As principais notícias de ações destacam a recuperação dos semicondutores, a queda nos preços do petróleo e a expectativa de relatórios de ganhos da Walmart.
+**Top picks hoje**: NVDA (score 4), AAPL (score 4), GEV (score 4), MSFT (score 3), GOOGL (score 3)
