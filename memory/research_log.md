@@ -613,3 +613,11 @@
 **Confiança**: 0%
 **Raciocínio**: Aplicação estrita das regras de auto-execução: LMT e MSFT estão em status REVIEW/REDUCE há várias sessões e DEVEM ser executadas (EXIT LMT 100%, REDUCE MSFT 50%) antes de qualquer nova compra. Adicionar uma nova posição sem primeiro limpar posições com tese quebrada seria negligência e violação directa da regra Auto-Execution Trigger. Além disso, NVDA está em earnings blackout (20 mai, T-1), AMZN já em carteira a performar, e o macro está negativo (SPY -0.37%, futuros -0.45%). Slots disponíveis (2/6) não justificam compra precipitada — cash é posição válida. Prioridade absoluta da próxima sessão: executar saídas pendentes. Sem convicção ≥70% em qualquer novo ticker da watchlist neste contexto.
 **Riscos**: Adiar execuções pendentes (LMT/MSFT) perpetua a paralisia que a regra anti-paralisia visa eliminar; Entrar em nova posição com macro negativo e earnings NVDA iminente aumenta risco de drawdown agregado
+
+
+### Fecho de Mercado — 2026-05-19
+**P&L dia**: $-218.45 (-0.22%)
+**SPY dia**: -0.13%
+**vs Benchmark**: -0.08% (underperform)
+**Capital final**: $100534.17
+**Daily cap atingido**: Não

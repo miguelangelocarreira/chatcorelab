@@ -199,3 +199,12 @@
 **O que funcionou**: Recusa de abrir nova posição com a casa por arrumar foi a decisão coerente — adicionar ABBV sem research fundamentalista seria FOMO disfarçado. NVDA a +10.36% pré-earnings valida a tese de manter blackout em vez de tentar timing. Outperformance face ao SPY num dia vermelho mostra que a carteira tem exposição defensiva suficiente.
 
 **O que falhou**: A decisão de manhã reconheceu explicitamente as auto-execuções pendentes (LMT, MSFT) mas… NÃO AS EXECUTOU. Isto é exactamente o padrão que a regra de auto-execution foi criada para quebrar. Diagnosticei correctamente "diagnóstico sem execução é negligência" e depois cometi precisamente essa negligência. A regra dos >2 sessões consecutivas em REDUCE/REVIEW está activada há muito mais tempo — LMT devia
+### Lição — 2026-05-19
+
+**Decisão de manhã**: NO_ACTION com 0% de confiança. Justificação: aplicação estrita da regra Auto-Execution Trigger — LMT (EXIT 100%) e MSFT (REDUCE 50%) deviam ter sido executadas ANTES de qualquer nova compra. NVDA em blackout (earnings T-1), macro negativo (SPY -0.37% no pré-market), e nenhuma tese nova com convicção ≥70%.
+
+**Resultado**: P&L -$218.45 (-0.22%), underperform SPY em -0.08pp. Dia ligeiramente negativo, mas dentro de ruído normal. NVDA fechou +10.05% acumulado (resiliente apesar do blackout), AMZN +2.65% continua a validar a tese AWS, LMT -0.48% e MSFT -1.19% confirmam o diagnóstico de tese fraca.
+
+**O que funcionou**: Não adicionar exposição num dia de macro negativo com slots disponíveis foi correto — não houve FOMO. Reconhecimento explícito de que NVDA em blackout impede entry adicional. AMZN continua a entregar alpha sem necessidade de mexer.
+
+**O que falhou**: **Falha grave de execução**: a decisão de manhã invocou a regra Auto-Execution Trigger como justificação para NO_ACTION em compras, mas NÃO executou as vendas obrigatórias (LMT EXIT 100%, MSFT REDUCE 50%). Isto é exactamente o padrão que a regra foi criada para combater — diagnóstico sem execução. A regra não diz "não comprar até resolver"; diz "vender automaticamente na 3ª sessão".
