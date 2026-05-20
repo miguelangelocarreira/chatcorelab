@@ -208,3 +208,11 @@
 **O que funcionou**: Não adicionar exposição num dia de macro negativo com slots disponíveis foi correto — não houve FOMO. Reconhecimento explícito de que NVDA em blackout impede entry adicional. AMZN continua a entregar alpha sem necessidade de mexer.
 
 **O que falhou**: **Falha grave de execução**: a decisão de manhã invocou a regra Auto-Execution Trigger como justificação para NO_ACTION em compras, mas NÃO executou as vendas obrigatórias (LMT EXIT 100%, MSFT REDUCE 50%). Isto é exactamente o padrão que a regra foi criada para combater — diagnóstico sem execução. A regra não diz "não comprar até resolver"; diz "vender automaticamente na 3ª sessão".
+### Lição — 2026-05-20
+**Decisão de manhã**: NO_ACTION com confiança 0%. Justificação: dia de earnings da NVDA (holding core +11.8%), duas auto-execuções pendentes (LMT EXIT 100% e MSFT REDUCE 50%) por resolver, e nenhum candidato novo com score ≥70% (máximo 4/7 em AAPL/JPM/LMT).
+
+**Resultado**: +$154 (+0.15%) vs SPY +0.78% → underperform de -0.63pp. Carteira capturou apenas 19% do movimento do mercado, puxada por NVDA +10.80% e AMZN +5% (sólidos), travada por LMT -1.42% e MSFT -0.34% (peso morto).
+
+**O que funcionou**: Disciplina de não abrir posição nova em dia de earnings da NVDA — correcto por regra. NVDA e AMZN continuam a entregar a tese AI infrastructure. Reconhecimento explícito de que slots ocupados por teses quebradas impedem nova alocação.
+
+**O que falhou**: **Crítico — a auto-execução de LMT e MSFT NÃO foi executada hoje**. O agent_instructions.md é inequívoco: "AUTO-EXEC: EXIT 100% próx. sessão" para LMT e "REDUCE 50% próx. sessão" para MSFT. Em vez disso, a manhã foi gasta a *racionalizar* a inacção ("não faz sentido adicionar risco com slots ocupados") quando a regra exigia LIBERTAR os slots primeiro. Isto é exactamente o padrão de paralisia que a regra de auto-execução foi desenhada para quebrar — e o agente quebr

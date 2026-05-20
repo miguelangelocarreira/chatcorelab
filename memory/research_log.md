@@ -634,3 +634,11 @@
 **Confiança**: 0%
 **Raciocínio**: Hoje é dia de earnings da NVDA (20 mai) — maior catalisador do mês e já em carteira (+11.8%). Não abro novas posições em blackout de earnings de uma holding core. Adicionalmente, a carteira tem duas posições em auto-execução pendente (LMT EXIT 100% e MSFT REDUCE 50%) que devem ser resolvidas via ordens SELL antes de qualquer alocação de novo capital — não faz sentido adicionar risco com slots ocupados por teses quebradas. Scores actuais (AAPL/JPM/LMT 4, MSFT/AMZN/NVDA 3) não revelam convicção ≥70% em nenhum candidato novo. Cash a aguardar (a) reação NVDA pós-earnings, (b) libertação de slots via auto-execuções. Disciplina > actividade.
 **Riscos**: NVDA miss/guidance fraco contagia AMZN e MSFT; Atraso na execução de LMT/MSFT amplifica perdas latentes
+
+
+### Fecho de Mercado — 2026-05-20
+**P&L dia**: $154.00 (0.15%)
+**SPY dia**: 0.78%
+**vs Benchmark**: -0.63% (underperform)
+**Capital final**: $100678.26
+**Daily cap atingido**: Não
