@@ -627,3 +627,10 @@
 **Fonte**: Tavily
 **Contexto macro**: S&P 500 futures subiram levemente à medida que os traders aguardam os resultados da Nvidia. As expectativas em torno dos ganhos da Nvidia, um líder em tecnologia de inteligência artificial, dominaram as discussões do mercado. As ações da Nvidia, que contribuiu cerca de 20% para os retornos do S&P 500 este ano, subiram 1,6% antes do mercado, refletindo uma recuperação nos estoques de chips. Além disso, os principais índices de ações dos EUA fecharam em baixa, com o Nasdaq caindo 0,8%, o S&P 500 recuando 0,7% e o Dow Jones Industrial Average diminuindo 0,6%, possivelmente influenciados por rendimentos de títulos mais altos. As perspectivas de preços mais altos podem retardar o boom da construção de IA, conforme destacado em análises recentes.
 **Top picks hoje**: AAPL (score 4), LMT (score 4), GEV (score 4), JPM (score 4), NVDA (score 3)
+
+
+### Claude Decision — 2026-05-20
+**Ação**: NO_ACTION
+**Confiança**: 0%
+**Raciocínio**: Hoje é dia de earnings da NVDA (20 mai) — maior catalisador do mês e já em carteira (+11.8%). Não abro novas posições em blackout de earnings de uma holding core. Adicionalmente, a carteira tem duas posições em auto-execução pendente (LMT EXIT 100% e MSFT REDUCE 50%) que devem ser resolvidas via ordens SELL antes de qualquer alocação de novo capital — não faz sentido adicionar risco com slots ocupados por teses quebradas. Scores actuais (AAPL/JPM/LMT 4, MSFT/AMZN/NVDA 3) não revelam convicção ≥70% em nenhum candidato novo. Cash a aguardar (a) reação NVDA pós-earnings, (b) libertação de slots via auto-execuções. Disciplina > actividade.
+**Riscos**: NVDA miss/guidance fraco contagia AMZN e MSFT; Atraso na execução de LMT/MSFT amplifica perdas latentes
