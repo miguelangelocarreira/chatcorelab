@@ -642,3 +642,9 @@
 **vs Benchmark**: -0.63% (underperform)
 **Capital final**: $100678.26
 **Daily cap atingido**: Não
+
+
+### Research 2026-05-21 — Pre-Market Briefing
+**Fonte**: Tavily
+**Contexto macro**: Os futuros do S&P 500 estão em queda leve enquanto os investidores analisam os resultados da Nvidia. As expectativas para a empresa de inteligência artificial não foram totalmente atendidas, levando a uma reação fraca nos mercados. As perspectivas do Dow Jones e do Nasdaq também mostram quedas, com o mercado parecendo perder impulso após os resultados da Nvidia. Os principais destaques do dia incluem dados macro dos EUA e discursos de membros da Fed, além de notícias sobre SoftBank, que está subindo devido a notícias sobre o IPO da OpenAI.
+**Top picks hoje**: AAPL (score 5), VST (score 5), NVDA (score 4), GOOGL (score 4), GEV (score 4)
