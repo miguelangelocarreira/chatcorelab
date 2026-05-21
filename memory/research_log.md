@@ -648,3 +648,10 @@
 **Fonte**: Tavily
 **Contexto macro**: Os futuros do S&P 500 estão em queda leve enquanto os investidores analisam os resultados da Nvidia. As expectativas para a empresa de inteligência artificial não foram totalmente atendidas, levando a uma reação fraca nos mercados. As perspectivas do Dow Jones e do Nasdaq também mostram quedas, com o mercado parecendo perder impulso após os resultados da Nvidia. Os principais destaques do dia incluem dados macro dos EUA e discursos de membros da Fed, além de notícias sobre SoftBank, que está subindo devido a notícias sobre o IPO da OpenAI.
 **Top picks hoje**: AAPL (score 5), VST (score 5), NVDA (score 4), GOOGL (score 4), GEV (score 4)
+
+
+### Claude Decision — 2026-05-21
+**Ação**: NO_ACTION
+**Confiança**: 0%
+**Raciocínio**: Aplicar regra de execução automática antes de qualquer compra nova. LMT (tese quebrada >10 sessões, status REDUCE) e MSFT (REVIEW pós-earnings >5 sessões) estão em auto-execução obrigatória na próxima sessão — EXIT 100% LMT e REDUCE 50% MSFT. Não posso adicionar exposição enquanto não executar as saídas pendentes. Adicionalmente, NVDA reporta earnings a 20 mai (blackout entry confirmado, já em carteira). AMZN +5.2% e NVDA +9.3% já contribuem para a performance positiva (+0.62%). Concentração tech actual (AMZN+MSFT+NVDA) já próxima do limite de 40% setorial após libertar capital de LMT. Nenhum ticker no scoreboard atinge convicção ≥70% com catalisador imediato — AAPL e VST com score 5 mas sem catalisador documentado. Disciplina: primeiro executar saídas, depois reavaliar entradas com capital limpo.
+**Riscos**: Adiar execução de LMT/MSFT mais uma sessão prolonga perdas latentes; Perder oportunidade de entrada em VST/AAPL se catalisador surgir antes da limpeza da carteira
